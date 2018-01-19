@@ -1,6 +1,6 @@
 {
   "name": "@planningcenter/helpdesk-embed",
-  "version": "1.0.0-alpha.1",
+  "version": "1.0.0-alpha.2",
   "description": "helpdesk-embed object",
   "main": "helpdesk-embed.js",
   "scripts": {
@@ -15,7 +15,6 @@
   "bugs": {
     "url": "https://github.com/planningcenter/javascript/issues"
   },
-  "homepage":
-    "https://github.com/planningcenter/javascript/tree/master/packages/helpdesk-embed",
+  "homepage": "https://github.com/planningcenter/javascript/tree/master/packages/helpdesk-embed",
   "private": false
 }
