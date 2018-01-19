@@ -7,5 +7,6 @@
   "repository": "git@github.com:planningcenter/modules.git",
   "author": "Michael Chan <mijoch@gmail.com>",
   "license": "UNLICENSED",
-  "private": true
+  "private": true,
+  "workspaces": ["packages/*"]
 }
