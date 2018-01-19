@@ -1,0 +1,2 @@
+!function(n,e){"object"==typeof exports&&"undefined"!=typeof module?module.exports=e():"function"==typeof define&&define.amd?define(e):n.planningcenterurl=e()}(this,function(){return function(n){return function(e){if(n&&e)switch(n){case"production":return"https://"+e+".planningcenteronline.com";case"staging":return"https://"+e+"-staging.planningcenteronline.com";case"development":case"test":return"http://"+e+".pco.test";default:return"http://"+e+".planningcenteronline.com"}}}});
+//# sourceMappingURL=url.umd.js.map

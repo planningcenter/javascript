@@ -1,28 +1,23 @@
 {
-  "name": "pco-url",
-  "version": "2.0.0",
+  "name": "@planningcenter/url",
+  "version": "1.0.0-alpha",
   "description": "A dumb url origin generator in JS",
-  "main": "dist/pco-url.cjs.js",
-  "module": "dist/pco-url.esm.js",
-  "browser": "dist/pco-url.umd.js",
-  "repository": "https://github.com/planningcenter/pco-url.git",
+  "source": "index.js",
+  "main": "dist/url.js",
+  "module": "dist/url.esm.js",
+  "browser": "dist/url.umd.js",
+  "repository": "https://github.com/planningcenter/javascript.git",
   "author": "Michael Chan <mijoch@gmail.com>",
-  "license": "MIT",
+  "license": "UNLICENSED",
+  "files": ["dist", "index.js"],
   "scripts": {
-    "rollup": "rollup -c",
+    "build": "microbundle",
+    "dev": "microbundle watch",
+    "pretest": "npm run build",
     "test": "jest"
   },
   "devDependencies": {
-    "babel-jest": "^20.0.3",
-    "babel-plugin-external-helpers": "^6.22.0",
-    "babel-preset-env": "^1.6.0",
     "jest": "^20.0.4",
-    "regenerator-runtime": "^0.10.5",
-    "rollup": "^0.45.1",
-    "rollup-plugin-babel": "^3.0.2",
-    "rollup-plugin-commonjs": "^8.2.1",
-    "rollup-plugin-node-resolve": "^3.0.0"
-  },
-  "dependencies": {
+    "microbundle": "^0.3.1"
   }
 }
