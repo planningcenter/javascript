@@ -8,13 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/planningcenter/helpdesk-embed.git"
+    "url": "git+https://github.com/planningcenter/javascript.git"
   },
   "author": "",
   "license": "UNLICENSED",
   "bugs": {
-    "url": "https://github.com/planningcenter/helpdesk-embed/issues"
+    "url": "https://github.com/planningcenter/javascript/issues"
   },
-  "homepage": "https://github.com/planningcenter/helpdesk-embed#readme",
+  "homepage":
+    "https://github.com/planningcenter/javascript/tree/master/packages/helpdesk-embed",
   "private": false
 }

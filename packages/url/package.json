@@ -16,8 +16,14 @@
     "pretest": "npm run build",
     "test": "jest"
   },
+  "bugs": {
+    "url": "https://github.com/planningcenter/javascript/issues"
+  },
+  "homepage":
+    "https://github.com/planningcenter/javascript/tree/master/packages/url",
   "devDependencies": {
     "jest": "^20.0.4",
     "microbundle": "^0.3.1"
-  }
+  },
+  "private": false
 }
