@@ -1,6 +1,6 @@
 {
   "name": "@planningcenter/url",
-  "version": "1.0.0-alpha",
+  "version": "1.0.0-alpha.1",
   "description": "A dumb url origin generator in JS",
   "source": "index.js",
   "main": "dist/url.js",
@@ -9,7 +9,10 @@
   "repository": "https://github.com/planningcenter/javascript.git",
   "author": "Michael Chan <mijoch@gmail.com>",
   "license": "UNLICENSED",
-  "files": ["dist", "index.js"],
+  "files": [
+    "dist",
+    "index.js"
+  ],
   "scripts": {
     "build": "microbundle",
     "dev": "microbundle watch",
@@ -19,8 +22,7 @@
   "bugs": {
     "url": "https://github.com/planningcenter/javascript/issues"
   },
-  "homepage":
-    "https://github.com/planningcenter/javascript/tree/master/packages/url",
+  "homepage": "https://github.com/planningcenter/javascript/tree/master/packages/url",
   "devDependencies": {
     "jest": "^20.0.4",
     "microbundle": "^0.3.1"
