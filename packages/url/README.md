@@ -1,17 +1,19 @@
-# pco-url
+# @planningcenter/url
+
 A dumb url origin generator in JS.
 
 Builds environment-considered url origins in JS-land, for Planning Center apps.
 
 ## Examples
+
 ```js
-pcoUrl("development")("api")
+planningcenterurl("development")("api");
 // => "http://api.pco.test"
 
-pcoUrl("staging")("people")
+planningcenterurl("staging")("people");
 // => "https://accounts.planningcenteronline.com"
 
-pcoUrl("production")("accounts")
+planningcenterurl("production")("accounts");
 // => "https://people-staging.planningcenteronline.com"
 ```
 
@@ -19,21 +21,24 @@ Arguments are curried.
 You can make a generic env-considered function.
 
 ```js
-const envPcoUrl = pcoUrl(window.railsEnv)
-envPcoUrl("api")
+const envURL = planningcenterurl(window.railsEnv);
+
+envURL("api");
 ```
 
 ## In Planning Center Apps
+
 Planning center apps expose the Rails env as the JS global `railsEnv`. Use like so.
 
 ```js
-pcoUrl(railsEnv)("api")
+planningcenterurl(railsEnv)("api");
 ```
 
 ## Fetching example
+
 ```js
-fetch(`${pcoEnvUrl(env)("api")}/people/v2/me`, {
-  credentials: "include",
+fetch(`${planningcenterurl(env)("api")}/people/v2/me`, {
+  credentials: "include"
 })
   .then(res => res.json())
   .then(json => json.data)
@@ -41,29 +46,31 @@ fetch(`${pcoEnvUrl(env)("api")}/people/v2/me`, {
     this.setState({
       currentUser: {
         id,
-        ...attributes,
-      },
+        ...attributes
+      }
     })
   )
   .catch(err => console.log(err));
-
 ```
 
 ## Installation
+
 Script tag on Rails
+
 ```html
-<script type="javascript" src="https://unpkg.com/pco-url@1.0.0/lib/pco-url.js"></script>
-<!-- exposed as global `pcoUrl` -->
+<script type="javascript" src="https://unpkg.com/@planningcenter/url"></script>
+<!-- exposed as global `planningcenterurl` -->
 ```
 
 Webpacker on Rails
+
 ```bash
-yarn add pco-url
+yarn add @planningcenter/url
 ```
 
 ```js
 /* global railsEnv */
-import pcoUrl from "pco-url"
+import pcurl from "@planningcenter/url";
 
-pcoUrl(railsEnv)("api")
+pcurl(railsEnv)("api");
 ```
