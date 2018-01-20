@@ -1,6 +1,6 @@
 {
   "name": "@planningcenter/topbar",
-  "version": "2.0.0-rc.1",
+  "version": "2.0.0-rc.2",
   "description": "Planning Center application Topbar",
   "main": "dist/topbar.cjs.js",
   "module": "dist/topbar.esm.js",
@@ -13,7 +13,9 @@
     "prepublish": "yarn build",
     "generate-toc": "node ./scripts/generate-toc.js"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "repository": "https://github.com/planningcenter/topbar.git",
   "author": "Michael Chan <mijoch@gmail.com>",
   "private": false,
