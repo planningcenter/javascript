@@ -11,8 +11,8 @@ class AppsProvider extends React.Component<
     apps: object[];
   }
 > {
-  constructor() {
-    super();
+  constructor(props: any) {
+    super(props);
 
     this.state = {
       apps: []

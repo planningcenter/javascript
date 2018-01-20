@@ -14,8 +14,8 @@ class NotSmallRoute extends React.Component<
     down: boolean;
   }
 > {
-  constructor() {
-    super();
+  constructor(props: any) {
+    super(props);
     this.state = {
       entered: false,
       down: false

@@ -14,8 +14,8 @@ class ConnectedPeopleProvider extends React.Component<
     connectedPeople: object[];
   }
 > {
-  constructor() {
-    super();
+  constructor(props: any) {
+    super(props);
 
     this.state = {
       connectedPeople: []

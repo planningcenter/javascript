@@ -25,8 +25,8 @@ class AppsButton extends React.Component<
     down: boolean;
   }
 > {
-  constructor() {
-    super();
+  constructor(props: any) {
+    super(props);
     this.state = {
       entered: false,
       down: false
@@ -90,8 +90,8 @@ class HoverableListItem extends React.Component<
     entered: boolean;
   }
 > {
-  constructor() {
-    super();
+  constructor(props: any) {
+    super(props);
     this.state = {
       entered: false
     };
@@ -133,8 +133,8 @@ class Hoverable extends React.Component<
     down: boolean;
   }
 > {
-  constructor() {
-    super();
+  constructor(props: any) {
+    super(props);
     this.state = {
       entered: false,
       down: false
@@ -173,7 +173,7 @@ const AppsMenu = props => (
     <Popup
       style={{
         marginTop: "8px",
-        ...props.visible
+        ...(props.visible
           ? {
               visibility: "visible",
               opacity: 1,
@@ -183,7 +183,7 @@ const AppsMenu = props => (
               visibility: "hidden",
               opacity: 0,
               transition: "all 120ms ease-in"
-            }
+            })
       }}
       component={Outsider}
       onOutsideClick={props.toggle}
@@ -266,8 +266,8 @@ class Outsider extends React.Component<
 > {
   private container: HTMLElement;
 
-  constructor() {
-    super();
+  constructor(props: any) {
+    super(props);
     this.handleOutsideClick = this.handleOutsideClick.bind(this);
   }
 
@@ -366,8 +366,8 @@ class NotSmallTopbar extends React.Component<
     showOrgName: true
   };
 
-  constructor() {
-    super();
+  constructor(props: any) {
+    super(props);
 
     this.state = {
       routesVisible: true,
@@ -410,7 +410,8 @@ class NotSmallTopbar extends React.Component<
           toggle={() =>
             this.setState(({ appsMenuVisible }) => ({
               appsMenuVisible: !appsMenuVisible
-            }))}
+            }))
+          }
         />
 
         <AppsButton
@@ -422,7 +423,8 @@ class NotSmallTopbar extends React.Component<
                 appsMenuVisible: !appsMenuVisible
               }),
               this.props.requestAppsFetch()
-            )}
+            )
+          }
           appName={this.props.appName}
         />
 
@@ -474,7 +476,8 @@ class NotSmallTopbar extends React.Component<
                   userMenuVisible: !userMenuVisible
                 }),
                 this.props.requestConnectedPeopleFetch()
-              )}
+              )
+            }
           >
             <Avatar env={this.props.env} url={this.props.userAvatarPath} />
 
@@ -510,14 +513,15 @@ class NotSmallTopbar extends React.Component<
             onOutsideClick={() =>
               this.setState(({ userMenuVisible }) => ({
                 userMenuVisible: !userMenuVisible
-              }))}
+              }))
+            }
             cleanup={!this.state.userMenuVisible}
             style={{
               color: "#525252",
               right: 0,
               marginTop: "8px",
               maxWidth: "20em",
-              ...this.state.userMenuVisible
+              ...(this.state.userMenuVisible
                 ? {
                     visibility: "visible",
                     opacity: 1,
@@ -527,7 +531,7 @@ class NotSmallTopbar extends React.Component<
                     visibility: "hidden",
                     opacity: 0,
                     transition: "all 120ms ease-in"
-                  },
+                  }),
               cursor: "default"
             }}
           >

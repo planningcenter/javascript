@@ -29,8 +29,8 @@ class PointBreak extends React.Component<
     width: number;
   }
 > {
-  constructor() {
-    super();
+  constructor(props: any) {
+    super(props);
 
     this.state = {
       width: window.innerWidth
@@ -44,11 +44,19 @@ class PointBreak extends React.Component<
   }
 
   componentDidMount() {
-    window.addEventListener("resize", debounce(this.setWindowWidth, 100), false);
+    window.addEventListener(
+      "resize",
+      debounce(this.setWindowWidth, 100),
+      false
+    );
   }
 
   componentDidUnMount() {
-    window.removeEventListener("resize", debounce(this.setWindowWidth, 100), false);
+    window.removeEventListener(
+      "resize",
+      debounce(this.setWindowWidth, 100),
+      false
+    );
   }
 
   breakpointString(width) {

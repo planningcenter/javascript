@@ -63,8 +63,8 @@ class SmallTopbar extends React.Component<
     userMenuVisible: boolean;
   }
 > {
-  constructor() {
-    super();
+  constructor(props: any) {
+    super(props);
 
     this.state = {
       routesMenuVisible: false,
@@ -164,7 +164,8 @@ class SmallTopbar extends React.Component<
               onClick={() =>
                 this.setState(({ userMenuVisible }) => ({
                   userMenuVisible: !userMenuVisible
-                }))}
+                }))
+              }
             >
               <div
                 style={{
@@ -235,9 +236,9 @@ class SmallTopbar extends React.Component<
                         backgroundColor: userSwitchState
                           ? "transparent"
                           : "#292929",
-                        boxShadow: `0 0 0 1px ${userSwitchState
-                          ? this.props.colors.base1
-                          : "#292929"}`,
+                        boxShadow: `0 0 0 1px ${
+                          userSwitchState ? this.props.colors.base1 : "#292929"
+                        }`,
                         display: "flex",
                         alignItems: "center"
                       }}
@@ -268,46 +269,45 @@ class SmallTopbar extends React.Component<
                   }}
                 >
                   <ul style={{ padding: 0, margin: 0 }}>
-                    {appsMenuFormatter(
-                      this.props.apps,
-                      this.props.appName
-                    ).map(({ attributes: { name } }) => (
-                      <li
-                        key={name}
-                        style={{
-                          listStyleType: "none",
-                          borderTop: "1px solid #363636"
-                        }}
-                      >
-                        <a
+                    {appsMenuFormatter(this.props.apps, this.props.appName).map(
+                      ({ attributes: { name } }) => (
+                        <li
+                          key={name}
                           style={{
-                            display: "flex",
-                            alignItems: "center",
-                            height: "48px",
-                            paddingLeft: "16px",
-                            paddingRight: "16px"
+                            listStyleType: "none",
+                            borderTop: "1px solid #363636"
                           }}
-                          data-turbolinks={false}
-                          href={`${pcoUrl(this.props.env)(
-                            "accounts"
-                          )}/apps/${name.toLowerCase()}`}
                         >
-                          {React.createElement(
-                            COLOR_APP_BADGES[name.toLowerCase()],
-                            {
-                              size: "24px"
-                            }
-                          )}
-                          <span style={{ marginLeft: "16px" }} />
-                          {React.createElement(
-                            MONO_APP_NAME[name.toLowerCase()],
-                            {
-                              color: "#fff"
-                            }
-                          )}
-                        </a>
-                      </li>
-                    ))}
+                          <a
+                            style={{
+                              display: "flex",
+                              alignItems: "center",
+                              height: "48px",
+                              paddingLeft: "16px",
+                              paddingRight: "16px"
+                            }}
+                            data-turbolinks={false}
+                            href={`${pcoUrl(this.props.env)(
+                              "accounts"
+                            )}/apps/${name.toLowerCase()}`}
+                          >
+                            {React.createElement(
+                              COLOR_APP_BADGES[name.toLowerCase()],
+                              {
+                                size: "24px"
+                              }
+                            )}
+                            <span style={{ marginLeft: "16px" }} />
+                            {React.createElement(
+                              MONO_APP_NAME[name.toLowerCase()],
+                              {
+                                color: "#fff"
+                              }
+                            )}
+                          </a>
+                        </li>
+                      )
+                    )}
                   </ul>
                   <div
                     style={{
@@ -375,8 +375,9 @@ class SmallTopbar extends React.Component<
                               <a
                                 href={`${pcoUrl(this.props.env)(
                                   "accounts"
-                                )}/link/new?to=${id}&return=${this.props
-                                  .appName}%2f`}
+                                )}/link/new?to=${id}&return=${
+                                  this.props.appName
+                                }%2f`}
                                 data-turbolinks={false}
                                 style={{
                                   maxWidth: "100%",
@@ -488,7 +489,8 @@ class SmallTopbar extends React.Component<
                       routesMenuVisible: true,
                       userMenuVisible: false
                     }
-            )}
+            )
+          }
         >
           <CurrentRouteComponent>
             {capitalize(currentRouteText)}
