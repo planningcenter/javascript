@@ -1,0 +1,2 @@
+!function(e,o){"object"==typeof exports&&"undefined"!=typeof module?o(exports):"function"==typeof define&&define.amd?define(["exports"],o):o(e.finder={})}(this,function(e){"production"===process.env.NODE_ENV?module.exports=require("./cjs/react.production.min.js"):module.exports=require("./cjs/react.development.js");var o=function(e){function o(){e.apply(this,arguments)}return e&&(o.__proto__=e),(o.prototype=Object.create(e&&e.prototype)).constructor=o,o.prototype.render=function(){return h("div",null)},o}(void 0);e.WindowSize=o});
+//# sourceMappingURL=finder.umd.js.map

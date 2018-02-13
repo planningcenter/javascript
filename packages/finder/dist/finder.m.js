@@ -1,0 +1,2 @@
+"production"===process.env.NODE_ENV?module.exports=require("./cjs/react.production.min.js"):module.exports=require("./cjs/react.development.js");var e=function(e){function r(){e.apply(this,arguments)}return e&&(r.__proto__=e),(r.prototype=Object.create(e&&e.prototype)).constructor=r,r.prototype.render=function(){return h("div",null)},r}(void 0);export{e as WindowSize};
+//# sourceMappingURL=finder.m.js.map
