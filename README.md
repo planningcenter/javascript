@@ -10,3 +10,6 @@ A collection of shared components, scripts, wrappers, and forks in JavaScript.
 * url
   * [@planningcenter/url](https://www.npmjs.com/package/@planningcenter/url)
   * [source](https://github.com/planningcenter/javascript/tree/master/packages/url)
+* finder
+* [@planningcenter/finder]
+  * [source](https://github.com/planningcenter/javascript/tree/master/packages/finder)
