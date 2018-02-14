@@ -4,9 +4,9 @@ A collection of shared components, scripts, wrappers, and forks in JavaScript.
 
 ## Packages
 
-* [@planningcenter/helpdesk-embed](https://www.npmjs.com/package/@planningcenter/helpdesk-embed) ([project](https://github.com/planningcenter/javascript/tree/master/packages/helpdesk-embed))
-* [@planningcenter/url](https://www.npmjs.com/package/@planningcenter/url) ([project](https://github.com/planningcenter/javascript/tree/master/packages/url))
-* [@planningcenter/finder](https://www.npmjs.com/package/@planningcenter/finder) ([project](https://github.com/planningcenter/javascript/tree/master/packages/finder))
+* [@planningcenter/helpdesk-embed](https://www.npmjs.com/package/@planningcenter/helpdesk-embed) ([project](packages/helpdesk-embed))
+* [@planningcenter/url](https://www.npmjs.com/package/@planningcenter/url) ([project](packages/url))
+* [@planningcenter/finder](https://www.npmjs.com/package/@planningcenter/finder) ([project](packages/finder))
 
 ## Structure
 
