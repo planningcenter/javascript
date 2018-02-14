@@ -1,6 +1,6 @@
 {
   "name": "@planningcenter/finder",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Components for building a resource Finder in React",
   "source": "index.js",
   "main": "dist/finder.js",
