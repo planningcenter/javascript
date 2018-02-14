@@ -1,6 +1,6 @@
 import * as React from "react";
 
-export class WindowSize extends React.Component {
+export class WindowWidth extends React.Component {
   constructor() {
     super();
     this.state = { width: 0 };
@@ -17,7 +17,7 @@ export class WindowSize extends React.Component {
     window.removeEventListener("resize", this.setWidth);
   }
 
-  setWidth() {
+  setDimensions() {
     this.setState({ width: window.innerWidth });
   }
 
@@ -25,10 +25,3 @@ export class WindowSize extends React.Component {
     return this.props.render(this.state);
   }
 }
-WindowSize.propTypes = {
-  render: PropTypes.func.isRequired
-};
-
-WindowSize.defaultProps = {
-  render: () => <div>Left side!</div>
-};

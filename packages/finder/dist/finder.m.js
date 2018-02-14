@@ -117,16 +117,16 @@ function _possibleConstructorReturn(self, call) {
   return self;
 }
 
-var WindowSize =
+var WindowWidth =
 /*#__PURE__*/
 function (_React$Component) {
-  _inherits(WindowSize, _React$Component);
+  _inherits(WindowWidth, _React$Component);
 
-  function WindowSize() {
+  function WindowWidth() {
     var _this;
 
-    _classCallCheck(this, WindowSize);
-    _this = _possibleConstructorReturn(this, (WindowSize.__proto__ || Object.getPrototypeOf(WindowSize)).call(this));
+    _classCallCheck(this, WindowWidth);
+    _this = _possibleConstructorReturn(this, (WindowWidth.__proto__ || Object.getPrototypeOf(WindowWidth)).call(this));
     _this.state = {
       width: 0
     };
@@ -134,7 +134,7 @@ function (_React$Component) {
     return _this;
   }
 
-  _createClass(WindowSize, [{
+  _createClass(WindowWidth, [{
     key: "componentDidMount",
     value: function componentDidMount() {
       window.addEventListener("resize", this.setWidth);
@@ -146,8 +146,8 @@ function (_React$Component) {
       window.removeEventListener("resize", this.setWidth);
     }
   }, {
-    key: "setWidth",
-    value: function setWidth() {
+    key: "setDimensions",
+    value: function setDimensions() {
       this.setState({
         width: window.innerWidth
       });
@@ -158,16 +158,14 @@ function (_React$Component) {
       return this.props.render(this.state);
     }
   }]);
-  return WindowSize;
+  return WindowWidth;
 }(Component);
-WindowSize.propTypes = {
-  render: PropTypes.func.isRequired
-};
-WindowSize.defaultProps = {
-  render: function render() {
-    return createElement("div", null, "Left side!");
-  }
-};
+
+
+
+var WindowWidth$1 = Object.freeze({
+	WindowWidth: WindowWidth
+});
 
 /* ! copy-pasted from react-overflowing for easy customization before adding as dep */
 
@@ -206,7 +204,6 @@ function (_React$Component) {
   return EdgeGradient;
 }(Component);
 /* ! copy-pasted from react-overflowing for easy customization before adding as dep */
-
 
 var Overflowing =
 /*#__PURE__*/
@@ -287,5 +284,12 @@ function (_React$Component2) {
   return Overflowing;
 }(Component);
 
-export { Overflowing, WindowSize };
+
+
+var Overflowing$1 = Object.freeze({
+	EdgeGradient: EdgeGradient,
+	Overflowing: Overflowing
+});
+
+export { Overflowing$1 as Overflowing, WindowWidth$1 as WindowWidth };
 //# sourceMappingURL=finder.m.js.map

@@ -1,7 +1,7 @@
 import * as React from "react";
 
 /* ! copy-pasted from react-overflowing for easy customization before adding as dep */
-class EdgeGradient extends React.Component {
+export class EdgeGradient extends React.Component {
   render() {
     const { gap, direction, edge, style, ...nativeProps } = this.props;
 

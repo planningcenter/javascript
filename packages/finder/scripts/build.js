@@ -1,10 +1,7 @@
 const { rollup } = require("rollup");
-const resolve = require("rollup-plugin-node-resolve");
-const commonjs = require("rollup-plugin-commonjs");
 const babel = require("rollup-plugin-babel");
 const package = require("../package.json");
-
-// console.log(package)
+const chalk = require("chalk");
 
 rollup({
   input: package.source,
@@ -20,16 +17,19 @@ rollup({
     name: "Finder",
     sourcemap: true
   });
+  console.log(`wrote ${chalk.green("dist/finder.umd.js")}`);
 
   bundle.write({
     file: "./dist/finder.js",
     format: "cjs",
     sourcemap: true
   });
+  console.log(`wrote ${chalk.green("dist/finder.js")}`);
 
   bundle.write({
     file: "./dist/finder.m.js",
     format: "es",
     sourcemap: true
   });
+  console.log(`wrote ${chalk.green("dist/finder.m.js")}`);
 });
