@@ -1,3 +1,4 @@
 import { WindowSize } from "./modules/WindowSize";
+import { Overflowing } from "./modules/Overflowing";
 
-export { WindowSize };
+export { Overflowing, WindowSize };

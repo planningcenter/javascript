@@ -11,12 +11,33 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "build": "microbundle",
+    "build": "node ./scripts/build.js",
     "dev": "microbundle watch"
   },
-  "dependencies": {},
+  "babel": {
+    "presets": [
+      "@babel/react",
+      [
+        "@babel/env",
+        {
+          "shippedProposals": true,
+          "modules": false
+        }
+      ]
+    ]
+  },
+  "dependencies": {
+    "babel-preset-modern-browsers": "^10.0.1"
+  },
   "devDependencies": {
+    "@babel/cli": "^7.0.0-beta.40",
+    "@babel/core": "^7.0.0-beta.40",
+    "@babel/preset-env": "^7.0.0-beta.40",
+    "@babel/preset-react": "^7.0.0-beta.40",
     "microbundle": "^0.4.3",
-    "react": "^16.2.0"
+    "react": "^16.2.0",
+    "rollup": "^0.55.5",
+    "rollup-plugin-babel": "^4.0.0-beta.0",
+    "rollup-plugin-node-resolve": "^3.0.2"
   }
 }
