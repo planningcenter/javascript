@@ -165,12 +165,6 @@ function (_React$Component) {
   return WindowWidth;
 }(React.Component);
 
-
-var WindowWidth$2 = Object.freeze({
-	WindowWidth: WindowWidth,
-	default: WindowWidth
-});
-
 /* ! copy-pasted from react-overflowing for easy customization before adding as dep */
 
 var EdgeGradient =
@@ -288,13 +282,8 @@ function (_React$Component2) {
   return Overflowing;
 }(React.Component);
 
+// import flat for Finder module
 
-var Overflowing$2 = Object.freeze({
-	EdgeGradient: EdgeGradient,
-	Overflowing: Overflowing,
-	default: Overflowing
-});
-
-exports.Overflowing = Overflowing$2;
-exports.WindowWidth = WindowWidth$2;
+exports.Overflowing = Overflowing;
+exports.WindowWidth = WindowWidth;
 //# sourceMappingURL=finder.js.map
