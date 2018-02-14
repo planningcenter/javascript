@@ -25,3 +25,5 @@ export class WindowWidth extends React.Component {
     return this.props.render(this.state);
   }
 }
+
+export default WindowWidth

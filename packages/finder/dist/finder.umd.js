@@ -150,8 +150,8 @@ function (_React$Component) {
       window.removeEventListener("resize", this.setWidth);
     }
   }, {
-    key: "setDimensions",
-    value: function setDimensions() {
+    key: "setWidth",
+    value: function setWidth() {
       this.setState({
         width: window.innerWidth
       });
@@ -166,9 +166,9 @@ function (_React$Component) {
 }(React.Component);
 
 
-
-var WindowWidth$1 = Object.freeze({
-	WindowWidth: WindowWidth
+var WindowWidth$2 = Object.freeze({
+	WindowWidth: WindowWidth,
+	default: WindowWidth
 });
 
 /* ! copy-pasted from react-overflowing for easy customization before adding as dep */
@@ -289,14 +289,14 @@ function (_React$Component2) {
 }(React.Component);
 
 
-
-var Overflowing$1 = Object.freeze({
+var Overflowing$2 = Object.freeze({
 	EdgeGradient: EdgeGradient,
-	Overflowing: Overflowing
+	Overflowing: Overflowing,
+	default: Overflowing
 });
 
-exports.Overflowing = Overflowing$1;
-exports.WindowWidth = WindowWidth$1;
+exports.Overflowing = Overflowing$2;
+exports.WindowWidth = WindowWidth$2;
 
 Object.defineProperty(exports, '__esModule', { value: true });
 

@@ -79,3 +79,5 @@ export class Overflowing extends React.Component {
     );
   }
 }
+
+export default Overflowing
