@@ -17,7 +17,7 @@ export class WindowWidth extends React.Component {
     window.removeEventListener("resize", this.setWidth);
   }
 
-  setDimensions() {
+  setWidth() {
     this.setState({ width: window.innerWidth });
   }
 
