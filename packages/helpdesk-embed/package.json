@@ -1,6 +1,6 @@
 {
   "name": "@planningcenter/helpdesk-embed",
-  "version": "1.0.0-alpha.2",
+  "version": "1.0.0",
   "description": "helpdesk-embed object",
   "main": "helpdesk-embed.js",
   "scripts": {
