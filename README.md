@@ -47,3 +47,8 @@ Here are additional commands you might find helpful:
 
 All commands are prefixed with `yarn`.
 `npm` is not an acceptable substitute for `lerna` commands.
+
+## Improvements
+
+* New project generator with sensible defaults
+
