@@ -53,15 +53,15 @@ export class Overflowing extends React.Component {
   }
 
   render() {
-    const { children, style, ...nativeProps } = this.props;
+    const { children, style, rendeRoot, ...nativeProps } = this.props;
 
-    return (
-      <div style={{ position: "relative" }}>
-        {Boolean(this.state.right) && (
+    return renderRoot({
+      style: { position: "relative" },
+      children: [
+        Boolean(this.state.right) && (
           <EdgeGradient gap={this.state.right} direction="left" edge="right" />
-        )}
+        ),
         <div
-          className="testing"
           ref={el => (this.containerEl = el)}
           {...nativeProps}
           style={{
@@ -71,13 +71,18 @@ export class Overflowing extends React.Component {
           onScroll={this.handleOverflow}
         >
           <div ref={el => (this.innerEl = el)}>{children}</div>
-        </div>
-        {Boolean(this.state.left) && (
+        </div>,
+        Boolean(this.state.left) && (
           <EdgeGradient gap={this.state.left} direction="right" edge="left" />
-        )}
-      </div>
-    );
+        )
+      ]
+    });
+
+    return <div style={{ position: "relative" }} />;
   }
 }
+Overflowing.defaultProps = {
+  renderRoot: props => <div {...props} />
+};
 
-export default Overflowing
+export default Overflowing;

@@ -249,38 +249,49 @@ function (_React$Component2) {
       var _props2 = this.props,
           children = _props2.children,
           style = _props2.style,
-          nativeProps = _objectWithoutProperties(_props2, ["children", "style"]);
+          rendeRoot = _props2.rendeRoot,
+          nativeProps = _objectWithoutProperties(_props2, ["children", "style", "rendeRoot"]);
+      return renderRoot({
+        style: {
+          position: "relative"
+        },
+        children: [Boolean(this.state.right) && React.createElement(EdgeGradient, {
+          gap: this.state.right,
+          direction: "left",
+          edge: "right"
+        }), React.createElement("div", _extends({
+          ref: function ref(el) {
+            return _this2.containerEl = el;
+          }
+        }, nativeProps, {
+          style: _extends({
+            overflow: "auto"
+          }, style),
+          onScroll: this.handleOverflow
+        }), React.createElement("div", {
+          ref: function ref(el) {
+            return _this2.innerEl = el;
+          }
+        }, children)), Boolean(this.state.left) && React.createElement(EdgeGradient, {
+          gap: this.state.left,
+          direction: "right",
+          edge: "left"
+        })]
+      });
       return React.createElement("div", {
         style: {
           position: "relative"
         }
-      }, Boolean(this.state.right) && React.createElement(EdgeGradient, {
-        gap: this.state.right,
-        direction: "left",
-        edge: "right"
-      }), React.createElement("div", _extends({
-        className: "testing",
-        ref: function ref(el) {
-          return _this2.containerEl = el;
-        }
-      }, nativeProps, {
-        style: _extends({
-          overflow: "auto"
-        }, style),
-        onScroll: this.handleOverflow
-      }), React.createElement("div", {
-        ref: function ref(el) {
-          return _this2.innerEl = el;
-        }
-      }, children)), Boolean(this.state.left) && React.createElement(EdgeGradient, {
-        gap: this.state.left,
-        direction: "right",
-        edge: "left"
-      }));
+      });
     }
   }]);
   return Overflowing;
 }(React.Component);
+Overflowing.defaultProps = {
+  renderRoot: function renderRoot(props) {
+    return React.createElement("div", props);
+  }
+};
 
 // import flat (default) for Finder module
 
