@@ -249,8 +249,8 @@ function (_React$Component2) {
       var _props2 = this.props,
           children = _props2.children,
           style = _props2.style,
-          rendeRoot = _props2.rendeRoot,
-          nativeProps = _objectWithoutProperties(_props2, ["children", "style", "rendeRoot"]);
+          renderRoot = _props2.renderRoot,
+          nativeProps = _objectWithoutProperties(_props2, ["children", "style", "renderRoot"]);
       return renderRoot({
         style: {
           position: "relative"
@@ -277,11 +277,6 @@ function (_React$Component2) {
           direction: "right",
           edge: "left"
         })]
-      });
-      return React.createElement("div", {
-        style: {
-          position: "relative"
-        }
       });
     }
   }]);
