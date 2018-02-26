@@ -278,7 +278,7 @@ function (_React$Component2) {
   return Overflowing;
 }(Component);
 
-// import flat for Finder module
+// import flat (default) for Finder module
 
 export { Overflowing, WindowWidth };
 //# sourceMappingURL=finder.m.js.map

@@ -282,7 +282,7 @@ function (_React$Component2) {
   return Overflowing;
 }(React.Component);
 
-// import flat for Finder module
+// import flat (default) for Finder module
 
 exports.Overflowing = Overflowing;
 exports.WindowWidth = WindowWidth;
