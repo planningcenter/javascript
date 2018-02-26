@@ -53,7 +53,7 @@ export class Overflowing extends React.Component {
   }
 
   render() {
-    const { children, style, rendeRoot, ...nativeProps } = this.props;
+    const { children, style, renderRoot, ...nativeProps } = this.props;
 
     return renderRoot({
       style: { position: "relative" },
@@ -77,8 +77,6 @@ export class Overflowing extends React.Component {
         )
       ]
     });
-
-    return <div style={{ position: "relative" }} />;
   }
 }
 Overflowing.defaultProps = {
