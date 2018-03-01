@@ -9,7 +9,9 @@ import {
   DisplaySwitch,
   BellIcon,
   XIcon,
-  SpyglassIcon
+  SpyglassIcon,
+  PlatformNotificationsBar,
+  PlatformNotificationsProvider
   // AppsProvider,
   // ConnectedPeopleProvider
 } from "../index";
@@ -38,6 +40,24 @@ const shared = {
   //   base2: "#487813",
   //   base3: "#376109"
   // }
+};
+
+const staticPlatformNotifications = {
+  "1": {
+    html: "<strong>PCO Rocks!</strong>",
+    enabled: "true"
+  },
+  texas: {
+    html: "<strong>I won't be here long!</strong>",
+    enabled: "true",
+    expires_at: "2018-02-28T19:02:13Z"
+  },
+  other: {
+    html:
+      "Just testing some things... <em>I won't be here long!</em>: <a href='#'>click this</a>",
+    enabled: "true",
+    expires_at: "2018-02-28T19:02:13Z"
+  }
 };
 
 const staticData = {
@@ -245,6 +265,7 @@ class SampleTopbar extends React.Component<
     userId: string;
     userName: string;
     orgName: string;
+    platformNotifications?: object;
   },
   {}
 > {
@@ -255,6 +276,20 @@ class SampleTopbar extends React.Component<
           <StaticAppsProvider
             render={(apps, fetchApps) => (
               <div style={{ backgroundColor: shared.colors.base0 }}>
+                <PlatformNotificationsProvider
+                  env={shared.env}
+                  initialNotifications={staticPlatformNotifications}
+                  render={(data, actions) => {
+                    return (
+                      <PlatformNotificationsBar
+                        colors={shared.colors}
+                        notifications={data.notifications}
+                        onDismiss={actions.dismissNotification}
+                      />
+                    );
+                  }}
+                />
+
                 <DisplaySwitch
                   smallTopbar={() => (
                     <div style={{ backgroundColor: shared.colors.base0 }}>
@@ -338,7 +373,7 @@ class SampleTopbar extends React.Component<
   }
 }
 
-const Notifications = ({ notifications=false, style={}, ...props }) => (
+const Notifications = ({ notifications = false, style = {}, ...props }) => (
   <a
     href="#"
     {...props}
@@ -363,8 +398,8 @@ class Search extends React.Component<
   { onOpen: any; onClose: any },
   { open: boolean }
 > {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = { open: false };
   }
 
@@ -400,6 +435,7 @@ ReactDOM.render(
       userId="1"
       userName="Juan Valdez"
       orgName="National Federation of Coffee National Federation of Coffee National Federation of Coffee"
+      platformNotifications={staticPlatformNotifications}
     />
     <div>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras pharetra

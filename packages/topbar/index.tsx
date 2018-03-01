@@ -8,6 +8,10 @@ import NotSmallTopbar from "./modules/NotSmallTopbar";
 import NotSmallRoute from "./modules/NotSmallRoute";
 import SmallTopbar from "./modules/SmallTopbar";
 import SmallRoute from "./modules/SmallRoute";
+import {
+  Bar as PlatformNotificationsBar,
+  Provider as PlatformNotificationsProvider
+} from "./modules/platform_notifications";
 
 /* icons */
 import BellIcon from "./modules/BellIcon";
@@ -24,5 +28,7 @@ export {
   SmallTopbar,
   SmallRoute,
   SpyglassIcon,
-  XIcon
+  XIcon,
+  PlatformNotificationsBar,
+  PlatformNotificationsProvider
 };
