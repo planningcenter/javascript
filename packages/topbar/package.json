@@ -1,6 +1,6 @@
 {
   "name": "@planningcenter/topbar",
-  "version": "2.0.0",
+  "version": "2.1.0-0",
   "description": "Planning Center application Topbar",
   "main": "dist/topbar.cjs.js",
   "module": "dist/topbar.esm.js",
