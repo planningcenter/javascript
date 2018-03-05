@@ -25,7 +25,6 @@ interface ProviderProps {
   formatter?: any;
   render: (notifications: any, callback: any) => React.ReactElement<any>;
   initialNotifications: object;
-  onDismissError?: any;
 }
 
 export class Provider extends React.Component<
@@ -43,15 +42,7 @@ export class Provider extends React.Component<
   }
 
   public static defaultProps: Partial<ProviderProps> = {
-    formatter: formatter,
-    onDismissError: err => {
-      console.log(
-        "Handle this error by providing an onDismissError callback to `PlatformNotificationsBar`: ",
-        err
-      );
-
-      return alert("I'm sorry. We couldn't dismiss this notification.");
-    }
+    formatter: formatter
   };
 
   dismissNotification(id) {
@@ -62,13 +53,7 @@ export class Provider extends React.Component<
         )}/people/v2/me/platform_notifications/${id}/dismiss`
       )
       .withCredentials()
-      .end((err, res) => {
-        if (err || !res.ok) {
-          return (
-            this.props.env === "development" && this.props.onDismissError(err)
-          );
-        }
-
+      .end(() => {
         return this.setState(({ notifications }) => {
           const newNotifications = notifications;
           if (notifications[id]) delete newNotifications[id];
