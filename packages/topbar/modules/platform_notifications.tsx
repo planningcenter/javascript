@@ -1,5 +1,6 @@
 import * as React from "react";
 import * as request from "superagent";
+import { PointBreak } from "./DisplaySwitch";
 import pcURL from "./pco-url";
 import XIcon from "./XIcon";
 
@@ -95,16 +96,18 @@ interface Props {
 export class Bar extends React.Component<Props, {}> {
   render() {
     return Boolean(this.props.notifications.length > 0) ? (
-      <div
-        className="__Topbar_PlatformNotifications_link"
-        style={{
-          color: "white",
-          backgroundColor: "#282828",
-          paddingTop: 16,
-          paddingBottom: 16
-        }}
-      >
-        <style>{`
+      <PointBreak
+        render={breakpoint => (
+          <div
+            className="__Topbar_PlatformNotifications_link"
+            style={{
+              color: "white",
+              backgroundColor: "#282828",
+              paddingTop: 16,
+              paddingBottom: 16
+            }}
+          >
+            <style>{`
             .__Topbar_PlatformNotifications_link { color: white }
             .__Topbar_PlatformNotifications_link a { color: ${
               this.props.colors.base0
@@ -116,43 +119,48 @@ export class Bar extends React.Component<Props, {}> {
               this.props.colors.base2
             } }
           `}</style>
-        {this.props.notifications.map(
-          this.props.renderItem
-            ? this.props.renderItem
-            : (notification, i) => (
-                <div
-                  key={notification.id}
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "space-between",
-                    paddingTop: 8,
-                    paddingLeft: 16,
-                    paddingBottom: 8,
-                    paddingRight: 16,
-                    marginTop: i > 0 ? 16 : 0
-                  }}
-                >
-                  <span
-                    dangerouslySetInnerHTML={{ __html: notification.data.html }}
-                  />
+            {this.props.notifications.map(
+              this.props.renderItem
+                ? this.props.renderItem
+                : (notification, i) => (
+                    <div
+                      key={notification.id}
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "space-between",
+                        paddingTop: 8,
+                        paddingLeft:
+                          ["xs", "sm"].indexOf(breakpoint) !== -1 ? 16 : 24,
+                        paddingBottom: 8,
+                        paddingRight: 10,
+                        marginTop: i > 0 ? 16 : 0
+                      }}
+                    >
+                      <span
+                        dangerouslySetInnerHTML={{
+                          __html: notification.data.html
+                        }}
+                      />
 
-                  <button
-                    type="button"
-                    style={{
-                      cursor: "pointer",
-                      backgroundColor: "transparent",
-                      borderWidth: 0,
-                      WebkitAppearance: "none"
-                    }}
-                    onClick={() => this.props.onDismiss(notification.id)}
-                  >
-                    <XIcon fill="white" style={{ width: 20, height: 20 }} />
-                  </button>
-                </div>
-              )
+                      <button
+                        type="button"
+                        style={{
+                          cursor: "pointer",
+                          backgroundColor: "transparent",
+                          borderWidth: 0,
+                          WebkitAppearance: "none"
+                        }}
+                        onClick={() => this.props.onDismiss(notification.id)}
+                      >
+                        <XIcon fill="white" style={{ width: 20, height: 20 }} />
+                      </button>
+                    </div>
+                  )
+            )}
+          </div>
         )}
-      </div>
+      />
     ) : null;
   }
 }

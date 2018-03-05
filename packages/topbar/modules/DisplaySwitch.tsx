@@ -21,7 +21,7 @@ const debounce = (func, wait) => {
   };
 };
 
-class PointBreak extends React.Component<
+export class PointBreak extends React.Component<
   {
     render: (breakpoint: string) => React.ReactElement<any>;
   },
