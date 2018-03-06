@@ -87,9 +87,7 @@ export class Bar extends React.Component<Props, {}> {
             className="__Topbar_PlatformNotifications_link"
             style={{
               color: "white",
-              backgroundColor: "#282828",
-              paddingTop: 16,
-              paddingBottom: 16
+              backgroundColor: "#282828"
             }}
           >
             <style>{`
@@ -114,12 +112,13 @@ export class Bar extends React.Component<Props, {}> {
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "space-between",
-                        paddingTop: 8,
+                        paddingTop: 16,
                         paddingLeft:
                           ["xs", "sm"].indexOf(breakpoint) !== -1 ? 16 : 24,
-                        paddingBottom: 8,
+                        paddingBottom: 16,
                         paddingRight: 10,
-                        marginTop: i > 0 ? 16 : 0
+                        // marginTop: i > 0 ? 16 : 0,
+                        ...(i && { borderTop: "1px solid rgba(0,0,0,.35)" })
                       }}
                     >
                       <span
