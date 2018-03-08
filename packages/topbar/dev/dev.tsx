@@ -11,7 +11,9 @@ import {
   XIcon,
   SpyglassIcon,
   PlatformNotificationsBar,
-  PlatformNotificationsProvider
+  PlatformNotificationsProvider,
+  PlatformNotification,
+  PlatformNotificationsStyle
   // AppsProvider,
   // ConnectedPeopleProvider
 } from "../index";
@@ -276,19 +278,26 @@ class SampleTopbar extends React.Component<
           <StaticAppsProvider
             render={(apps, fetchApps) => (
               <div style={{ backgroundColor: shared.colors.base0 }}>
-                <PlatformNotificationsProvider
-                  env={shared.env}
-                  initialNotifications={staticPlatformNotifications}
-                  render={(data, actions) => {
-                    return (
+                <PlatformNotificationsStyle colors={shared.colors}>
+                  <PlatformNotification>
+                    <span>test</span>
+                    <a href="#">
+                      link
+                    </a>
+                  </PlatformNotification>
+
+                  <PlatformNotificationsProvider
+                    env={shared.env}
+                    initialNotifications={staticPlatformNotifications}
+                    render={(data, actions) => (
                       <PlatformNotificationsBar
                         colors={shared.colors}
                         notifications={data.notifications}
                         onDismiss={actions.dismissNotification}
                       />
-                    );
-                  }}
-                />
+                    )}
+                  />
+                </PlatformNotificationsStyle>
 
                 <DisplaySwitch
                   smallTopbar={() => (

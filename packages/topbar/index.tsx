@@ -10,7 +10,9 @@ import SmallTopbar from "./modules/SmallTopbar";
 import SmallRoute from "./modules/SmallRoute";
 import {
   Bar as PlatformNotificationsBar,
-  Provider as PlatformNotificationsProvider
+  Provider as PlatformNotificationsProvider,
+  Notification as PlatformNotification,
+  Style as PlatformNotificationsStyle
 } from "./modules/platform_notifications";
 
 /* icons */
@@ -30,5 +32,7 @@ export {
   SpyglassIcon,
   XIcon,
   PlatformNotificationsBar,
-  PlatformNotificationsProvider
+  PlatformNotificationsProvider,
+  PlatformNotification,
+  PlatformNotificationsStyle
 };
