@@ -6,21 +6,23 @@ const external = Object.keys(pkg.dependencies || {});
 
 export default [
   {
-    input: "index.tsx",
+    input: "index.ts",
     output: {
-      file: pkg.browser,
-      format: "umd"
+      file: pkg["umd:main"],
+      format: "umd",
+      globals: { react: "React", superagent: "superagent" },
+      sourcemap: true,
+      name: "Topbar"
     },
     external,
-    name: "Topbar",
     plugins: [typescript({ typescript: tsc })]
   },
   {
-    input: "index.tsx",
+    input: "index.ts",
     external,
     output: [
-      { file: pkg.main, format: "cjs" },
-      { file: pkg.module, format: "es" }
+      { file: pkg.main, format: "cjs", sourcemap: true },
+      { file: pkg.module, format: "es", sourcemap: true }
     ],
     plugins: [typescript({ typescript: tsc })]
   }

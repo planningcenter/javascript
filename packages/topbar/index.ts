@@ -32,7 +32,7 @@ export {
   SpyglassIcon,
   XIcon,
   PlatformNotificationsBar,
-  // PlatformNotificationsProvider,
-  // PlatformNotification,
-  // PlatformNotificationsStyle
+  PlatformNotificationsProvider,
+  PlatformNotification,
+  PlatformNotificationsStyle
 };
