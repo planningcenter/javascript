@@ -46,6 +46,13 @@ export class Provider extends React.Component<
   };
 
   dismissNotification(id) {
+    this.setState(({ notifications }) => {
+      const newNotifications = notifications;
+      if (notifications[id]) delete newNotifications[id];
+
+      return { notifications: newNotifications };
+    });
+
     return request
       .post(
         `${pcURL(this.props.env)(
@@ -54,12 +61,7 @@ export class Provider extends React.Component<
       )
       .withCredentials()
       .end(() => {
-        return this.setState(({ notifications }) => {
-          const newNotifications = notifications;
-          if (notifications[id]) delete newNotifications[id];
-
-          return { notifications: newNotifications };
-        });
+        return;
       });
   }
 

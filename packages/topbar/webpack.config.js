@@ -25,10 +25,8 @@ module.exports = {
   devServer: {
     watchContentBase: true,
     port: 9000
-    // open: true
   },
   plugins: [
-    // new CleanWebpackPlugin(["dev"]),
     new HtmlWebpackPlugin({
       template: "dev/index.html"
     })
