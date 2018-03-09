@@ -4,9 +4,9 @@ import ConnectedPeopleProvider from "./modules/ConnectedPeopleProvider";
 
 /* display components */
 import DisplaySwitch from "./modules/DisplaySwitch";
-import NotSmallTopbar from "./modules/NotSmallTopbar";
+import { NotSmallTopbar } from "./modules/NotSmallTopbar";
 import NotSmallRoute from "./modules/NotSmallRoute";
-import SmallTopbar from "./modules/SmallTopbar";
+import { SmallTopbar } from "./modules/SmallTopbar";
 import SmallRoute from "./modules/SmallRoute";
 import {
   Bar as PlatformNotificationsBar,
@@ -32,7 +32,7 @@ export {
   SpyglassIcon,
   XIcon,
   PlatformNotificationsBar,
-  PlatformNotificationsProvider,
-  PlatformNotification,
-  PlatformNotificationsStyle
+  // PlatformNotificationsProvider,
+  // PlatformNotification,
+  // PlatformNotificationsStyle
 };

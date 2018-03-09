@@ -1,12 +1,12 @@
 import * as React from "react";
 
-interface Props {
+export interface Props {
   item: string;
   method?: "localStorage" | "sessionStorage";
   render: (apps: any, other: any) => React.ReactElement<any>;
 }
 
-class ClientStorage extends React.Component<Props, {}> {
+export class ClientStorage extends React.Component<Props, {}> {
   public static defaultProps: Partial<Props> = {
     method: "localStorage"
   };
@@ -24,5 +24,3 @@ class ClientStorage extends React.Component<Props, {}> {
     );
   }
 }
-
-export default ClientStorage;

@@ -1,8 +1,8 @@
-interface App {
+export interface App {
   attributes: { name: string; url: string };
 }
 
-interface ConnectedPerson {
+export interface ConnectedPerson {
   id: number;
   attributes: { name: string; organization_name: string };
 }

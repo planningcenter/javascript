@@ -7,7 +7,7 @@ import Avatar from "./Avatar";
 import MONO_APP_ICONS from "./MONO_APP_ICONS";
 import MONO_APP_NAME from "./MONO_APP_NAME";
 import COLOR_APP_BADGES from "./COLOR_APP_BADGES";
-import LocalStorageProvider from "./ClientStorage";
+import { ClientStorage as LocalStorageProvider } from "./ClientStorage";
 import { appsMenuFormatter, connectedPeopleMenuFormatter } from "./formatters";
 
 import { IEFlex1 } from "./styles";
@@ -35,7 +35,7 @@ const DisclosureChevronIcon = props => (
   </svg>
 );
 
-interface Props {
+export interface Props {
   apps: { attributes: { name: string; url: string } }[];
   env: string;
   appName: string;
@@ -56,7 +56,7 @@ interface Props {
   notifications?: any;
 }
 
-class SmallTopbar extends React.Component<
+export class SmallTopbar extends React.Component<
   Props,
   {
     routesMenuVisible: boolean;
@@ -508,5 +508,3 @@ class SmallTopbar extends React.Component<
     );
   }
 }
-
-export default SmallTopbar;

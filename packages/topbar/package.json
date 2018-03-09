@@ -2,11 +2,12 @@
   "name": "@planningcenter/topbar",
   "version": "2.2.0-0",
   "description": "Planning Center application Topbar",
-  "main": "dist/topbar.cjs.js",
-  "module": "dist/topbar.esm.js",
-  "browser": "dist/topbar.umd.js",
+  "main": "dist/topbar.js",
+  "umd:main": "dist/topbar.umd.js",
+  "module": "dist/topbar.m.js",
+  "source": "index.ts",
   "scripts": {
-    "build": "rollup -c",
+    "build": "microbundle",
     "dev": "webpack-dev-server",
     "test": "jest",
     "pretest": "yarn build",
@@ -23,7 +24,12 @@
     "lerna": "^2.8.0",
     "markdown-toc": "^1.2.0",
     "react": "^15.6.1",
-    "superagent": "^3.8.0"
+    "rollup": "^0.56.5",
+    "rollup-plugin-typescript2": "^0.12.0",
+    "superagent": "^3.8.0",
+    "ts-loader": "^4.0.1",
+    "webpack": "^4.1.1",
+    "webpack-dev-server": "^3.1.0"
   },
   "devDependencies": {
     "@types/react": "^16.0.5",
@@ -32,6 +38,7 @@
     "html-webpack-plugin": "^2.30.1",
     "install": "^0.10.1",
     "jest": "^21.1.0",
+    "microbundle": "^0.4.4",
     "react-dom": "^15.6.1",
     "react-test-renderer": "^15.6.1",
     "regenerator-runtime": "^0.11.0",

@@ -20,7 +20,7 @@ function formatter(notifications) {
   }));
 }
 
-interface ProviderProps {
+export interface ProviderProps {
   env: string;
   formatter?: any;
   render: (notifications: any, callback: any) => React.ReactElement<any>;
@@ -71,7 +71,7 @@ export class Provider extends React.Component<
   }
 }
 
-interface Props {
+export interface Props {
   notifications: any[];
   colors: any; // TODO
   renderItem?: (object, number) => any;

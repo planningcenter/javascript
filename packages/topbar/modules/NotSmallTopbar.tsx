@@ -330,7 +330,7 @@ const Popup: React.StatelessComponent<{
   />
 );
 
-interface Props {
+export interface Props {
   apps: { attributes: { name: string; url: string } }[];
   activeRoute: string;
   env: string;
@@ -351,7 +351,7 @@ interface Props {
   linkToProfile?: boolean;
 }
 
-class NotSmallTopbar extends React.Component<
+export class NotSmallTopbar extends React.Component<
   Props,
   {
     appsMenuVisible: boolean;
@@ -732,5 +732,3 @@ class NotSmallTopbar extends React.Component<
     );
   }
 }
-
-export default NotSmallTopbar;
