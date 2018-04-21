@@ -1,2 +1,0 @@
-!function(e,t){"object"==typeof exports&&"undefined"!=typeof module?module.exports=t(require("react")):"function"==typeof define&&define.amd?define(["react"],t):e.symbol=t(e.react)}(this,function(e){return function(e){var t=e.symbol.replace(".svg","").split("#"),n=t[0],o=t[1];return h("svg",Object.assign({},{role:"presentation"},e,{className:["symbol",e.className].join(" ").trim()}),h("use",{xlinkHref:n+".svg#"+o}))}});
-//# sourceMappingURL=symbol.umd.js.map
