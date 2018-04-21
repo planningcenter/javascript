@@ -1,0 +1,25 @@
+{
+  "name": "@planningcenter/symbol",
+  "version": "1.0.0",
+  "description": "A component for presenting external SVG symbols via file-loader",
+  "main": "dist/symbol.js",
+  "umd:main": "dist/symbol.umd.js",
+  "module": "dist/symbol.m.js",
+  "source": "src/symbol.js",
+  "repository": "@planningcenter/javascript",
+  "author": "Michael Chan <mijoch@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "build": "microbundle",
+    "dev": "microbundle watch"
+  },
+  "devDependencies": {
+    "microbundle": "^0.4.4",
+    "react": "^16.3.2"
+  },
+  "dependencies": {},
+  "peerDependencies": {
+    "react": ">=15.0.0"
+  }
+}
