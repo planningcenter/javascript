@@ -3,6 +3,8 @@ import { createElement } from "react";
 function Symbol(props) {
   let [path, symbol] = props.symbol.replace(".svg", "").split("#");
 
+  delete props.symbol;
+
   return createElement(
     "svg",
     Object.assign(
