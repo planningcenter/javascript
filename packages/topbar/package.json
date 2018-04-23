@@ -1,6 +1,6 @@
 {
   "name": "@planningcenter/topbar",
-  "version": "2.3.0-0",
+  "version": "3.0.0-0",
   "description": "Planning Center application Topbar",
   "main": "dist/topbar.js",
   "umd:main": "dist/topbar.umd.js",
@@ -13,9 +13,7 @@
     "prepublish": "yarn build",
     "generate-toc": "node ./scripts/generate-toc.js"
   },
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "repository": "https://github.com/planningcenter/javascript.git",
   "author": "Michael Chan <mijoch@gmail.com>",
   "private": false,
