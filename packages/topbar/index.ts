@@ -1,38 +1,24 @@
 /* providers */
-import AppsProvider from "./modules/AppsProvider";
-import ConnectedPeopleProvider from "./modules/ConnectedPeopleProvider";
+export { default as AppsProvider } from "./modules/AppsProvider";
+export {
+  default as ConnectedPeopleProvider
+} from "./modules/ConnectedPeopleProvider";
 
 /* display components */
-import DisplaySwitch from "./modules/DisplaySwitch";
-import { NotSmallTopbar } from "./modules/NotSmallTopbar";
-import NotSmallRoute from "./modules/NotSmallRoute";
-import { SmallTopbar } from "./modules/SmallTopbar";
-import SmallRoute from "./modules/SmallRoute";
-import {
-  Bar as PlatformNotificationsBar,
-  Provider as PlatformNotificationsProvider,
-  Notification as PlatformNotification,
-  Style as PlatformNotificationsStyle
+export { default as DisplaySwitch } from "./modules/DisplaySwitch";
+export { NotSmallTopbar } from "./modules/NotSmallTopbar";
+export { default as NotSmallRoute } from "./modules/NotSmallRoute";
+export { SmallTopbar } from "./modules/SmallTopbar";
+export { default as SmallRoute } from "./modules/SmallRoute";
+
+export {
+  Bar as PlatformAnnouncementBar,
+  Provider as PlatformAnnouncementsProvider,
+  Notification as PlatformAnnouncement,
+  Style as PlatformAnnouncementsStyle
 } from "./modules/platform_notifications";
 
 /* icons */
-import BellIcon from "./modules/BellIcon";
-import XIcon from "./modules/XIcon";
-import SpyglassIcon from "./modules/SpyglassIcon";
-
-export {
-  AppsProvider,
-  BellIcon,
-  ConnectedPeopleProvider,
-  DisplaySwitch,
-  NotSmallTopbar,
-  NotSmallRoute,
-  SmallTopbar,
-  SmallRoute,
-  SpyglassIcon,
-  XIcon,
-  PlatformNotificationsBar,
-  PlatformNotificationsProvider,
-  PlatformNotification,
-  PlatformNotificationsStyle
-};
+export { default as BellIcon } from "./modules/BellIcon";
+export { default as XIcon } from "./modules/XIcon";
+export { default as SpyglassIcon } from "./modules/SpyglassIcon";

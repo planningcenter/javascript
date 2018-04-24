@@ -10,10 +10,10 @@ import {
   BellIcon,
   XIcon,
   SpyglassIcon,
-  PlatformNotificationsBar,
-  PlatformNotificationsProvider,
-  PlatformNotification,
-  PlatformNotificationsStyle
+  PlatformAnnouncementBar,
+  PlatformAnnouncementsProvider,
+  PlatformAnnouncement,
+  PlatformAnnouncementsStyle
   // AppsProvider,
   // ConnectedPeopleProvider
 } from "../index";
@@ -278,26 +278,24 @@ class SampleTopbar extends React.Component<
           <StaticAppsProvider
             render={(apps, fetchApps) => (
               <div style={{ backgroundColor: shared.colors.base0 }}>
-                <PlatformNotificationsStyle colors={shared.colors}>
-                  <PlatformNotification>
+                <PlatformAnnouncementsStyle colors={shared.colors}>
+                  <PlatformAnnouncement>
                     <span>test</span>
-                    <a href="#">
-                      link
-                    </a>
-                  </PlatformNotification>
+                    <a href="#">link</a>
+                  </PlatformAnnouncement>
 
-                  <PlatformNotificationsProvider
+                  <PlatformAnnouncementsProvider
                     env={shared.env}
                     initialNotifications={staticPlatformNotifications}
                     render={(data, actions) => (
-                      <PlatformNotificationsBar
+                      <PlatformAnnouncementBar
                         colors={shared.colors}
                         notifications={data.notifications}
                         onDismiss={actions.dismissNotification}
                       />
                     )}
                   />
-                </PlatformNotificationsStyle>
+                </PlatformAnnouncementsStyle>
 
                 <DisplaySwitch
                   smallTopbar={() => (
@@ -332,7 +330,7 @@ class SampleTopbar extends React.Component<
                           </SmallRoute>
                         ))}
                         notifications={() => (
-                          <Notifications notifications={true} />
+                          <Announcement notifications={true} />
                         )}
                       />
                     </div>
@@ -365,7 +363,7 @@ class SampleTopbar extends React.Component<
                         </NotSmallRoute>
                       ))}
                       notifications={() => (
-                        <Notifications notifications={true} />
+                        <Announcement notifications={true} />
                       )}
                       search={({ hideRoutes, showRoutes }) => (
                         <Search onOpen={hideRoutes} onClose={showRoutes} />
@@ -382,7 +380,7 @@ class SampleTopbar extends React.Component<
   }
 }
 
-const Notifications = ({ notifications = false, style = {}, ...props }) => (
+const Announcement = ({ notifications = false, style = {}, ...props }) => (
   <a
     href="#"
     {...props}
