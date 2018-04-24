@@ -2,7 +2,7 @@ import * as React from "react";
 
 import { fontFamily } from "./styles";
 
-const Unbutton: React.StatelessComponent<{
+export const Unbutton: React.StatelessComponent<{
   id?: string;
   style?: object;
   onClick?: any;
@@ -27,5 +27,3 @@ const Unbutton: React.StatelessComponent<{
     {...nativeProps}
   />
 );
-
-export default Unbutton;

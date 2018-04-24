@@ -1,13 +1,13 @@
 import * as React from "react";
 
-import pcoUrl from "./pco-url";
-import StyledRoot from "./StyledRoot";
-import Unbutton from "./Unbutton";
-import Avatar from "./Avatar";
-import MONO_APP_ICONS from "./MONO_APP_ICONS";
-import MONO_APP_NAME from "./MONO_APP_NAME";
-import COLOR_APP_BADGES from "./COLOR_APP_BADGES";
-import { ClientStorage as LocalStorageProvider } from "./ClientStorage";
+import pcoUrl from "./pco_url";
+import StyledRoot from "./styled_root";
+import { Unbutton } from "./unbutton";
+import { Avatar } from "./avatar";
+import MONO_APP_ICONS from "./mono_app_icons";
+import MONO_APP_NAME from "./mono_app_name";
+import COLOR_APP_BADGES from "./color_app_badges";
+import { ClientStorage as LocalStorageProvider } from "./client_storage";
 import { appsMenuFormatter, connectedPeopleMenuFormatter } from "./formatters";
 import { IEFlex1, fontFamily } from "./styles";
 

@@ -1,7 +1,7 @@
 import * as React from "react";
 import * as request from "superagent";
-import { PointBreak } from "./DisplaySwitch";
-import pcURL from "./pco-url";
+import { PointBreak } from "./display_switch";
+import pcURL from "./pco_url";
 import { X as XSymbol } from "./symbols";
 
 const entries = function(obj) {

@@ -1,14 +1,15 @@
 import * as React from "react";
 
-import pcoUrl from "./pco-url";
+import pcoUrl from "./pco_url";
 
-const Avatar: React.StatelessComponent<{
+export const Avatar: React.StatelessComponent<{
   env: string;
   url?: string;
   style?: object;
 }> = ({ env, url: incomingUrl = "", style, ...nativeProps }) => {
   const url =
-    incomingUrl || `${pcoUrl(env)("people")}/static/no_photo_thumbnail_gray.svg`;
+    incomingUrl ||
+    `${pcoUrl(env)("people")}/static/no_photo_thumbnail_gray.svg`;
 
   return (
     <div
@@ -27,5 +28,3 @@ const Avatar: React.StatelessComponent<{
     />
   );
 };
-
-export default Avatar;

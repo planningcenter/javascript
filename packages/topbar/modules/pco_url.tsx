@@ -1,5 +1,4 @@
-// typescript implementation of shared lib https://github.com/planningcenter/pco-url
-export default (env: string) => (appName: string ): string => {
+export default (env: string) => (appName: string): string => {
   if (!(env && appName)) return;
 
   switch (env) {

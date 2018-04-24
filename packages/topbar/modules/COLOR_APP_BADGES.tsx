@@ -8,7 +8,7 @@ import {
   Registrations,
   Resources,
   Services
-} from "./APP_SYMBOLS";
+} from "./app_symbols";
 
 const Clipboard = ({
   size = "32px",

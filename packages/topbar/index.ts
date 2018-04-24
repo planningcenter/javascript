@@ -1,7 +1,7 @@
-export { AppsProvider } from "./modules/AppsProvider";
-export { ConnectedPeopleProvider } from "./modules/ConnectedPeopleProvider";
+export { AppsProvider } from "./modules/apps_provider";
+export { ConnectedPeopleProvider } from "./modules/connected_people_provider";
 
-export { DisplaySwitch } from "./modules/DisplaySwitch";
+export { DisplaySwitch } from "./modules/display_switch";
 
 export {
   Topbar as NotSmallTopbar,

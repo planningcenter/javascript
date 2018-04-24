@@ -1,13 +1,13 @@
 import * as React from "react";
 
-import pcoUrl from "./pco-url";
-import StyledRoot from "./StyledRoot";
-import Unbutton from "./Unbutton";
-import Avatar from "./Avatar";
+import pcoUrl from "./pco_url";
+import StyledRoot from "./styled_root";
+import { Unbutton } from "./unbutton";
+import { Avatar } from "./avatar";
 import { appsMenuFormatter, connectedPeopleMenuFormatter } from "./formatters";
-import MONO_APP_BADGES from "./MONO_APP_BADGES";
-import MONO_APP_NAME from "./MONO_APP_NAME";
-import COLOR_APP_BADGES from "./COLOR_APP_BADGES";
+import MONO_APP_BADGES from "./mono_app_badges";
+import MONO_APP_NAME from "./mono_app_name";
+import COLOR_APP_BADGES from "./color_app_badges";
 import { slightBackgroundTransition, fontFamily, IEFlex1 } from "./styles";
 
 class AppsButton extends React.Component<

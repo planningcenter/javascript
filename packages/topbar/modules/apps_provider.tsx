@@ -1,6 +1,6 @@
 import * as React from "react";
-import pcoUrl from "./pco-url";
-import getJSON from "./getJSON";
+import pcoUrl from "./pco_url";
+import getJSON from "./get_json";
 
 export class AppsProvider extends React.Component<
   {
