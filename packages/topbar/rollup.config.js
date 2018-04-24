@@ -2,7 +2,7 @@ import typescript from "rollup-plugin-typescript2";
 import tsc from "typescript";
 import pkg from "./package.json";
 
-const external = Object.keys(pkg.dependencies || {});
+const external = Object.keys(Object.assign({}, pkg.dependencies, pkg.peerDependencies));
 
 export default [
   {
