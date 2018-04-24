@@ -1,25 +1,16 @@
 import { createElement } from "react";
 
-function Symbol(props) {
-  let [path, symbol] = props.symbol.replace(".svg", "").split("#");
+function Symbol({ symbol: _symbol, ...props }) {
+  let [path, symbol] = _symbol.replace(".svg", "").split("#");
 
-  delete props.symbol;
-
-  return createElement(
-    "svg",
-    Object.assign(
-      {},
-      {
-        role: "presentation"
-      },
-      props,
-      {
-        className: ["symbol", props.className].join(" ").trim()
-      }
-    ),
-    createElement("use", {
-      xlinkHref: path + ".svg#" + symbol
-    })
+  return (
+    <svg
+      role="presentation"
+      className={["symbol", props.className].join(" ").trim()}
+      {...props}
+    >
+      <use xlinkHref={`${path}.svg#${symbol}`} />
+    </svg>
   );
 }
 
