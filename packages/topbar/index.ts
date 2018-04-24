@@ -14,7 +14,8 @@ export {
   Style as PlatformAnnouncementsStyle
 } from "./modules/platform_notifications";
 
-/* icons */
-export { BellIcon } from "./modules/BellIcon";
-export { XIcon } from "./modules/XIcon";
-export { SpyglassIcon } from "./modules/SpyglassIcon";
+export {
+  Bell as BellSymbol,
+  X as XSymbol,
+  Spyglass as SpyglassSymbol
+} from "./modules/symbols";

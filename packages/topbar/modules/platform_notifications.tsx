@@ -2,7 +2,7 @@ import * as React from "react";
 import * as request from "superagent";
 import { PointBreak } from "./DisplaySwitch";
 import pcURL from "./pco-url";
-import { XIcon } from "./XIcon";
+import { X as XSymbol } from "./symbols";
 
 const entries = function(obj) {
   var ownProps = Object.keys(obj),
@@ -177,7 +177,7 @@ export class Bar extends React.Component<Props, {}> {
                     }}
                     onClick={() => this.props.onDismiss(notification.id)}
                   >
-                    <XIcon fill="white" style={{ width: 20, height: 20 }} />
+                    <XSymbol fill="white" style={{ width: 20, height: 20 }} />
                   </button>
                 </Notification>
               )

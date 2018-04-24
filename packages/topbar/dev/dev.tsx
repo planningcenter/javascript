@@ -7,9 +7,9 @@ import {
   SmallTopbar,
   SmallRoute,
   DisplaySwitch,
-  BellIcon,
-  XIcon,
-  SpyglassIcon,
+  BellSymbol,
+  XSymbol,
+  SpyglassSymbol,
   PlatformAnnouncementBar,
   PlatformAnnouncementsProvider,
   PlatformAnnouncement,
@@ -393,7 +393,7 @@ const Announcement = ({ notifications = false, style = {}, ...props }) => (
       ...style
     }}
   >
-    <BellIcon
+    <BellSymbol
       dot={notifications}
       fill={shared.colors.base3}
       stroke={shared.colors.base0}
@@ -423,11 +423,11 @@ class Search extends React.Component<
       <div>
         {this.state.open ? (
           <button type="button" onClick={() => this.setState({ open: false })}>
-            <XIcon />
+            <XSymbol />
           </button>
         ) : (
           <button type="button" onClick={() => this.setState({ open: true })}>
-            <SpyglassIcon />
+            <SpyglassSymbol />
           </button>
         )}
       </div>
