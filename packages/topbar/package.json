@@ -21,7 +21,7 @@
     "superagent": "^3.8.0"
   },
   "peerDependencies": {
-    "react": "^15.6.1"
+    "react": ">= 15.6.1 < 17"
   },
   "devDependencies": {
     "@types/react": "^16.0.5",
