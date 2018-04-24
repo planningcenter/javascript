@@ -1,6 +1,6 @@
 import * as React from "react";
 
-const StyledRoot: React.StatelessComponent<{
+export const StyledRoot: React.StatelessComponent<{
   children: any;
   style?: object;
 }> = ({ children, style, ...nativeProps }) => (
@@ -29,5 +29,3 @@ const StyledRoot: React.StatelessComponent<{
     {children}
   </div>
 );
-
-export default StyledRoot;

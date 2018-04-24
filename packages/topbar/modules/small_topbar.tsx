@@ -1,7 +1,7 @@
 import * as React from "react";
 
 import pcoUrl from "./pco_url";
-import StyledRoot from "./styled_root";
+import { StyledRoot } from "./styled_root";
 import { Unbutton } from "./unbutton";
 import { Avatar } from "./avatar";
 import MONO_APP_ICONS from "./mono_app_icons";
