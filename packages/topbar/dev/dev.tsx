@@ -44,7 +44,7 @@ const shared = {
   // }
 };
 
-const staticPlatformNotifications = {
+const staticPlatformAnnouncements = {
   "1": {
     html: "<strong>PCO Rocks!</strong>",
     enabled: "true"
@@ -267,7 +267,7 @@ class SampleTopbar extends React.Component<
     userId: string;
     userName: string;
     orgName: string;
-    platformNotifications?: object;
+    platformAnnouncements?: object;
   },
   {}
 > {
@@ -286,12 +286,12 @@ class SampleTopbar extends React.Component<
 
                   <PlatformAnnouncementsProvider
                     env={shared.env}
-                    initialNotifications={staticPlatformNotifications}
+                    initialAnnouncements={staticPlatformAnnouncements}
                     render={(data, actions) => (
                       <PlatformAnnouncementBar
                         colors={shared.colors}
-                        notifications={data.notifications}
-                        onDismiss={actions.dismissNotification}
+                        announcements={data.announcements}
+                        onDismiss={actions.dismissAnnouncements}
                       />
                     )}
                   />
@@ -330,7 +330,7 @@ class SampleTopbar extends React.Component<
                           </SmallRoute>
                         ))}
                         notifications={() => (
-                          <Announcement notifications={true} />
+                          <Notification notifications={true} />
                         )}
                       />
                     </div>
@@ -363,7 +363,7 @@ class SampleTopbar extends React.Component<
                         </NotSmallRoute>
                       ))}
                       notifications={() => (
-                        <Announcement notifications={true} />
+                        <Notification notifications={true} />
                       )}
                       search={({ hideRoutes, showRoutes }) => (
                         <Search onOpen={hideRoutes} onClose={showRoutes} />
@@ -380,7 +380,7 @@ class SampleTopbar extends React.Component<
   }
 }
 
-const Announcement = ({ notifications = false, style = {}, ...props }) => (
+const Notification = ({ notifications = false, style = {}, ...props }) => (
   <a
     href="#"
     {...props}
@@ -442,7 +442,7 @@ ReactDOM.render(
       userId="1"
       userName="Juan Valdez"
       orgName="National Federation of Coffee National Federation of Coffee National Federation of Coffee"
-      platformNotifications={staticPlatformNotifications}
+      platformAnnouncements={staticPlatformAnnouncements}
     />
     <div>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras pharetra

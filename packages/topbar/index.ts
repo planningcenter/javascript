@@ -16,9 +16,9 @@ export {
 export {
   Bar as PlatformAnnouncementBar,
   Provider as PlatformAnnouncementsProvider,
-  Notification as PlatformAnnouncement,
+  Announcement as PlatformAnnouncement,
   Style as PlatformAnnouncementsStyle
-} from "./modules/platform_notifications";
+} from "./modules/platform_announcements";
 
 export {
   Bell as BellSymbol,

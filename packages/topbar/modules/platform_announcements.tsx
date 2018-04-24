@@ -13,8 +13,8 @@ const entries = function(obj) {
   return resArray;
 };
 
-function formatter(notifications) {
-  return entries(notifications).map(entry => ({
+function formatter(announcements) {
+  return entries(announcements).map(entry => ({
     id: entry[0],
     data: entry[1]
   }));
@@ -23,21 +23,21 @@ function formatter(notifications) {
 export interface ProviderProps {
   env: string;
   formatter?: any;
-  render: (notifications: any, callback: any) => React.ReactElement<any>;
-  initialNotifications: object;
+  render: (announcements: any, callback: any) => React.ReactElement<any>;
+  initialAnnouncements: object;
 }
 
 export class Provider extends React.Component<
   ProviderProps,
   {
-    notifications: object[];
+    announcements: object[];
   }
 > {
   constructor(props: any) {
     super(props);
 
     this.state = {
-      notifications: props.initialNotifications
+      announcements: props.initialAnnouncements
     };
   }
 
@@ -45,12 +45,12 @@ export class Provider extends React.Component<
     formatter: formatter
   };
 
-  dismissNotification(id) {
-    this.setState(({ notifications }) => {
-      const newNotifications = notifications;
-      if (notifications[id]) delete newNotifications[id];
+  dismissAnnouncements(id) {
+    this.setState(({ announcements }) => {
+      const newAnnouncements = announcements;
+      if (announcements[id]) delete newAnnouncements[id];
 
-      return { notifications: newNotifications };
+      return { announcements: newAnnouncements };
     });
 
     return request
@@ -67,20 +67,20 @@ export class Provider extends React.Component<
 
   render() {
     return this.props.render(
-      { notifications: this.props.formatter(this.state.notifications) },
-      { dismissNotification: this.dismissNotification.bind(this) }
+      { announcements: this.props.formatter(this.state.announcements) },
+      { dismissAnnouncements: this.dismissAnnouncements.bind(this) }
     );
   }
 }
 
 export interface Props {
-  notifications: any[];
+  announcements: any[];
   colors: any; // TODO
   renderItem?: (object, number) => any;
   onDismiss: (any) => any;
 }
 
-export class Notification extends React.Component<{ style?: object }, {}> {
+export class Announcement extends React.Component<{ style?: object }, {}> {
   render() {
     const { style, ...platformProps } = this.props;
 
@@ -120,7 +120,7 @@ export class Style extends React.Component<
 
     return (
       <div
-        className={["__Topbar_PlatformNotifications_link"].join(" ").trim()}
+        className={["__Topbar_PlatformAnnouncements_link"].join(" ").trim()}
         style={{
           color: "white",
           backgroundColor: "#282828",
@@ -129,12 +129,12 @@ export class Style extends React.Component<
         {...platformProps}
       >
         <style>{`
-            .__Topbar_PlatformNotifications_link { color: white }
-            .__Topbar_PlatformNotifications_link a { color: ${colors.base0} }
-            .__Topbar_PlatformNotifications_link a:hover { color: ${
+            .__Topbar_PlatformAnnouncements_link { color: white }
+            .__Topbar_PlatformAnnouncements_link a { color: ${colors.base0} }
+            .__Topbar_PlatformAnnouncements_link a:hover { color: ${
               colors.base1
             } }
-            .__Topbar_PlatformNotifications_link a:active { color: ${
+            .__Topbar_PlatformAnnouncements_link a:active { color: ${
               colors.base2
             } }
           `}</style>
@@ -151,16 +151,16 @@ export class Style extends React.Component<
 // more appropriately. Then remove `Style` root.
 export class Bar extends React.Component<Props, {}> {
   render() {
-    return Boolean(this.props.notifications.length > 0) ? (
+    return Boolean(this.props.announcements.length > 0) ? (
       <Style colors={this.props.colors}>
-        {this.props.notifications.map(
+        {this.props.announcements.map(
           this.props.renderItem
             ? this.props.renderItem
-            : notification => (
-                <Notification key={notification.id}>
+            : announcements => (
+                <Announcement key={announcements.id}>
                   <span
                     dangerouslySetInnerHTML={{
-                      __html: notification.data.html
+                      __html: announcements.data.html
                     }}
                   />
 
@@ -175,11 +175,11 @@ export class Bar extends React.Component<Props, {}> {
                       padding: 8,
                       margin: -8
                     }}
-                    onClick={() => this.props.onDismiss(notification.id)}
+                    onClick={() => this.props.onDismiss(announcements.id)}
                   >
                     <XSymbol fill="white" style={{ width: 20, height: 20 }} />
                   </button>
-                </Notification>
+                </Announcement>
               )
         )}
       </Style>
