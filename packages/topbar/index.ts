@@ -2,10 +2,16 @@ export { AppsProvider } from "./modules/AppsProvider";
 export { ConnectedPeopleProvider } from "./modules/ConnectedPeopleProvider";
 
 export { DisplaySwitch } from "./modules/DisplaySwitch";
-export { NotSmallTopbar } from "./modules/NotSmallTopbar";
-export { NotSmallRoute } from "./modules/NotSmallRoute";
-export { SmallTopbar } from "./modules/SmallTopbar";
-export { SmallRoute } from "./modules/SmallRoute";
+
+export {
+  Topbar as NotSmallTopbar,
+  Route as NotSmallRoute
+} from "./modules/not_small_topbar";
+
+export {
+  Topbar as SmallTopbar,
+  Route as SmallRoute
+} from "./modules/small_topbar";
 
 export {
   Bar as PlatformAnnouncementBar,

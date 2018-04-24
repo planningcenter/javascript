@@ -9,8 +9,7 @@ import MONO_APP_NAME from "./MONO_APP_NAME";
 import COLOR_APP_BADGES from "./COLOR_APP_BADGES";
 import { ClientStorage as LocalStorageProvider } from "./ClientStorage";
 import { appsMenuFormatter, connectedPeopleMenuFormatter } from "./formatters";
-
-import { IEFlex1 } from "./styles";
+import { IEFlex1, fontFamily } from "./styles";
 
 const MENU_GUTTER = 57;
 
@@ -56,7 +55,7 @@ export interface Props {
   notifications?: any;
 }
 
-export class SmallTopbar extends React.Component<
+export class Topbar extends React.Component<
   Props,
   {
     routesMenuVisible: boolean;
@@ -508,3 +507,22 @@ export class SmallTopbar extends React.Component<
     );
   }
 }
+
+export const Route = ({ active, ...props }) => (
+  <a
+    style={{
+      display: "block",
+      backgroundColor: "#444",
+      borderBottom: "1px solid #333",
+      color: "#fff",
+      fontWeight: "bold",
+      textTransform: "capitalize",
+      textDecoration: "none",
+      lineHeight: "47px",
+      textAlign: "center",
+      ...fontFamily,
+      ...(active && { backgroundColor: "#333" })
+    }}
+    {...props}
+  />
+);
