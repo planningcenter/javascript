@@ -1,15 +1,11 @@
-/* providers */
-export { default as AppsProvider } from "./modules/AppsProvider";
-export {
-  default as ConnectedPeopleProvider
-} from "./modules/ConnectedPeopleProvider";
+export { AppsProvider } from "./modules/AppsProvider";
+export { ConnectedPeopleProvider } from "./modules/ConnectedPeopleProvider";
 
-/* display components */
-export { default as DisplaySwitch } from "./modules/DisplaySwitch";
+export { DisplaySwitch } from "./modules/DisplaySwitch";
 export { NotSmallTopbar } from "./modules/NotSmallTopbar";
-export { default as NotSmallRoute } from "./modules/NotSmallRoute";
+export { NotSmallRoute } from "./modules/NotSmallRoute";
 export { SmallTopbar } from "./modules/SmallTopbar";
-export { default as SmallRoute } from "./modules/SmallRoute";
+export { SmallRoute } from "./modules/SmallRoute";
 
 export {
   Bar as PlatformAnnouncementBar,
@@ -19,6 +15,6 @@ export {
 } from "./modules/platform_notifications";
 
 /* icons */
-export { default as BellIcon } from "./modules/BellIcon";
-export { default as XIcon } from "./modules/XIcon";
-export { default as SpyglassIcon } from "./modules/SpyglassIcon";
+export { BellIcon } from "./modules/BellIcon";
+export { XIcon } from "./modules/XIcon";
+export { SpyglassIcon } from "./modules/SpyglassIcon";

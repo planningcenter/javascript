@@ -72,7 +72,7 @@ export class PointBreak extends React.Component<
   }
 }
 
-class DisplaySwitch extends React.Component<
+export class DisplaySwitch extends React.Component<
   {
     smallTopbar: (breakpointShorthand: string) => React.ReactElement<any>;
     notSmallTopbar: (breakpointShortand: string) => React.ReactElement<any>;
@@ -93,5 +93,3 @@ class DisplaySwitch extends React.Component<
     );
   }
 }
-
-export default DisplaySwitch;

@@ -2,7 +2,7 @@ import * as React from "react";
 import pcoUrl from "./pco-url";
 import getJSON from "./getJSON";
 
-class ConnectedPeopleProvider extends React.Component<
+export class ConnectedPeopleProvider extends React.Component<
   {
     env: string;
     render: (
@@ -59,5 +59,3 @@ class ConnectedPeopleProvider extends React.Component<
     );
   }
 }
-
-export default ConnectedPeopleProvider;

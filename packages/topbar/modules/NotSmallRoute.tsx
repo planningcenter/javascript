@@ -2,7 +2,7 @@ import * as React from "react";
 
 import { slightBackgroundTransition, fontFamily } from "./styles";
 
-class NotSmallRoute extends React.Component<
+export class NotSmallRoute extends React.Component<
   {
     active: boolean;
     colors: any;
@@ -59,5 +59,3 @@ class NotSmallRoute extends React.Component<
     );
   }
 }
-
-export default NotSmallRoute;

@@ -1,10 +1,9 @@
 import * as React from "react";
 
-const XIcon: React.StatelessComponent<{ fill?: string; style?: object }> = ({
-  fill = "#A0A0A0",
-  style,
-  ...nativeProps
-}) => (
+export const XIcon: React.StatelessComponent<{
+  fill?: string;
+  style?: object;
+}> = ({ fill = "#A0A0A0", style, ...nativeProps }) => (
   <svg
     width="16"
     height="16"
@@ -19,5 +18,3 @@ const XIcon: React.StatelessComponent<{ fill?: string; style?: object }> = ({
     />
   </svg>
 );
-
-export default XIcon;

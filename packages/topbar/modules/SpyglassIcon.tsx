@@ -1,6 +1,6 @@
 import * as React from "react";
 
-const SpyglassIcon: React.StatelessComponent<{
+export const SpyglassIcon: React.StatelessComponent<{
   fill?: string;
   style?: object;
 }> = ({ fill = "#000", style, ...nativeProps }) => (
@@ -18,5 +18,3 @@ const SpyglassIcon: React.StatelessComponent<{
     />
   </svg>
 );
-
-export default SpyglassIcon;

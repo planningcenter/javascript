@@ -2,7 +2,7 @@ import * as React from "react";
 import pcoUrl from "./pco-url";
 import getJSON from "./getJSON";
 
-class AppsProvider extends React.Component<
+export class AppsProvider extends React.Component<
   {
     env: string;
     render: (apps: object[], callback: any) => React.ReactElement<any>;
@@ -41,5 +41,3 @@ class AppsProvider extends React.Component<
     return this.props.render(this.state.apps || [], this.fetchApps.bind(this));
   }
 }
-
-export default AppsProvider;

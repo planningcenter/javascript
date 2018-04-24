@@ -2,7 +2,7 @@ import * as React from "react";
 
 import { fontFamily } from "./styles";
 
-const Route = ({ active, ...props }) => (
+export const SmallRoute = ({ active, ...props }) => (
   <a
     style={{
       display: "block",
@@ -20,5 +20,3 @@ const Route = ({ active, ...props }) => (
     {...props}
   />
 );
-
-export default Route;

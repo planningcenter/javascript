@@ -1,6 +1,6 @@
 import * as React from "react";
 
-const BellIcon: React.StatelessComponent<{
+export const BellIcon: React.StatelessComponent<{
   dot?: boolean;
   dotFill?: string;
   fill?: string;
@@ -38,5 +38,3 @@ const BellIcon: React.StatelessComponent<{
     )}
   </svg>
 );
-
-export default BellIcon;

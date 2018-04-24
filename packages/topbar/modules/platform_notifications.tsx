@@ -2,7 +2,7 @@ import * as React from "react";
 import * as request from "superagent";
 import { PointBreak } from "./DisplaySwitch";
 import pcURL from "./pco-url";
-import XIcon from "./XIcon";
+import { XIcon } from "./XIcon";
 
 const entries = function(obj) {
   var ownProps = Object.keys(obj),
