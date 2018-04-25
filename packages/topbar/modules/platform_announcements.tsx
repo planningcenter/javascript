@@ -20,14 +20,14 @@ function formatter(announcements) {
   }));
 }
 
-export interface ProviderProps {
+interface ProviderProps {
   env: string;
   formatter?: any;
   children: (announcements: any, callback: any) => React.ReactElement<any>;
   initialAnnouncements: object;
 }
 
-export class Provider extends React.Component<
+class Provider extends React.Component<
   ProviderProps,
   {
     announcements: object[];
@@ -73,13 +73,6 @@ export class Provider extends React.Component<
   }
 }
 
-export interface Props {
-  announcements: any[];
-  colors: any; // TODO
-  renderItem?: (object, number) => any;
-  onDismiss: (any) => any;
-}
-
 export class StyledAnnouncement extends React.Component<
   { style?: object },
   {}
@@ -110,7 +103,7 @@ export class StyledAnnouncement extends React.Component<
   }
 }
 
-export class Style extends React.Component<
+export class StyleProvider extends React.Component<
   {
     style?: object;
     className?: string;
@@ -147,28 +140,6 @@ export class Style extends React.Component<
   }
 }
 
-export class Map extends React.Component<
-  {
-    announcements: object[];
-    renderItem: any;
-  },
-  {}
-> {
-  render() {
-    return Boolean(this.props.announcements.length > 0) ? (
-      <div>{this.props.announcements.map(this.props.renderItem)}</div>
-    ) : null;
-  }
-}
-
-//   render: (apps: any, other: any) => React.ReactElement<any>;
-// }
-
-// export class ClientStorage extends React.Component<Props, {}> {
-//   public static defaultProps: Partial<Props> = {
-//     method: "localStorage"
-//   };
-
 export default class PlatformAnnouncements extends React.Component<
   {
     colors: any;
@@ -190,7 +161,7 @@ export default class PlatformAnnouncements extends React.Component<
 
   render() {
     return (
-      <Style colors={this.props.colors}>
+      <StyleProvider colors={this.props.colors}>
         <Provider
           env={this.props.env}
           initialAnnouncements={this.props.announcements}
@@ -205,12 +176,12 @@ export default class PlatformAnnouncements extends React.Component<
             ) : null
           }
         </Provider>
-      </Style>
+      </StyleProvider>
     );
   }
 }
 
-export function StyledDismissButton({ ...props }) {
+function StyledDismissButton({ ...props }: any): JSX.Element {
   return (
     <button
       type="button"
@@ -230,7 +201,10 @@ export function StyledDismissButton({ ...props }) {
   );
 }
 
-export function DissmissibleAnnouncement(props) {
+function DissmissibleAnnouncement(props: {
+  html: string;
+  onClick: () => any;
+}): JSX.Element {
   return (
     <StyledAnnouncement>
       <span

@@ -15,10 +15,8 @@ export {
 
 export {
   default as PlatformAnnouncements,
-  Map as PlatformAnnouncementsMap,
-  Provider as PlatformAnnouncementsProvider,
-  StyledAnnouncement as PlatformAnnouncement,
-  Style as PlatformAnnouncementsStyle
+  StyleProvider as PlatformAnnouncementsStyleProvider,
+  StyledAnnouncement as StyledPlatformAnnouncement
 } from "./modules/platform_announcements";
 
 export {

@@ -11,10 +11,8 @@ import {
   XSymbol,
   SpyglassSymbol,
   PlatformAnnouncements,
-  PlatformAnnouncementsMap,
-  PlatformAnnouncementsProvider,
-  PlatformAnnouncement,
-  PlatformAnnouncementsStyle
+  PlatformAnnouncementsStyleProvider,
+  StyledPlatformAnnouncement
   // AppsProvider,
   // ConnectedPeopleProvider
 } from "../index";
@@ -279,12 +277,12 @@ class SampleTopbar extends React.Component<
           <StaticAppsProvider
             render={(apps, fetchApps) => (
               <div style={{ backgroundColor: shared.colors.base0 }}>
-                <PlatformAnnouncementsStyle colors={shared.colors}>
-                  <PlatformAnnouncement>
+                <PlatformAnnouncementsStyleProvider colors={shared.colors}>
+                  <StyledPlatformAnnouncement>
                     <span>Static Platform Announcement</span>
                     <a href="#">link</a>
-                  </PlatformAnnouncement>
-                </PlatformAnnouncementsStyle>
+                  </StyledPlatformAnnouncement>
+                </PlatformAnnouncementsStyleProvider>
 
                 <PlatformAnnouncements
                   announcements={staticPlatformAnnouncements}
