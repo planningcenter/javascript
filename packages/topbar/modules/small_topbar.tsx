@@ -4,12 +4,32 @@ import pcoUrl from "./pco_url";
 import { StyledRoot } from "./styled_root";
 import { Unbutton } from "./unbutton";
 import { Avatar } from "./avatar";
-import MONO_APP_ICONS from "./mono_app_icons";
 import MONO_APP_NAME from "./mono_app_name";
 import COLOR_APP_BADGES from "./color_app_badges";
 import { ClientStorage as LocalStorageProvider } from "./client_storage";
 import { appsMenuFormatter, connectedPeopleMenuFormatter } from "./formatters";
 import { IEFlex1, fontFamily } from "./styles";
+import MonoAppIcon, {
+  Accounts,
+  CheckIns,
+  Giving,
+  Groups,
+  People,
+  Registrations,
+  Resources,
+  Services
+} from "./mono_app_icons";
+
+const MONO_APP_ICONS = {
+  Accounts,
+  CheckIns,
+  Giving,
+  Groups,
+  People,
+  Registrations,
+  Resources,
+  Services
+};
 
 const MENU_GUTTER = 57;
 
@@ -122,12 +142,11 @@ export class Topbar extends React.Component<
             );
           }}
         >
-          {React.createElement(
-            MONO_APP_ICONS[this.props.appName.toLowerCase()],
-            {
-              size: "24px"
-            }
-          )}
+          <MonoAppIcon
+            app={this.props.appName.replace("-", "")}
+            colors={this.props.colors}
+            size={26}
+          />
         </div>
 
         <div

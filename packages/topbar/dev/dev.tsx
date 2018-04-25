@@ -17,55 +17,6 @@ import {
   // ConnectedPeopleProvider
 } from "../index";
 
-const shared = {
-  appName: "Giving",
-  env: "development",
-  style: {
-    zIndex: 1
-  },
-  colors: {
-    base0: "#F4C551",
-    base1: "#E4A93A",
-    base2: "#C47F15",
-    base3: "#8E5804"
-  }
-  // colors: { // People
-  //   base0: "#5781CF",
-  //   base1: "#3F70CB",
-  //   base2: "#3063BF",
-  //   base3: "#184595"
-  // },
-  // colors: { // Services
-  //   base0: "#6A9639",
-  //   base1: "#55861F",
-  //   base2: "#487813",
-  //   base3: "#376109"
-  // }
-};
-
-const staticPlatformAnnouncements = {
-  "1": {
-    html: "<strong>PCO Rocks!</strong>",
-    enabled: "true"
-  },
-  texas: {
-    html: "<strong>I won't be here long!</strong>",
-    enabled: "true",
-    expires_at: "2018-02-28T19:02:13Z"
-  }
-  // other: {
-  //   html:
-  //     "Just testing some things... <em>I won't be here long!</em>: <a href='#'>click this</a>",
-  //   enabled: "true",
-  //   expires_at: "2018-02-28T19:02:13Z"
-  // }
-};
-
-const staticData = {
-  routes: [["people", "#"], ["some", "#"], ["other", "#"]],
-  activeRoute: "people"
-};
-
 const apps = [
   {
     type: "App",
@@ -122,6 +73,57 @@ const apps = [
     links: { self: "http://api.pco.test/people/v2/apps/10" }
   }
 ];
+
+const shared = {
+  appName: apps[7].attributes.name,
+  env: "development",
+  style: {
+    zIndex: 1
+  },
+  // colors: {
+  //   base0: "#F4C551",
+  //   base1: "#E4A93A",
+  //   base2: "#C47F15",
+  //   base3: "#8E5804"
+  // }
+  // colors: {
+  //   // People
+  //   base0: "#5781CF",
+  //   base1: "#3F70CB",
+  //   base2: "#3063BF",
+  //   base3: "#184595"
+  // }
+  colors: {
+    // Services
+    base0: "#6A9639",
+    base1: "#55861F",
+    base2: "#487813",
+    base3: "#376109"
+  }
+};
+
+const staticPlatformAnnouncements = {
+  "1": {
+    html: "<strong>PCO Rocks!</strong>",
+    enabled: "true"
+  },
+  texas: {
+    html: "<strong>I won't be here long!</strong>",
+    enabled: "true",
+    expires_at: "2018-02-28T19:02:13Z"
+  }
+  // other: {
+  //   html:
+  //     "Just testing some things... <em>I won't be here long!</em>: <a href='#'>click this</a>",
+  //   enabled: "true",
+  //   expires_at: "2018-02-28T19:02:13Z"
+  // }
+};
+
+const staticData = {
+  routes: [["people", "#"], ["some", "#"], ["other", "#"]],
+  activeRoute: "people"
+};
 
 const asyncData = {
   apps: [
@@ -443,7 +445,7 @@ ReactDOM.render(
       orgName="National Federation of Coffee National Federation of Coffee National Federation of Coffee"
       platformAnnouncements={staticPlatformAnnouncements}
     />
-    <div style={{ padding: 32 }}>
+    <div style={{ padding: 16 }}>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras pharetra
       facilisis dolor vel viverra. Praesent viverra est id eros sollicitudin, id
       gravida nisl imperdiet. Nunc convallis ultrices posuere. Quisque augue
