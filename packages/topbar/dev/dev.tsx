@@ -114,6 +114,12 @@ const apps = [
     id: "9",
     attributes: { name: "Services", url: "http://services.pco.test" },
     links: { self: "http://api.pco.test/people/v2/apps/9" }
+  },
+  {
+    type: "App",
+    id: "10",
+    attributes: { name: "Church Center", url: "http://church-center.pco.test" },
+    links: { self: "http://api.pco.test/people/v2/apps/10" }
   }
 ];
 

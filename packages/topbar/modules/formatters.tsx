@@ -17,7 +17,10 @@ const withoutItemContainingAttributeValue = (attr: string) => (
 ) => (arr: any[]): any[] =>
   arr.reduce(
     (acc, item) =>
-      (item.attributes[attr] || "") === value ? acc : acc.concat([item]),
+      (item.attributes[attr] || "") === value ||
+      (item.attributes[attr] || "") === "Church Center"
+        ? acc
+        : acc.concat([item]),
     []
   );
 
@@ -25,10 +28,14 @@ export const appsMenuFormatter = (
   apps: App[],
   excludedAppName: string
 ): App[] =>
-   withoutItemContainingAttributeValue("name")(excludedAppName)(sortByAttribute("name")(apps))
+  withoutItemContainingAttributeValue("name")(excludedAppName)(
+    sortByAttribute("name")(apps)
+  );
 
 export const connectedPeopleMenuFormatter = (
   connectedPeople: ConnectedPerson[],
   excludedOrgName: string
 ): ConnectedPerson[] =>
-  withoutItemContainingAttributeValue("name")(excludedOrgName)(sortByAttribute("organization_name")(connectedPeople))
+  withoutItemContainingAttributeValue("name")(excludedOrgName)(
+    sortByAttribute("organization_name")(connectedPeople)
+  );
