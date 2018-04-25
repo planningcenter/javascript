@@ -437,7 +437,7 @@ ReactDOM.render(
       orgName="National Federation of Coffee National Federation of Coffee National Federation of Coffee"
       platformAnnouncements={staticPlatformAnnouncements}
     />
-    <div>
+    <div style={{ padding: 32 }}>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras pharetra
       facilisis dolor vel viverra. Praesent viverra est id eros sollicitudin, id
       gravida nisl imperdiet. Nunc convallis ultrices posuere. Quisque augue

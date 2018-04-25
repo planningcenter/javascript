@@ -20,6 +20,7 @@
   "author": "Michael Chan <mijoch@gmail.com>",
   "private": false,
   "dependencies": {
+    "lerna": "^2.8.0",
     "superagent": "^3.8.0"
   },
   "peerDependencies": {
