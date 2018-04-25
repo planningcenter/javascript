@@ -10,7 +10,8 @@ import {
   BellSymbol,
   XSymbol,
   SpyglassSymbol,
-  PlatformAnnouncementBar,
+  PlatformAnnouncements,
+  PlatformAnnouncementsMap,
   PlatformAnnouncementsProvider,
   PlatformAnnouncement,
   PlatformAnnouncementsStyle
@@ -53,13 +54,13 @@ const staticPlatformAnnouncements = {
     html: "<strong>I won't be here long!</strong>",
     enabled: "true",
     expires_at: "2018-02-28T19:02:13Z"
-  },
-  other: {
-    html:
-      "Just testing some things... <em>I won't be here long!</em>: <a href='#'>click this</a>",
-    enabled: "true",
-    expires_at: "2018-02-28T19:02:13Z"
   }
+  // other: {
+  //   html:
+  //     "Just testing some things... <em>I won't be here long!</em>: <a href='#'>click this</a>",
+  //   enabled: "true",
+  //   expires_at: "2018-02-28T19:02:13Z"
+  // }
 };
 
 const staticData = {
@@ -280,22 +281,16 @@ class SampleTopbar extends React.Component<
               <div style={{ backgroundColor: shared.colors.base0 }}>
                 <PlatformAnnouncementsStyle colors={shared.colors}>
                   <PlatformAnnouncement>
-                    <span>test</span>
+                    <span>Static Platform Announcement</span>
                     <a href="#">link</a>
                   </PlatformAnnouncement>
-
-                  <PlatformAnnouncementsProvider
-                    env={shared.env}
-                    initialAnnouncements={staticPlatformAnnouncements}
-                    render={(data, actions) => (
-                      <PlatformAnnouncementBar
-                        colors={shared.colors}
-                        announcements={data.announcements}
-                        onDismiss={actions.dismissAnnouncements}
-                      />
-                    )}
-                  />
                 </PlatformAnnouncementsStyle>
+
+                <PlatformAnnouncements
+                  announcements={staticPlatformAnnouncements}
+                  colors={shared.colors}
+                  env={shared.env}
+                />
 
                 <DisplaySwitch
                   smallTopbar={() => (

@@ -14,9 +14,10 @@ export {
 } from "./modules/small_topbar";
 
 export {
-  Bar as PlatformAnnouncementBar,
+  default as PlatformAnnouncements,
+  Map as PlatformAnnouncementsMap,
   Provider as PlatformAnnouncementsProvider,
-  Announcement as PlatformAnnouncement,
+  StyledAnnouncement as PlatformAnnouncement,
   Style as PlatformAnnouncementsStyle
 } from "./modules/platform_announcements";
 

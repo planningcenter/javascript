@@ -23,7 +23,7 @@ function formatter(announcements) {
 export interface ProviderProps {
   env: string;
   formatter?: any;
-  render: (announcements: any, callback: any) => React.ReactElement<any>;
+  children: (announcements: any, callback: any) => React.ReactElement<any>;
   initialAnnouncements: object;
 }
 
@@ -66,7 +66,7 @@ export class Provider extends React.Component<
   }
 
   render() {
-    return this.props.render(
+    return this.props.children(
       { announcements: this.props.formatter(this.state.announcements) },
       { dismissAnnouncements: this.dismissAnnouncements.bind(this) }
     );
@@ -80,7 +80,10 @@ export interface Props {
   onDismiss: (any) => any;
 }
 
-export class Announcement extends React.Component<{ style?: object }, {}> {
+export class StyledAnnouncement extends React.Component<
+  { style?: object },
+  {}
+> {
   render() {
     const { style, ...platformProps } = this.props;
 
@@ -144,45 +147,99 @@ export class Style extends React.Component<
   }
 }
 
-// TODO: Rename to Map
-// This had too many things packed into it given the
-// first version of the feature.
-// At the next breaking release, I'd like to name it
-// more appropriately. Then remove `Style` root.
-export class Bar extends React.Component<Props, {}> {
+export class Map extends React.Component<
+  {
+    announcements: object[];
+    renderItem: any;
+  },
+  {}
+> {
   render() {
     return Boolean(this.props.announcements.length > 0) ? (
-      <Style colors={this.props.colors}>
-        {this.props.announcements.map(
-          this.props.renderItem
-            ? this.props.renderItem
-            : announcements => (
-                <Announcement key={announcements.id}>
-                  <span
-                    dangerouslySetInnerHTML={{
-                      __html: announcements.data.html
-                    }}
-                  />
-
-                  <button
-                    type="button"
-                    style={{
-                      cursor: "pointer",
-                      backgroundColor: "transparent",
-                      borderWidth: 0,
-                      WebkitAppearance: "none",
-                      // larger click target without increasing box
-                      padding: 8,
-                      margin: -8
-                    }}
-                    onClick={() => this.props.onDismiss(announcements.id)}
-                  >
-                    <XSymbol fill="white" style={{ width: 20, height: 20 }} />
-                  </button>
-                </Announcement>
-              )
-        )}
-      </Style>
+      <div>{this.props.announcements.map(this.props.renderItem)}</div>
     ) : null;
   }
+}
+
+//   render: (apps: any, other: any) => React.ReactElement<any>;
+// }
+
+// export class ClientStorage extends React.Component<Props, {}> {
+//   public static defaultProps: Partial<Props> = {
+//     method: "localStorage"
+//   };
+
+export default class PlatformAnnouncements extends React.Component<
+  {
+    colors: any;
+    env: string;
+    announcements: object;
+    renderItem?: any;
+  },
+  {}
+> {
+  public static defaultProps = {
+    renderItem: ({ announcement, actions }) => (
+      <DissmissibleAnnouncement
+        key={announcement.id}
+        html={announcement.data.html}
+        onClick={() => actions.dismissAnnouncements(announcement.id)}
+      />
+    )
+  };
+
+  render() {
+    return (
+      <Style colors={this.props.colors}>
+        <Provider
+          env={this.props.env}
+          initialAnnouncements={this.props.announcements}
+        >
+          {(data, actions) =>
+            Boolean(data.announcements.length > 0) ? (
+              <div>
+                {data.announcements.map(announcement =>
+                  this.props.renderItem({ announcement, actions })
+                )}
+              </div>
+            ) : null
+          }
+        </Provider>
+      </Style>
+    );
+  }
+}
+
+export function StyledDismissButton({ ...props }) {
+  return (
+    <button
+      type="button"
+      style={{
+        cursor: "pointer",
+        backgroundColor: "transparent",
+        borderWidth: 0,
+        WebkitAppearance: "none",
+        // larger click target without increasing box
+        padding: 8,
+        margin: -8
+      }}
+      {...props}
+    >
+      <XSymbol fill="white" style={{ width: 20, height: 20 }} />
+    </button>
+  );
+}
+
+export function DissmissibleAnnouncement(props) {
+  return (
+    <StyledAnnouncement>
+      <span
+        dangerouslySetInnerHTML={{
+          __html: props.html
+        }}
+      />
+
+      <StyledDismissButton onClick={props.onClick} />
+    </StyledAnnouncement>
+  );
 }
