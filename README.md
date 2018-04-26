@@ -4,9 +4,10 @@ A collection of shared components, scripts, wrappers, and forks in JavaScript.
 
 ## Packages
 
-* [@planningcenter/helpdesk-embed](https://www.npmjs.com/package/@planningcenter/helpdesk-embed) ([project](packages/helpdesk-embed))
-* [@planningcenter/url](https://www.npmjs.com/package/@planningcenter/url) ([project](packages/url))
 * [@planningcenter/finder](https://www.npmjs.com/package/@planningcenter/finder) ([project](packages/finder))
+* [@planningcenter/helpdesk-embed](https://www.npmjs.com/package/@planningcenter/helpdesk-embed) ([project](packages/helpdesk-embed))
+* [@planningcenter/topbar](https://www.npmjs.com/package/@planningcenter/topbar) ([project](packages/topbar))
+* [@planningcenter/url](https://www.npmjs.com/package/@planningcenter/url) ([project](packages/url))
 
 ## Structure
 
@@ -19,7 +20,7 @@ included packages can be linked for local, cross-package development.
 
 Here's an example...
 
-Say you're working in `@planningcenter/topbar` and need to add a feature to `@planningcenter/url`. Instead of having find that repo, clone it,, make a few blind change, publish, and re-`yarn`, you're able to develop and publish changes to both simultaniously.
+Say you're working in `@planningcenter/topbar` and need to add a feature to `@planningcenter/url`. Instead of having find that repo, clone it, make a few blind change, publish, and re-`yarn`, you're able to develop and publish changes to both simultaniously.
 
 ## Publishing
 
@@ -51,4 +52,3 @@ All commands are prefixed with `yarn`.
 ## Improvements
 
 * New project generator with sensible defaults
-
