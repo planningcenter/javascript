@@ -81,7 +81,7 @@ const apps = [
 ];
 
 const shared = {
-  appName: apps[1].attributes.name,
+  appName: apps[0].attributes.name,
   env: "development",
   style: {
     zIndex: 1
