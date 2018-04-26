@@ -179,6 +179,7 @@ function Services({ color, size = 20, ...platformProps }): JSX.Element {
       width="67.995"
       height={size}
       viewBox="0 0 67.995 20"
+      style={{ display: "block" }}
     >
       <title>services-text</title>
       <path

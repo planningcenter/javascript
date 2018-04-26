@@ -59,7 +59,7 @@ function UserMenuAppLockup(props) {
   let appName = props.appName.replace(/[\s-]/, "");
 
   return (
-    <div>
+    <div style={{ display: "flex", alignItems: "center" }}>
       <ColorAppIcon appName={appName} size={28} />
       <span style={{ marginLeft: "12px" }} />
       <MonoAppText appName={appName} color="#fff" size={28} />
@@ -79,7 +79,7 @@ export class Topbar extends React.Component<
 
     this.state = {
       routesMenuVisible: false,
-      userMenuVisible: false
+      userMenuVisible: true
     };
   }
 
@@ -135,7 +135,7 @@ export class Topbar extends React.Component<
           }}
         >
           <MonoAppIcon
-            app={this.props.appName.replace(/[\s-]/, "")}
+            appName={this.props.appName.replace(/[\s-]/, "")}
             colors={this.props.colors}
             size={26}
           />

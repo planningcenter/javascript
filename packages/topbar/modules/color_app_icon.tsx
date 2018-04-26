@@ -9,6 +9,7 @@ export function ColorAppIcon({ appName, size = 20 }): JSX.Element {
       width={size}
       height={size}
       viewBox="0 0 20 20"
+      style={{ display: "block" }}
     >
       {ColorAppSquircles[appName]()}
       {React.createElement(AppSymbols[appName], { color: "#fff" })}

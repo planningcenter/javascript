@@ -5,10 +5,14 @@ import { StyledRoot } from "./styled_root";
 import { Unbutton } from "./unbutton";
 import { Avatar } from "./avatar";
 import { appsMenuFormatter, connectedPeopleMenuFormatter } from "./formatters";
+import { slightBackgroundTransition, fontFamily, IEFlex1 } from "./styles";
+
 import MONO_APP_BADGES from "./mono_app_badges";
 import MONO_APP_NAME from "./mono_app_name";
 import COLOR_APP_BADGES from "./color_app_badges";
-import { slightBackgroundTransition, fontFamily, IEFlex1 } from "./styles";
+import { MonoAppIcon } from "./mono_app_icon";
+import { MonoAppText } from "./mono_app_text";
+import { ColorAppIcon } from "./color_app_icon";
 
 class AppsButton extends React.Component<
   {
@@ -69,10 +73,19 @@ class AppsButton extends React.Component<
         onMouseUp={() => this.setState({ down: false })}
         {...nativeProps}
       >
-        <div>{React.createElement(MONO_APP_BADGES[appName.toLowerCase()])}</div>
-        <div style={{ marginLeft: "8px" }}>
-          <DisclosureChevronIcon colors={colors} />
-        </div>
+        <MonoAppIcon
+          appName={appName.replace(/[\s-]/, "")}
+          colors={this.props.colors}
+          size={24}
+        />
+        <div style={{ margin: 4 }} />
+        <MonoAppText
+          appName={appName.replace(/[\s-]/, "")}
+          color="#fff"
+          size={24}
+        />
+        <div style={{ margin: 4 }} />
+        <DisclosureChevronIcon colors={colors} style={{ display: "block" }} />
       </Unbutton>
     );
   }
@@ -187,7 +200,7 @@ const AppsMenu = props => (
       onOutsideClick={props.toggle}
       cleanup={!props.visible}
     >
-      <menu style={{ margin: 0, padding: 0 }}>
+      <menu style={{ margin: 0, padding: 0, minWidth: 180 }}>
         {props.apps.map(({ attributes: { name } }, i) => (
           <HoverableListItem
             component="a"
@@ -207,11 +220,13 @@ const AppsMenu = props => (
             href={`${pcoUrl(props.env)("accounts")}/apps/${name.toLowerCase()}`}
             data-turbolinks={false}
           >
-            {React.createElement(COLOR_APP_BADGES[name.toLowerCase()])}
-            <span style={{ marginLeft: "8px" }} />
-            {React.createElement(MONO_APP_NAME[name.toLowerCase()], {
-              color: "#444"
-            })}
+            <ColorAppIcon appName={name.replace(/[\s-]/, "")} size={24} />
+            <span style={{ margin: 4 }} />
+            <MonoAppText
+              appName={name.replace(/[\s-]/, "")}
+              color="#444"
+              size={24}
+            />
           </HoverableListItem>
         ))}
       </menu>
@@ -219,10 +234,17 @@ const AppsMenu = props => (
   </PopupRoot>
 );
 
-const DisclosureChevronIcon = ({ colors }) => (
+const DisclosureChevronIcon = ({
+  colors,
+  style
+}: {
+  colors: any;
+  style?: object;
+}): JSX.Element => (
   <svg
     style={{
-      margin: "-3px"
+      margin: "-3px",
+      ...style
     }}
     width="16"
     height="16"

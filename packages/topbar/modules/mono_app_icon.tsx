@@ -11,13 +11,13 @@ function Squircle({ color = "#fff", ...platformProps }): JSX.Element {
 }
 
 export function MonoAppIcon({
-  app: appName,
+  appName,
   colors,
   style,
   size = 20,
   ...platformProps
 }: {
-  app: string;
+  appName: string;
   colors: any; // TODO: shared type
   style?: any;
   size?: number;
