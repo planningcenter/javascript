@@ -7,7 +7,7 @@ import { Avatar } from "./avatar";
 import { appsMenuFormatter, connectedPeopleMenuFormatter } from "./formatters";
 import { slightBackgroundTransition, fontFamily, IEFlex1 } from "./styles";
 import { MonoAppIcon } from "./mono_app_icon";
-import { MonoAppText } from "./mono_app_text";
+import { MonoAppName } from "./mono_app_name";
 import { ColorAppIcon } from "./color_app_icon";
 
 class AppsButton extends React.Component<
@@ -75,7 +75,7 @@ class AppsButton extends React.Component<
           size={24}
         />
         <div style={{ margin: 4 }} />
-        <MonoAppText
+        <MonoAppName
           appName={appName.replace(/[\s-]/, "")}
           color="#fff"
           size={24}
@@ -219,7 +219,7 @@ const AppsMenu = (props) => (
           >
             <ColorAppIcon appName={name.replace(/[\s-]/, "")} size={24} />
             <span style={{ margin: 4 }} />
-            <MonoAppText
+            <MonoAppName
               appName={name.replace(/[\s-]/, "")}
               color="#444"
               size={24}

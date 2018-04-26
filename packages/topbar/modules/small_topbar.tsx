@@ -8,7 +8,7 @@ import { ClientStorage as LocalStorageProvider } from "./client_storage";
 import { appsMenuFormatter, connectedPeopleMenuFormatter } from "./formatters";
 import { IEFlex1, fontFamily } from "./styles";
 import { MonoAppIcon } from "./mono_app_icon";
-import { MonoAppText } from "./mono_app_text";
+import { MonoAppName } from "./mono_app_name";
 import { ColorAppIcon } from "./color_app_icon";
 
 const MENU_GUTTER = 57;
@@ -41,7 +41,7 @@ function UserMenuAppLockup(props) {
     <div style={{ display: "flex", alignItems: "center" }}>
       <ColorAppIcon appName={appName} size={28} />
       <span style={{ marginLeft: "12px" }} />
-      <MonoAppText appName={appName} color="#fff" size={28} />
+      <MonoAppName appName={appName} color="#fff" size={28} />
     </div>
   );
 }

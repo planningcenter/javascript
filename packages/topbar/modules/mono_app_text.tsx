@@ -1,6 +1,6 @@
 import * as React from "react";
 
-function Accounts({ color, size = 20, ...platformProps }): JSX.Element {
+export function Accounts({ color, size = 20, ...platformProps }): JSX.Element {
   return (
     <svg
       id="4ce749c7-c01e-4a9b-9496-b14fd2e761aa"
@@ -19,7 +19,7 @@ function Accounts({ color, size = 20, ...platformProps }): JSX.Element {
   );
 }
 
-function API({ color, size = 20, ...platformProps }): JSX.Element {
+export function API({ color, size = 20, ...platformProps }): JSX.Element {
   return (
     <svg
       id="bed028ef-58ee-4c4c-a757-08ecc3276857"
@@ -38,7 +38,7 @@ function API({ color, size = 20, ...platformProps }): JSX.Element {
   );
 }
 
-function CheckIns({ color, size = 20, ...platformProps }): JSX.Element {
+export function CheckIns({ color, size = 20, ...platformProps }): JSX.Element {
   return (
     <svg
       id="dc713595-39c2-41c4-b1d9-3ef8c295b738"
@@ -56,7 +56,12 @@ function CheckIns({ color, size = 20, ...platformProps }): JSX.Element {
     </svg>
   );
 }
-function ChurchCenter({ color, size = 20, ...platformProps }): JSX.Element {
+
+export function ChurchCenter({
+  color,
+  size = 20,
+  ...platformProps
+}): JSX.Element {
   return (
     <svg
       id="e2e8a225-c349-4aea-935c-64b6ad436be8"
@@ -75,7 +80,7 @@ function ChurchCenter({ color, size = 20, ...platformProps }): JSX.Element {
   );
 }
 
-function Giving({ color, size = 20, ...platformProps }): JSX.Element {
+export function Giving({ color, size = 20, ...platformProps }): JSX.Element {
   return (
     <svg
       id="a221b42b-722d-4eb3-b043-fff7f3c6686f"
@@ -94,7 +99,7 @@ function Giving({ color, size = 20, ...platformProps }): JSX.Element {
   );
 }
 
-function Groups({ color, size = 20, ...platformProps }): JSX.Element {
+export function Groups({ color, size = 20, ...platformProps }): JSX.Element {
   return (
     <svg
       id="08e4075e-8ca4-4400-a3ae-98f53270d1d0"
@@ -113,7 +118,7 @@ function Groups({ color, size = 20, ...platformProps }): JSX.Element {
   );
 }
 
-function People({ color, size = 20, ...platformProps }): JSX.Element {
+export function People({ color, size = 20, ...platformProps }): JSX.Element {
   return (
     <svg
       id="c461f8d4-1c6e-406e-af2d-8d7721d891d5"
@@ -132,7 +137,11 @@ function People({ color, size = 20, ...platformProps }): JSX.Element {
   );
 }
 
-function Registrations({ color, size = 20, ...platformProps }): JSX.Element {
+export function Registrations({
+  color,
+  size = 20,
+  ...platformProps
+}): JSX.Element {
   return (
     <svg
       id="2da9f999-408b-4466-9b5d-b1268727ac81"
@@ -151,7 +160,7 @@ function Registrations({ color, size = 20, ...platformProps }): JSX.Element {
   );
 }
 
-function Resources({ color, size = 20, ...platformProps }): JSX.Element {
+export function Resources({ color, size = 20, ...platformProps }): JSX.Element {
   return (
     <svg
       id="74f21070-1fd8-4ba2-80b2-8fbdc21e6238"
@@ -170,7 +179,7 @@ function Resources({ color, size = 20, ...platformProps }): JSX.Element {
   );
 }
 
-function Services({ color, size = 20, ...platformProps }): JSX.Element {
+export function Services({ color, size = 20, ...platformProps }): JSX.Element {
   return (
     <svg
       id="bd77a8f3-6992-4241-927e-9fdc3bf67b80"
@@ -188,8 +197,4 @@ function Services({ color, size = 20, ...platformProps }): JSX.Element {
       />
     </svg>
   );
-}
-
-export function MonoAppText({ appName, color, size = 20 }) {
-  return React.createElement(eval(appName), { color, size });
 }
