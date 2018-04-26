@@ -347,38 +347,36 @@ const Popup: React.StatelessComponent<{
   />
 );
 
-export interface Props {
-  apps: { attributes: { name: string; url: string } }[];
-  activeRoute: string;
-  env: string;
-  appName: string;
-  routes: any;
-  colors: any;
-  userAvatarPath: string;
-  userId: string;
-  userName: string;
-  orgName: string;
-  connectedPeople: any;
-  search?: any;
-  style?: any;
-  showOrgName?: boolean;
-  notifications?: any;
-  requestAppsFetch: any;
-  requestConnectedPeopleFetch: any;
-  requestClearAppsCache: any;
-  requestClearConnectedPeopleCache: any;
-  linkToProfile?: boolean;
-}
-
 export class Topbar extends React.Component<
-  Props,
+  {
+    apps: { attributes: { name: string; url: string } }[];
+    activeRoute: string;
+    env: string;
+    appName: string;
+    routes: any;
+    colors: any;
+    userAvatarPath: string;
+    userId: string;
+    userName: string;
+    orgName: string;
+    connectedPeople: any;
+    search?: any;
+    style?: any;
+    showOrgName?: boolean;
+    notifications?: any;
+    requestAppsFetch: any;
+    requestConnectedPeopleFetch: any;
+    requestClearAppsCache: any;
+    requestClearConnectedPeopleCache: any;
+    linkToProfile?: boolean;
+  },
   {
     appsMenuVisible: boolean;
     userMenuVisible: boolean;
     routesVisible: boolean;
   }
 > {
-  public static defaultProps: Partial<Props> = {
+  public static defaultProps = {
     notifications: () => null,
     search: () => null,
     linkToProfile: true,

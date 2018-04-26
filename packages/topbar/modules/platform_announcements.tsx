@@ -20,15 +20,13 @@ function formatter(announcements) {
   }));
 }
 
-interface ProviderProps {
-  env: string;
-  formatter?: any;
-  children: (announcements: any, callback: any) => React.ReactElement<any>;
-  initialAnnouncements: object;
-}
-
 class Provider extends React.Component<
-  ProviderProps,
+  {
+    env: string;
+    formatter?: any;
+    children: (announcements: any, callback: any) => React.ReactElement<any>;
+    initialAnnouncements: object;
+  },
   {
     announcements: object[];
   }
@@ -41,7 +39,7 @@ class Provider extends React.Component<
     };
   }
 
-  public static defaultProps: Partial<ProviderProps> = {
+  public static defaultProps = {
     formatter: formatter,
   };
 

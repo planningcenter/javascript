@@ -1,8 +1,10 @@
 import * as React from "react";
-
 import { fontFamily } from "./styles";
 
-export const Unbutton: React.StatelessComponent<{
+export function Unbutton({
+  style,
+  ...nativeProps
+}: {
   id?: string;
   style?: object;
   onClick?: any;
@@ -10,20 +12,22 @@ export const Unbutton: React.StatelessComponent<{
   onMouseLeave?: any;
   onMouseDown?: any;
   onMouseUp?: any;
-}> = ({ style, ...nativeProps }) => (
-  <button
-    style={{
-      display: "inline-block",
-      cursor: "pointer",
-      backgroundColor: "transparent",
-      border: "none",
-      padding: 0,
-      appearance: "none",
-      WebkitAppearance: "none",
-      outline: 0,
-      ...fontFamily,
-      ...style,
-    }}
-    {...nativeProps}
-  />
-);
+}): JSX.Element {
+  return (
+    <button
+      style={{
+        display: "inline-block",
+        cursor: "pointer",
+        backgroundColor: "transparent",
+        border: "none",
+        padding: 0,
+        appearance: "none",
+        WebkitAppearance: "none",
+        outline: 0,
+        ...fontFamily,
+        ...style,
+      }}
+      {...nativeProps}
+    />
+  );
+}

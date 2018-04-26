@@ -34,29 +34,6 @@ const DisclosureChevronIcon = (props) => (
   </svg>
 );
 
-export interface Props {
-  apps: { attributes: { name: string; url: string } }[];
-  env: string;
-  appName: string;
-  routes: any;
-  colors: any;
-  userAvatarPath: string;
-  userId: string;
-  userName: string;
-  orgName: string;
-  connectedPeople: {
-    id: number;
-    attributes: { name: string; organization_name: string };
-  }[];
-  style?: any;
-  currentRouteComponent?: any;
-  requestAppsFetch: any;
-  requestConnectedPeopleFetch: any;
-  requestClearAppsCache: any;
-  requestClearConnectedPeopleCache: any;
-  notifications?: any;
-}
-
 function UserMenuAppLockup(props) {
   let appName = props.appName.replace(/[\s-]/, "");
 
@@ -70,7 +47,28 @@ function UserMenuAppLockup(props) {
 }
 
 export class Topbar extends React.Component<
-  Props,
+  {
+    apps: { attributes: { name: string; url: string } }[];
+    env: string;
+    appName: string;
+    routes: any;
+    colors: any;
+    userAvatarPath: string;
+    userId: string;
+    userName: string;
+    orgName: string;
+    connectedPeople: {
+      id: number;
+      attributes: { name: string; organization_name: string };
+    }[];
+    style?: any;
+    currentRouteComponent?: any;
+    requestAppsFetch: any;
+    requestConnectedPeopleFetch: any;
+    requestClearAppsCache: any;
+    requestClearConnectedPeopleCache: any;
+    notifications?: any;
+  },
   {
     routesMenuVisible: boolean;
     userMenuVisible: boolean;
@@ -85,7 +83,7 @@ export class Topbar extends React.Component<
     };
   }
 
-  public static defaultProps: Partial<Props> = {
+  public static defaultProps = {
     currentRouteComponent: (props) => <span {...props} />,
   };
 
