@@ -20,7 +20,6 @@
   "author": "Michael Chan <mijoch@gmail.com>",
   "private": false,
   "dependencies": {
-    "lerna": "^2.8.0",
     "superagent": "^3.8.0"
   },
   "peerDependencies": {
@@ -30,11 +29,12 @@
     "@types/react": "^16.0.5",
     "@types/react-dom": "^16.0.5",
     "html-webpack-plugin": "^3.0.6",
+    "lerna": "^2.8.0",
     "markdown-toc": "^1.2.0",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
-    "rollup": "^0.56.5",
-    "rollup-plugin-typescript2": "^0.12.0",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "rollup": "^0.58.2",
+    "rollup-plugin-typescript2": "^0.13.0",
     "ts-loader": "^4.0.1",
     "typescript": "^2.5.2",
     "webpack": "^4.1.1",
