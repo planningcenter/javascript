@@ -69,7 +69,7 @@ export class Topbar extends React.Component<
 
     this.state = {
       routesMenuVisible: false,
-      userMenuVisible: true
+      userMenuVisible: false
     };
   }
 
@@ -215,11 +215,13 @@ export class Topbar extends React.Component<
                     <div style={{ display: "flex", alignItems: "center" }}>
                       <ColorAppIcon
                         appName={this.props.appName.replace(/[\s-]/, "")}
+                        size={28}
                       />
-                      <span style={{ marginLeft: "8px" }} />
+                      <span style={{ marginLeft: "12px" }} />
                       <MonoAppText
                         appName={this.props.appName.replace(/[\s-]/, "")}
                         color="#fff"
+                        size={28}
                       />
                     </div>
                   </div>
@@ -288,11 +290,15 @@ export class Topbar extends React.Component<
                               "accounts"
                             )}/apps/${name.toLowerCase()}`}
                           >
-                            <ColorAppIcon appName={name.replace(/[\s-]/, "")} />
-                            <span style={{ marginLeft: "8px" }} />
+                            <ColorAppIcon
+                              appName={name.replace(/[\s-]/, "")}
+                              size={28}
+                            />
+                            <span style={{ marginLeft: "12px" }} />
                             <MonoAppText
                               appName={name.replace(/[\s-]/, "")}
                               color="#fff"
+                              size={28}
                             />
                           </a>
                         </li>
