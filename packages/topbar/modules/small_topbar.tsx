@@ -9,27 +9,7 @@ import COLOR_APP_BADGES from "./color_app_badges";
 import { ClientStorage as LocalStorageProvider } from "./client_storage";
 import { appsMenuFormatter, connectedPeopleMenuFormatter } from "./formatters";
 import { IEFlex1, fontFamily } from "./styles";
-import MonoAppIcon, {
-  Accounts,
-  CheckIns,
-  Giving,
-  Groups,
-  People,
-  Registrations,
-  Resources,
-  Services
-} from "./mono_app_icons";
-
-const MONO_APP_ICONS = {
-  Accounts,
-  CheckIns,
-  Giving,
-  Groups,
-  People,
-  Registrations,
-  Resources,
-  Services
-};
+import { MonoAppIcon } from "./mono_app_icon";
 
 const MENU_GUTTER = 57;
 
@@ -143,7 +123,7 @@ export class Topbar extends React.Component<
           }}
         >
           <MonoAppIcon
-            app={this.props.appName.replace("-", "")}
+            app={this.props.appName.replace(/[\s-]/, "")}
             colors={this.props.colors}
             size={26}
           />

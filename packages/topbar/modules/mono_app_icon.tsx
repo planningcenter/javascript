@@ -1,17 +1,6 @@
 import * as React from "react";
 
-import {
-  Accounts as AccountsSymbol,
-  CheckIns as CheckInsSymbol,
-  Giving as GivingSymbol,
-  Groups as GroupsSymbol,
-  People as PeopleSymbol,
-  Registrations as RegistrationsSymbol,
-  Resources as ResourcesSymbol,
-  Services as ServicesSymbol
-} from "./app_symbols";
-
-function Squircle({ color = "#fff", ...platformProps }) {
+function Squircle({ color = "#fff", ...platformProps }): JSX.Element {
   return (
     <path
       fill={color}
@@ -20,26 +9,7 @@ function Squircle({ color = "#fff", ...platformProps }) {
   );
 }
 
-const Clipboard: React.StatelessComponent<{
-  size?: string;
-  color?: string;
-  name?: string;
-}> = ({ size = "32px", color = "#000", name = "Generic", children }) => (
-  <svg
-    width={size}
-    height={size}
-    viewBox="0 0 32 32"
-    style={{ display: "block" }}
-  >
-    <path
-      d="M28.4,0H3.7C1.6,0,0,1.6,0,3.7v24.7c0,2,1.6,3.6,3.7,3.6h24.7c2,0,3.6-1.6,3.6-3.6V3.7C32,1.6,30.4,0,28.4,0z M27.2,26.6c0,0.4-0.3,0.6-0.6,0.6H5.4c-0.4,0-0.6-0.3-0.6-0.6V5.4c0-0.4,0.3-0.6,0.6-0.6h4.2v0.9c0,0.4,0.3,0.7,0.7,0.7h11.3 c0.4,0,0.7-0.3,0.7-0.7V4.8h4.2c0.4,0,0.6,0.3,0.6,0.6V26.6z"
-      fill={color}
-    />
-    {children}
-  </svg>
-);
-
-export function Accounts({ color, ...platformProps }) {
+function Accounts({ color, ...platformProps }): JSX.Element {
   return (
     <path
       fill={color}
@@ -48,7 +18,16 @@ export function Accounts({ color, ...platformProps }) {
   );
 }
 
-export function CheckIns({ color, ...platformProps }) {
+function API({ color, ...platformProps }): JSX.Element {
+  return (
+    <path
+      fill={color}
+      d="M11.08,12.387a3.277,3.277,0,0,0,.21-.86l1.47-.23-.25-1.63-1.48.22A3.167,3.167,0,0,0,9.93,8.5l.54-1.37-1.54-.6L8.39,7.9a3.393,3.393,0,0,0-1.76.27l-.92-1.15-1.3,1.03.93,1.16a3.462,3.462,0,0,0-.43.78A3.333,3.333,0,0,0,4.69,11l-1.49.23.25,1.69,1.59-.24a3.278,3.278,0,0,0,1.02,1.2l-.54,1.39,1.55.6.54-1.39a3.319,3.319,0,0,0,1.74-.27l.93,1.17,1.3-1.04-.93-1.17A3.258,3.258,0,0,0,11.08,12.387ZM9.81,11.9A1.953,1.953,0,0,1,7.29,13a1.942,1.942,0,1,1,2.52-1.1Zm5.89-4.32a1.581,1.581,0,0,0,.04-.38,2.066,2.066,0,0,0-1.39-1.95v-.82H12.97v.82A2.066,2.066,0,0,0,11.58,7.2a1.581,1.581,0,0,0,.04.38l-.71.41.7,1.2.7-.4a2.073,2.073,0,0,0,2.7,0l.7.4.7-1.2Zm-2.04.67A1.045,1.045,0,1,1,14.7,7.2,1.041,1.041,0,0,1,13.66,8.247Z"
+    />
+  );
+}
+
+function CheckIns({ color, ...platformProps }): JSX.Element {
   return (
     <path
       fill={color}
@@ -56,8 +35,16 @@ export function CheckIns({ color, ...platformProps }) {
     />
   );
 }
+function ChurchCenter({ color, ...platformProps }): JSX.Element {
+  return (
+    <path
+      fill={color}
+      d="M13.91,14.763a.334.334,0,0,1-.331.338l-1.959-.016a.334.334,0,0,1-.338-.331s.005-.233.005-1.8a3.674,3.674,0,0,0-1.279-2.638,3.674,3.674,0,0,0-1.279,2.638c0,1.565.005,1.8.005,1.8a.334.334,0,0,1-.338.331L6.437,15.1a.334.334,0,0,1-.331-.338s-.242-6.457-.02-6.65h0L9.671,5.021a.522.522,0,0,1,.684,0l3.58,3.092H13.93C14.152,8.325,13.91,14.763,13.91,14.763Z"
+    />
+  );
+}
 
-export function Giving({ color, ...platformProps }) {
+function Giving({ color, ...platformProps }): JSX.Element {
   return (
     <path
       fill={color}
@@ -66,7 +53,7 @@ export function Giving({ color, ...platformProps }) {
   );
 }
 
-export function Groups({ color, ...platformProps }) {
+function Groups({ color, ...platformProps }): JSX.Element {
   return (
     <path
       fill={color}
@@ -75,7 +62,7 @@ export function Groups({ color, ...platformProps }) {
   );
 }
 
-export function People({ color, ...platformProps }) {
+function People({ color, ...platformProps }): JSX.Element {
   return (
     <path
       fill={color}
@@ -84,7 +71,7 @@ export function People({ color, ...platformProps }) {
   );
 }
 
-export function Registrations({ color, ...platformProps }) {
+function Registrations({ color, ...platformProps }): JSX.Element {
   return (
     <path
       fill={color}
@@ -93,7 +80,7 @@ export function Registrations({ color, ...platformProps }) {
   );
 }
 
-export function Resources({ color, ...platformProps }) {
+function Resources({ color, ...platformProps }): JSX.Element {
   return (
     <path
       fill={color}
@@ -102,7 +89,7 @@ export function Resources({ color, ...platformProps }) {
   );
 }
 
-export function Services({ color, ...platformProps }) {
+function Services({ color, ...platformProps }): JSX.Element {
   return (
     <path
       fill={color}
@@ -111,7 +98,7 @@ export function Services({ color, ...platformProps }) {
   );
 }
 
-export default function MonoAppIcon({
+export function MonoAppIcon({
   app: appName,
   colors,
   style,
