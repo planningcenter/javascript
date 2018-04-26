@@ -5,7 +5,7 @@
   "source": "index.js",
   "main": "dist/finder-layouts.js",
   "module": "dist/finder-layouts.m.js",
-  "browser": "dist/finder-layouts.umd.js",
+  "umd:main": "dist/finder-layouts.umd.js",
   "repository": "https://github.com/planningcenter/javascript",
   "author": "Michael Chan <mijoch@gmail.com>",
   "license": "MIT",
@@ -28,16 +28,14 @@
       "@babel/plugin-proposal-class-properties"
     ]
   },
-  "dependencies": {
-    "@babel/core": "^7.0.0-beta.40"
-  },
   "devDependencies": {
+    "@babel/core": "^7.0.0-beta.40",
     "@babel/plugin-proposal-class-properties": "^7.0.0-beta.40",
     "@babel/preset-env": "^7.0.0-beta.40",
     "@babel/preset-react": "^7.0.0-beta.40",
     "chalk": "^2.3.1",
     "react": "^16.2.0",
-    "rollup": "^0.55.5",
+    "rollup": "^0.58.2",
     "rollup-plugin-babel": "^4.0.0-beta.0"
   }
 }
