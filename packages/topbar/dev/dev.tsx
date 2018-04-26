@@ -81,7 +81,7 @@ const apps = [
 ];
 
 const shared = {
-  appName: apps[0].attributes.name,
+  appName: apps[1].attributes.name,
   env: "development",
   style: {
     zIndex: 1
@@ -109,15 +109,15 @@ const shared = {
 };
 
 const staticPlatformAnnouncements = {
-  "1": {
-    html: "<strong>PCO Rocks!</strong>",
-    enabled: "true"
-  },
-  texas: {
-    html: "<strong>I won't be here long!</strong>",
-    enabled: "true",
-    expires_at: "2018-02-28T19:02:13Z"
-  }
+  // "1": {
+  //   html: "<strong>PCO Rocks!</strong>",
+  //   enabled: "true"
+  // },
+  // texas: {
+  //   html: "<strong>I won't be here long!</strong>",
+  //   enabled: "true",
+  //   expires_at: "2018-02-28T19:02:13Z"
+  // }
   // other: {
   //   html:
   //     "Just testing some things... <em>I won't be here long!</em>: <a href='#'>click this</a>",
@@ -291,12 +291,14 @@ class SampleTopbar extends React.Component<
           <StaticAppsProvider
             render={(apps, fetchApps) => (
               <div style={{ backgroundColor: shared.colors.base0 }}>
+                {/*
                 <PlatformAnnouncementsStyleProvider colors={shared.colors}>
                   <StyledPlatformAnnouncement>
                     <span>Static Platform Announcement</span>
                     <a href="#">link</a>
                   </StyledPlatformAnnouncement>
                 </PlatformAnnouncementsStyleProvider>
+              */}
 
                 <PlatformAnnouncements
                   announcements={staticPlatformAnnouncements}

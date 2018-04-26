@@ -5,6 +5,7 @@ import { StyledRoot } from "./styled_root";
 import { Unbutton } from "./unbutton";
 import { Avatar } from "./avatar";
 import MONO_APP_NAME from "./mono_app_name";
+import { MonoAppText } from "./mono_app_text";
 import COLOR_APP_BADGES from "./color_app_badges";
 import { ClientStorage as LocalStorageProvider } from "./client_storage";
 import { appsMenuFormatter, connectedPeopleMenuFormatter } from "./formatters";
@@ -67,7 +68,7 @@ export class Topbar extends React.Component<
 
     this.state = {
       routesMenuVisible: false,
-      userMenuVisible: false
+      userMenuVisible: true
     };
   }
 
@@ -215,13 +216,11 @@ export class Topbar extends React.Component<
                         COLOR_APP_BADGES[this.props.appName.toLowerCase()],
                         { size: "24px" }
                       )}
-                      <span style={{ marginLeft: "16px" }} />
-                      {React.createElement(
-                        MONO_APP_NAME[this.props.appName.toLowerCase()],
-                        {
-                          color: "#fff"
-                        }
-                      )}
+                      <span style={{ marginLeft: "12px" }} />
+                      <MonoAppText
+                        appName={this.props.appName.replace(/[\s-]/, "")}
+                        color="#fff"
+                      />
                     </div>
                   </div>
 
@@ -295,13 +294,11 @@ export class Topbar extends React.Component<
                                 size: "24px"
                               }
                             )}
-                            <span style={{ marginLeft: "16px" }} />
-                            {React.createElement(
-                              MONO_APP_NAME[name.toLowerCase()],
-                              {
-                                color: "#fff"
-                              }
-                            )}
+                            <span style={{ marginLeft: "12px" }} />
+                            <MonoAppText
+                              appName={name.replace(/[\s-]/, "")}
+                              color="#fff"
+                            />
                           </a>
                         </li>
                       )
