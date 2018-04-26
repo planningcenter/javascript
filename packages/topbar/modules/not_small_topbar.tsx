@@ -6,10 +6,6 @@ import { Unbutton } from "./unbutton";
 import { Avatar } from "./avatar";
 import { appsMenuFormatter, connectedPeopleMenuFormatter } from "./formatters";
 import { slightBackgroundTransition, fontFamily, IEFlex1 } from "./styles";
-
-import MONO_APP_BADGES from "./mono_app_badges";
-import MONO_APP_NAME from "./mono_app_name";
-import COLOR_APP_BADGES from "./color_app_badges";
 import { MonoAppIcon } from "./mono_app_icon";
 import { MonoAppText } from "./mono_app_text";
 import { ColorAppIcon } from "./color_app_icon";

@@ -10,7 +10,7 @@ import {
   BellSymbol,
   XSymbol,
   SpyglassSymbol,
-  PlatformAnnouncements,
+  PlatformNotifications,
   PlatformAnnouncementsStyleProvider,
   StyledPlatformAnnouncement
   // AppsProvider,
@@ -109,15 +109,15 @@ const shared = {
 };
 
 const staticPlatformAnnouncements = {
-  // "1": {
-  //   html: "<strong>PCO Rocks!</strong>",
-  //   enabled: "true"
-  // },
-  // texas: {
-  //   html: "<strong>I won't be here long!</strong>",
-  //   enabled: "true",
-  //   expires_at: "2018-02-28T19:02:13Z"
-  // }
+  "1": {
+    html: "<strong>PCO Rocks!</strong>",
+    enabled: "true"
+  },
+  texas: {
+    html: "<strong>I won't be here long!</strong>",
+    enabled: "true",
+    expires_at: "2018-02-28T19:02:13Z"
+  }
   // other: {
   //   html:
   //     "Just testing some things... <em>I won't be here long!</em>: <a href='#'>click this</a>",
@@ -317,7 +317,7 @@ class SampleTopbar extends React.Component<
                 </PlatformAnnouncementsStyleProvider>
               */}
 
-                <PlatformAnnouncements
+                <PlatformNotifications
                   announcements={staticPlatformAnnouncements}
                   colors={shared.colors}
                   env={shared.env}
