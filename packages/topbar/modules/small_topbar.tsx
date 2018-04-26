@@ -81,7 +81,7 @@ export class Topbar extends React.Component<
 
     this.state = {
       routesMenuVisible: false,
-      userMenuVisible: true,
+      userMenuVisible: false,
     };
   }
 
