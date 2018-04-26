@@ -18,7 +18,8 @@ const withoutItemContainingAttributeValue = (attr: string) => (
   arr.reduce(
     (acc, item) =>
       (item.attributes[attr] || "") === value ||
-      (item.attributes[attr] || "") === "Church Center"
+      (item.attributes[attr] || "") === "Church Center" ||
+      (item.attributes[attr] || "") === "API"
         ? acc
         : acc.concat([item]),
     []

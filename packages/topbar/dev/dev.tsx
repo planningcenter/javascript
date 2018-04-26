@@ -65,23 +65,23 @@ const apps = [
     id: "9",
     attributes: { name: "Services", url: "http://services.pco.test" },
     links: { self: "http://api.pco.test/people/v2/apps/9" }
+  },
+  {
+    type: "App",
+    id: "10",
+    attributes: { name: "Church Center", url: "http://church-center.pco.test" },
+    links: { self: "http://api.pco.test/people/v2/apps/10" }
+  },
+  {
+    type: "App",
+    id: "11",
+    attributes: { name: "API", url: "http://api.pco.test" },
+    links: { self: "http://api.pco.test/people/v2/apps/11" }
   }
-  // {
-  //   type: "App",
-  //   id: "10",
-  //   attributes: { name: "Church Center", url: "http://church-center.pco.test" },
-  //   links: { self: "http://api.pco.test/people/v2/apps/10" }
-  // }
-  // {
-  //   type: "App",
-  //   id: "11",
-  //   attributes: { name: "API", url: "http://api.pco.test" },
-  //   links: { self: "http://api.pco.test/people/v2/apps/11" }
-  // }
 ];
 
 const shared = {
-  appName: apps[0].attributes.name,
+  appName: apps[7].attributes.name,
   env: "development",
   style: {
     zIndex: 1
