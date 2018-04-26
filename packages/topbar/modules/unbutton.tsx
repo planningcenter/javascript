@@ -22,7 +22,7 @@ export const Unbutton: React.StatelessComponent<{
       WebkitAppearance: "none",
       outline: 0,
       ...fontFamily,
-      ...style
+      ...style,
     }}
     {...nativeProps}
   />

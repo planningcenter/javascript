@@ -8,28 +8,28 @@ module.exports = {
       {
         test: /\.tsx?$/,
         use: "ts-loader",
-        exclude: /node_modules/
-      }
-    ]
+        exclude: /node_modules/,
+      },
+    ],
   },
   resolve: {
-    extensions: [".tsx", ".ts", ".js"]
+    extensions: [".tsx", ".ts", ".js"],
   },
   entry: {
-    dev: "./dev/dev.tsx"
+    dev: "./dev/dev.tsx",
   },
   output: {
     filename: "[name].bundle.js",
-    path: path.resolve(__dirname, "dev")
+    path: path.resolve(__dirname, "dev"),
   },
   devtool: "inline-source-map",
   devServer: {
     watchContentBase: true,
-    port: 9000
+    port: 9000,
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "dev/index.html"
-    })
-  ]
+      template: "dev/index.html",
+    }),
+  ],
 };

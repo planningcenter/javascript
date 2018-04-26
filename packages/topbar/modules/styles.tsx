@@ -1,11 +1,11 @@
 export const slightBackgroundTransition = {
-  transition: "background-color 120ms ease-in"
+  transition: "background-color 120ms ease-in",
 };
 
 export const fontFamily = {
-  fontFamily: `"Lato", sans-serif`
+  fontFamily: `"Lato", sans-serif`,
 };
 
 export const IEFlex1 = {
-  flex: "1 1 auto"
+  flex: "1 1 auto",
 };

@@ -12,7 +12,7 @@ import {
   SpyglassSymbol,
   PlatformNotifications,
   PlatformAnnouncementsStyleProvider,
-  StyledPlatformAnnouncement
+  StyledPlatformAnnouncement,
   // AppsProvider,
   // ConnectedPeopleProvider
 } from "../index";
@@ -22,50 +22,50 @@ const apps = [
     type: "App",
     id: "1",
     attributes: { name: "Accounts", url: "http://accounts.pco.test" },
-    links: { self: "http://api.pco.test/people/v2/apps/1" }
+    links: { self: "http://api.pco.test/people/v2/apps/1" },
   },
   {
     type: "App",
     id: "3",
     attributes: { name: "People", url: "http://people.pco.test" },
-    links: { self: "http://api.pco.test/people/v2/apps/3" }
+    links: { self: "http://api.pco.test/people/v2/apps/3" },
   },
   {
     type: "App",
     id: "4",
     attributes: { name: "Check-Ins", url: "http://check-ins.pco.test" },
-    links: { self: "http://api.pco.test/people/v2/apps/4" }
+    links: { self: "http://api.pco.test/people/v2/apps/4" },
   },
   {
     type: "App",
     id: "5",
     attributes: { name: "Giving", url: "http://giving.pco.test" },
-    links: { self: "http://api.pco.test/people/v2/apps/5" }
+    links: { self: "http://api.pco.test/people/v2/apps/5" },
   },
   {
     type: "App",
     id: "6",
     attributes: { name: "Groups", url: "http://groups.pco.test" },
-    links: { self: "http://api.pco.test/people/v2/apps/6" }
+    links: { self: "http://api.pco.test/people/v2/apps/6" },
   },
   {
     type: "App",
     id: "7",
     attributes: { name: "Registrations", url: "http://registrations.pco.test" },
-    links: { self: "http://api.pco.test/people/v2/apps/7" }
+    links: { self: "http://api.pco.test/people/v2/apps/7" },
   },
   {
     type: "App",
     id: "8",
     attributes: { name: "Resources", url: "http://resources.pco.test" },
-    links: { self: "http://api.pco.test/people/v2/apps/8" }
+    links: { self: "http://api.pco.test/people/v2/apps/8" },
   },
   {
     type: "App",
     id: "9",
     attributes: { name: "Services", url: "http://services.pco.test" },
-    links: { self: "http://api.pco.test/people/v2/apps/9" }
-  }
+    links: { self: "http://api.pco.test/people/v2/apps/9" },
+  },
   // {
   //   type: "App",
   //   id: "10",
@@ -84,7 +84,7 @@ const shared = {
   appName: apps[0].attributes.name,
   env: "development",
   style: {
-    zIndex: 1
+    zIndex: 1,
   },
   // colors: {
   //   base0: "#F4C551",
@@ -104,20 +104,20 @@ const shared = {
     base0: "#6A9639",
     base1: "#55861F",
     base2: "#487813",
-    base3: "#376109"
-  }
+    base3: "#376109",
+  },
 };
 
 const staticPlatformAnnouncements = {
   "1": {
     html: "<strong>PCO Rocks!</strong>",
-    enabled: "true"
+    enabled: "true",
   },
   texas: {
     html: "<strong>I won't be here long!</strong>",
     enabled: "true",
-    expires_at: "2018-02-28T19:02:13Z"
-  }
+    expires_at: "2018-02-28T19:02:13Z",
+  },
   // other: {
   //   html:
   //     "Just testing some things... <em>I won't be here long!</em>: <a href='#'>click this</a>",
@@ -128,7 +128,7 @@ const staticPlatformAnnouncements = {
 
 const staticData = {
   routes: [["people", "#"], ["some", "#"], ["other", "#"]],
-  activeRoute: "people"
+  activeRoute: "people",
 };
 
 const asyncData = {
@@ -136,85 +136,85 @@ const asyncData = {
     {
       attributes: {
         name: "check-ins",
-        url: "#"
-      }
+        url: "#",
+      },
     },
     {
       attributes: {
         name: "groups",
-        url: "#"
-      }
+        url: "#",
+      },
     },
     {
       attributes: {
         name: "resources",
-        url: "#"
-      }
+        url: "#",
+      },
     },
     {
       attributes: {
         name: "accounts",
-        url: "#"
-      }
+        url: "#",
+      },
     },
     {
       attributes: {
         name: "giving",
-        url: "#"
-      }
+        url: "#",
+      },
     },
     {
       attributes: {
         name: "services",
-        url: "#"
-      }
+        url: "#",
+      },
     },
     {
       attributes: {
         name: "people",
-        url: "#"
-      }
+        url: "#",
+      },
     },
     {
       attributes: {
         name: "registrations",
-        url: "#"
-      }
-    }
+        url: "#",
+      },
+    },
   ],
   connectedPeople: [
     {
       id: 1,
       attributes: {
-        organization_name: "W Church"
-      }
+        organization_name: "W Church",
+      },
     },
     {
       id: 2,
       attributes: {
-        organization_name: "A Church"
-      }
+        organization_name: "A Church",
+      },
     },
     {
       id: 3,
       attributes: {
         organization_name:
-          "National Federation of Coffee National Federation of Coffee National Federation of Coffee"
-      }
+          "National Federation of Coffee National Federation of Coffee National Federation of Coffee",
+      },
     },
     {
       id: 4,
       attributes: {
-        organization_name: "Z Church"
-      }
+        organization_name: "Z Church",
+      },
     },
     {
       id: 5,
       attributes: {
-        organization_name: "C Church"
-      }
-    }
-  ]
+        organization_name: "C Church",
+      },
+    },
+  ],
 };
 
 class StaticConnectedPeopleProvider extends React.Component<
@@ -227,7 +227,7 @@ class StaticConnectedPeopleProvider extends React.Component<
     setTimeout(() => {
       window.localStorage.setItem(
         "Topbar:ConnectedPeople",
-        JSON.stringify(asyncData.connectedPeople)
+        JSON.stringify(asyncData.connectedPeople),
       );
       return this.forceUpdate();
     }, 1000);
@@ -248,8 +248,8 @@ class StaticConnectedPeopleProvider extends React.Component<
       JSON.parse(window.localStorage.getItem("Topbar:ConnectedPeople")) || [],
       {
         fetchConnectedPeople: this.mockConnectedPeopleFetch.bind(this),
-        clearConnectedPeopleCache: this.clearConnectedPeopleCache.bind(this)
-      }
+        clearConnectedPeopleCache: this.clearConnectedPeopleCache.bind(this),
+      },
     );
   }
 }
@@ -282,8 +282,8 @@ class StaticAppsProvider extends React.Component<
       JSON.parse(window.localStorage.getItem("Topbar:Apps")) || [],
       {
         fetchApps: this.mockAppsFetch.bind(this),
-        clearAppsCache: this.clearAppsCache.bind(this)
-      }
+        clearAppsCache: this.clearAppsCache.bind(this),
+      },
     );
   }
 }
@@ -303,7 +303,7 @@ class SampleTopbar extends React.Component<
       <StaticConnectedPeopleProvider
         render={(
           connectedPeople,
-          { fetchConnectedPeople, clearConnectedPeopleCache }
+          { fetchConnectedPeople, clearConnectedPeopleCache },
         ) => (
           <StaticAppsProvider
             render={(apps, { fetchApps, clearAppsCache }) => (
@@ -340,7 +340,7 @@ class SampleTopbar extends React.Component<
                             {...props}
                             style={{
                               ...style,
-                              textShadow: `${shared.colors.base2} 0 1px 1px`
+                              textShadow: `${shared.colors.base2} 0 1px 1px`,
                             }}
                           />
                         )}
@@ -365,7 +365,7 @@ class SampleTopbar extends React.Component<
                       />
                     </div>
                   )}
-                  notSmallTopbar={activeBreakpoint => (
+                  notSmallTopbar={(activeBreakpoint) => (
                     <NotSmallTopbar
                       {...shared}
                       {...staticData}
@@ -390,7 +390,7 @@ class SampleTopbar extends React.Component<
                           href={uri}
                           active={name === staticData.activeRoute}
                           style={{
-                            textShadow: `${shared.colors.base2} 0 1px 1px`
+                            textShadow: `${shared.colors.base2} 0 1px 1px`,
                           }}
                         >
                           {name}
@@ -424,7 +424,7 @@ const Notification = ({ notifications = false, style = {}, ...props }) => (
       alignItems: "center",
       paddingLeft: "16px",
       paddingRight: "16px",
-      ...style
+      ...style,
     }}
   >
     <BellSymbol
@@ -522,5 +522,5 @@ ReactDOM.render(
       convallis iaculis eleifend.
     </div>
   </div>,
-  document.getElementById("app")
+  document.getElementById("app"),
 );

@@ -13,7 +13,7 @@ const sortByAttribute = (attr: string) => (arr: any[]): any[] =>
     .sort((a, b) => a.attributes[attr].localeCompare(b.attributes[attr]));
 
 const withoutItemContainingAttributeValue = (attr: string) => (
-  value: string
+  value: string,
 ) => (arr: any[]): any[] =>
   arr.reduce(
     (acc, item) =>
@@ -22,21 +22,21 @@ const withoutItemContainingAttributeValue = (attr: string) => (
       (item.attributes[attr] || "") === "API"
         ? acc
         : acc.concat([item]),
-    []
+    [],
   );
 
 export const appsMenuFormatter = (
   apps: App[],
-  excludedAppName: string
+  excludedAppName: string,
 ): App[] =>
   withoutItemContainingAttributeValue("name")(excludedAppName)(
-    sortByAttribute("name")(apps)
+    sortByAttribute("name")(apps),
   );
 
 export const connectedPeopleMenuFormatter = (
   connectedPeople: ConnectedPerson[],
-  excludedOrgName: string
+  excludedOrgName: string,
 ): ConnectedPerson[] =>
   withoutItemContainingAttributeValue("name")(excludedOrgName)(
-    sortByAttribute("organization_name")(connectedPeople)
+    sortByAttribute("organization_name")(connectedPeople),
   );

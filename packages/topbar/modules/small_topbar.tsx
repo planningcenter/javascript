@@ -13,13 +13,13 @@ import { ColorAppIcon } from "./color_app_icon";
 
 const MENU_GUTTER = 57;
 
-const capitalize = s => s.charAt(0).toUpperCase() + s.slice(1);
+const capitalize = (s) => s.charAt(0).toUpperCase() + s.slice(1);
 
-const DisclosureChevronIcon = props => (
+const DisclosureChevronIcon = (props) => (
   <svg
     style={{
       marginLeft: "4px",
-      verticalAlign: "middle"
+      verticalAlign: "middle",
     }}
     width="16"
     height="16"
@@ -81,12 +81,12 @@ export class Topbar extends React.Component<
 
     this.state = {
       routesMenuVisible: false,
-      userMenuVisible: true
+      userMenuVisible: true,
     };
   }
 
   public static defaultProps: Partial<Props> = {
-    currentRouteComponent: props => <span {...props} />
+    currentRouteComponent: (props) => <span {...props} />,
   };
 
   componentDidUpdate() {
@@ -116,7 +116,7 @@ export class Topbar extends React.Component<
             height: "48px",
             paddingLeft: "16px",
             paddingRight: "16px",
-            justifyContent: "center"
+            justifyContent: "center",
           }}
           onClick={() => {
             this.props.requestAppsFetch();
@@ -127,12 +127,12 @@ export class Topbar extends React.Component<
                 userMenuVisible
                   ? {
                       routesMenuVisible: false,
-                      userMenuVisible: false
+                      userMenuVisible: false,
                     }
                   : {
                       routesMenuVisible: false,
-                      userMenuVisible: true
-                    }
+                      userMenuVisible: true,
+                    },
             );
           }}
         >
@@ -148,7 +148,7 @@ export class Topbar extends React.Component<
             position: "absolute",
             left: 0,
             top: "48px",
-            width: "100%"
+            width: "100%",
           }}
         >
           {this.state.routesMenuVisible && this.props.routes}
@@ -171,11 +171,11 @@ export class Topbar extends React.Component<
                 MozUserSelect: "none",
                 WebkitUserSelect: "none",
                 userSelect: "none",
-                WebkitTapHighlightColor: "transparent"
+                WebkitTapHighlightColor: "transparent",
               }}
               onClick={() =>
                 this.setState(({ userMenuVisible }) => ({
-                  userMenuVisible: !userMenuVisible
+                  userMenuVisible: !userMenuVisible,
                 }))
               }
             >
@@ -184,7 +184,7 @@ export class Topbar extends React.Component<
                   position: "absolute",
                   top: "11px",
                   right: "17px",
-                  color: "white"
+                  color: "white",
                 }}
               >
                 <svg
@@ -202,14 +202,14 @@ export class Topbar extends React.Component<
               </div>
 
               <div
-                onClick={e => e.stopPropagation()}
+                onClick={(e) => e.stopPropagation()}
                 style={{
                   display: "flex",
                   flexDirection: "column",
                   position: "relative",
                   height: "100%",
                   width: `calc(100% - ${MENU_GUTTER}px)`,
-                  backgroundColor: "#424242" // "white"
+                  backgroundColor: "#424242", // "white"
                 }}
               >
                 <div
@@ -220,7 +220,7 @@ export class Topbar extends React.Component<
                     paddingRight: "16px",
                     borderBottom: "1px solid #363636",
                     display: "flex",
-                    alignItems: "center"
+                    alignItems: "center",
                   }}
                 >
                   <div style={{ ...IEFlex1 }}>
@@ -242,7 +242,7 @@ export class Topbar extends React.Component<
                           userSwitchState ? this.props.colors.base1 : "#292929"
                         }`,
                         display: "flex",
-                        alignItems: "center"
+                        alignItems: "center",
                       }}
                     >
                       <Avatar
@@ -267,7 +267,7 @@ export class Topbar extends React.Component<
                   style={{
                     ...IEFlex1,
                     overflowY: "scroll",
-                    WebkitOverflowScrolling: "touch"
+                    WebkitOverflowScrolling: "touch",
                   }}
                 >
                   <ul style={{ padding: 0, margin: 0 }}>
@@ -277,7 +277,7 @@ export class Topbar extends React.Component<
                           key={name}
                           style={{
                             listStyleType: "none",
-                            borderTop: "1px solid #363636"
+                            borderTop: "1px solid #363636",
                           }}
                         >
                           <a
@@ -286,17 +286,17 @@ export class Topbar extends React.Component<
                               alignItems: "center",
                               height: "48px",
                               paddingLeft: "16px",
-                              paddingRight: "16px"
+                              paddingRight: "16px",
                             }}
                             data-turbolinks={false}
                             href={`${pcoUrl(this.props.env)(
-                              "accounts"
+                              "accounts",
                             )}/apps/${name.toLowerCase()}`}
                           >
                             <UserMenuAppLockup appName={name} />
                           </a>
                         </li>
-                      )
+                      ),
                     )}
                   </ul>
                   <div
@@ -309,7 +309,7 @@ export class Topbar extends React.Component<
                       right: "12px",
                       top: "60px",
                       width: "calc(100% - 68px)",
-                      height: "calc(100% - 124px)"
+                      height: "calc(100% - 124px)",
                     }}
                   >
                     <div
@@ -318,7 +318,7 @@ export class Topbar extends React.Component<
                         flexDirection: "column",
                         height: "100%",
                         overflowY: "scroll",
-                        WebkitOverflowScrolling: "touch"
+                        WebkitOverflowScrolling: "touch",
                       }}
                     >
                       <div
@@ -327,14 +327,14 @@ export class Topbar extends React.Component<
                           overflow: "hidden",
                           textOverflow: "ellipsis",
                           whiteSpace: "nowrap",
-                          padding: "16px"
+                          padding: "16px",
                         }}
                       >
                         <div
                           style={{
                             fontSize: "15px",
                             lineHeight: "1em",
-                            marginBottom: "8px"
+                            marginBottom: "8px",
                           }}
                         >
                           <strong>{this.props.userName}</strong>
@@ -354,17 +354,17 @@ export class Topbar extends React.Component<
                             padding: 0,
                             listStyleType: "none",
                             borderTop: "1px solid #F2F2F2",
-                            fontSize: "15px"
+                            fontSize: "15px",
                           }}
                         >
                           {connectedPeopleMenuFormatter(
                             this.props.connectedPeople,
-                            this.props.orgName
+                            this.props.orgName,
                           ).map(({ id, attributes: person }) => (
                             <li key={id}>
                               <a
                                 href={`${pcoUrl(this.props.env)(
-                                  "accounts"
+                                  "accounts",
                                 )}/link/new?to=${id}&return=${
                                   this.props.appName
                                 }%2f`}
@@ -384,7 +384,7 @@ export class Topbar extends React.Component<
                                   lineHeight: "48px",
                                   display: "block",
                                   color: "#444",
-                                  borderTop: "1px solid #ddd"
+                                  borderTop: "1px solid #ddd",
                                 }}
                               >
                                 {person.organization_name}
@@ -397,7 +397,7 @@ export class Topbar extends React.Component<
                         {this.props.connectedPeople.length && (
                           <a
                             href={`${pcoUrl(this.props.env)(
-                              "accounts"
+                              "accounts",
                             )}/unlink`}
                             onClick={() => {
                               this.props.requestClearAppsCache();
@@ -410,7 +410,7 @@ export class Topbar extends React.Component<
                               textAlign: "center",
                               borderTop: "1px solid #F2F2F2",
                               lineHeight: "48px",
-                              color: "#ef5433"
+                              color: "#ef5433",
                             }}
                           >
                             Unlink My Accounts
@@ -427,13 +427,13 @@ export class Topbar extends React.Component<
                     display: "flex",
                     flexDirection: "row",
                     textAlign: "center",
-                    lineHeight: "48px"
+                    lineHeight: "48px",
                   }}
                 >
                   <div
                     style={{
                       ...IEFlex1,
-                      borderRight: "1px solid #363636"
+                      borderRight: "1px solid #363636",
                     }}
                   >
                     <Unbutton
@@ -441,7 +441,7 @@ export class Topbar extends React.Component<
                         color: "white",
                         fontWeight: "bold",
                         fontSize: "15px",
-                        letterSpacing: "-.05em"
+                        letterSpacing: "-.05em",
                       }}
                       id="jsLaunchHelpdesk"
                     >
@@ -463,7 +463,7 @@ export class Topbar extends React.Component<
                         fontWeight: "bold",
                         fontSize: "15px",
                         letterSpacing: "-.05em",
-                        textDecoration: "none"
+                        textDecoration: "none",
                       }}
                     >
                       Log out
@@ -480,7 +480,7 @@ export class Topbar extends React.Component<
             ...IEFlex1,
             textAlign: "center",
             fontWeight: "bold",
-            lineHeight: "48px"
+            lineHeight: "48px",
           }}
           onClick={() =>
             this.setState(
@@ -488,12 +488,12 @@ export class Topbar extends React.Component<
                 routesMenuVisible
                   ? {
                       routesMenuVisible: false,
-                      userMenuVisible: false
+                      userMenuVisible: false,
                     }
                   : {
                       routesMenuVisible: true,
-                      userMenuVisible: false
-                    }
+                      userMenuVisible: false,
+                    },
             )
           }
         >
@@ -527,7 +527,7 @@ export const Route = ({ active, ...props }) => (
       lineHeight: "47px",
       textAlign: "center",
       ...fontFamily,
-      ...(active && { backgroundColor: "#333" })
+      ...(active && { backgroundColor: "#333" }),
     }}
     {...props}
   />

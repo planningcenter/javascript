@@ -33,7 +33,7 @@ export class PointBreak extends React.Component<
     super(props);
 
     this.state = {
-      width: window.innerWidth
+      width: window.innerWidth,
     };
 
     this.setWindowWidth = this.setWindowWidth.bind(this);
@@ -47,7 +47,7 @@ export class PointBreak extends React.Component<
     window.addEventListener(
       "resize",
       debounce(this.setWindowWidth, 100),
-      false
+      false,
     );
   }
 
@@ -55,7 +55,7 @@ export class PointBreak extends React.Component<
     window.removeEventListener(
       "resize",
       debounce(this.setWindowWidth, 100),
-      false
+      false,
     );
   }
 
@@ -82,7 +82,7 @@ export class DisplaySwitch extends React.Component<
   render() {
     return (
       <PointBreak
-        render={breakpoint => {
+        render={(breakpoint) => {
           if (["xs", "sm"].indexOf(breakpoint) !== -1) {
             return this.props.smallTopbar(breakpoint);
           }

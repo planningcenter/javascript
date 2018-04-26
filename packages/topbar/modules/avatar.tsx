@@ -22,7 +22,7 @@ export const Avatar: React.StatelessComponent<{
         backgroundPosition: "center",
         backgroundSize: "cover",
         backgroundImage: `url(${url})`,
-        ...style
+        ...style,
       }}
       {...nativeProps}
     />

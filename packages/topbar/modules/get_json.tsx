@@ -3,9 +3,9 @@ import * as request from "superagent";
 export default (
   url: string,
   cb: any,
-  handleError = err => {
+  handleError = (err) => {
     console.warn(err);
-  }
+  },
 ) =>
   request
     .get(url)

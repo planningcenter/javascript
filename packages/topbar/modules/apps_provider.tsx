@@ -15,16 +15,16 @@ export class AppsProvider extends React.Component<
     super(props);
 
     this.state = {
-      apps: []
+      apps: [],
     };
   }
 
   fetchApps() {
-    getJSON(`${pcoUrl(this.props.env)("api")}/people/v2/me/apps`, res => {
+    getJSON(`${pcoUrl(this.props.env)("api")}/people/v2/me/apps`, (res) => {
       const apps = res.data;
 
       return this.setState({ apps }, () =>
-        window.localStorage.setItem("Topbar:Apps", JSON.stringify(apps))
+        window.localStorage.setItem("Topbar:Apps", JSON.stringify(apps)),
       );
     });
   }
@@ -44,7 +44,7 @@ export class AppsProvider extends React.Component<
   render() {
     return this.props.render(this.state.apps || [], {
       fetchApps: this.fetchApps.bind(this),
-      clearAppsCache: this.clearAppsCache.bind(this)
+      clearAppsCache: this.clearAppsCache.bind(this),
     });
   }
 }

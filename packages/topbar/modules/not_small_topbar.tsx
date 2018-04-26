@@ -27,7 +27,7 @@ class AppsButton extends React.Component<
     super(props);
     this.state = {
       entered: false,
-      down: false
+      down: false,
     };
   }
 
@@ -60,7 +60,7 @@ class AppsButton extends React.Component<
           alignItems: "center",
           backgroundColor: getBackgroundColor(),
           ...slightBackgroundTransition,
-          ...style
+          ...style,
         }}
         onClick={onClick}
         onMouseEnter={() => this.setState({ entered: true })}
@@ -101,7 +101,7 @@ class HoverableListItem extends React.Component<
   constructor(props: any) {
     super(props);
     this.state = {
-      entered: false
+      entered: false,
     };
   }
 
@@ -117,7 +117,7 @@ class HoverableListItem extends React.Component<
       <C
         style={{
           ...style,
-          backgroundColor: getBackgroundColor()
+          backgroundColor: getBackgroundColor(),
         }}
         onMouseEnter={() => this.setState({ entered: true })}
         onMouseLeave={() => this.setState({ entered: false })}
@@ -145,7 +145,7 @@ class Hoverable extends React.Component<
     super(props);
     this.state = {
       entered: false,
-      down: false
+      down: false,
     };
   }
 
@@ -164,7 +164,7 @@ class Hoverable extends React.Component<
           ...fontFamily,
           ...style,
           ...(this.state.entered && hover),
-          ...(this.state.down && active)
+          ...(this.state.down && active),
         }}
         onMouseEnter={() => this.setState({ entered: true })}
         onMouseLeave={() => this.setState({ entered: false })}
@@ -176,7 +176,7 @@ class Hoverable extends React.Component<
   }
 }
 
-const AppsMenu = props => (
+const AppsMenu = (props) => (
   <PopupRoot>
     <Popup
       style={{
@@ -185,13 +185,13 @@ const AppsMenu = props => (
           ? {
               visibility: "visible",
               opacity: 1,
-              transition: "none"
+              transition: "none",
             }
           : {
               visibility: "hidden",
               opacity: 0,
-              transition: "all 120ms ease-in"
-            })
+              transition: "all 120ms ease-in",
+            }),
       }}
       component={Outsider}
       onOutsideClick={props.toggle}
@@ -211,7 +211,7 @@ const AppsMenu = props => (
               height: "48px",
               alignItems: "center",
               ...fontFamily,
-              ...(i && { borderTop: "1px solid #ddd" })
+              ...(i && { borderTop: "1px solid #ddd" }),
             }}
             key={name}
             href={`${pcoUrl(props.env)("accounts")}/apps/${name.toLowerCase()}`}
@@ -233,7 +233,7 @@ const AppsMenu = props => (
 
 const DisclosureChevronIcon = ({
   colors,
-  style
+  style,
 }: {
   colors: any;
   style?: object;
@@ -241,7 +241,7 @@ const DisclosureChevronIcon = ({
   <svg
     style={{
       margin: "-3px",
-      ...style
+      ...style,
     }}
     width="16"
     height="16"
@@ -306,7 +306,7 @@ class Outsider extends React.Component<
       document.addEventListener("click", this.handleOutsideClick, true);
     }
 
-    return <div ref={c => (this.container = c)} {...props} />;
+    return <div ref={(c) => (this.container = c)} {...props} />;
   }
 }
 
@@ -320,7 +320,7 @@ class PopupRoot extends React.Component<{ style?: object }, {}> {
           position: "relative",
           alignSelf: "flex-end",
           display: "flex",
-          ...style
+          ...style,
         }}
         {...nativeProps}
       />
@@ -341,7 +341,7 @@ const Popup: React.StatelessComponent<{
       boxShadow: "0 0 0 1px #D4D9E2, 0 8px 32px rgba(0,0,0,.3)",
       borderRadius: "3px",
       position: "absolute",
-      ...style
+      ...style,
     }}
     {...nativeProps}
   />
@@ -382,7 +382,7 @@ export class Topbar extends React.Component<
     notifications: () => null,
     search: () => null,
     linkToProfile: true,
-    showOrgName: true
+    showOrgName: true,
   };
 
   constructor(props: any) {
@@ -391,7 +391,7 @@ export class Topbar extends React.Component<
     this.state = {
       routesVisible: true,
       appsMenuVisible: false,
-      userMenuVisible: false
+      userMenuVisible: false,
     };
 
     this.hideRoutes = this.hideRoutes.bind(this);
@@ -419,7 +419,7 @@ export class Topbar extends React.Component<
         style={{
           paddingLeft: "8px",
           paddingRight: "16px",
-          ...this.props.style
+          ...this.props.style,
         }}
       >
         <AppsMenu
@@ -428,7 +428,7 @@ export class Topbar extends React.Component<
           visible={this.state.appsMenuVisible}
           toggle={() =>
             this.setState(({ appsMenuVisible }) => ({
-              appsMenuVisible: !appsMenuVisible
+              appsMenuVisible: !appsMenuVisible,
             }))
           }
         />
@@ -439,9 +439,9 @@ export class Topbar extends React.Component<
           onClick={() =>
             this.setState(
               ({ appsMenuVisible }) => ({
-                appsMenuVisible: !appsMenuVisible
+                appsMenuVisible: !appsMenuVisible,
               }),
-              this.props.requestAppsFetch()
+              this.props.requestAppsFetch(),
             )
           }
           appName={this.props.appName}
@@ -457,7 +457,7 @@ export class Topbar extends React.Component<
 
         {this.props.search({
           hideRoutes: this.hideRoutes,
-          showRoutes: this.showRoutes
+          showRoutes: this.showRoutes,
         })}
 
         <div
@@ -465,7 +465,7 @@ export class Topbar extends React.Component<
             marginLeft: "1rem",
             position: "relative",
             whiteSpace: "nowrap",
-            cursor: "pointer"
+            cursor: "pointer",
           }}
         >
           <Hoverable
@@ -485,16 +485,16 @@ export class Topbar extends React.Component<
               color: "white",
               backgroundColor: this.props.colors.base1,
               display: "flex",
-              ...slightBackgroundTransition
+              ...slightBackgroundTransition,
             }}
             active={{ backgroundColor: this.props.colors.base3 }}
             hover={{ backgroundColor: this.props.colors.base2 }}
             onClick={() =>
               this.setState(
                 ({ userMenuVisible }) => ({
-                  userMenuVisible: !userMenuVisible
+                  userMenuVisible: !userMenuVisible,
                 }),
-                this.props.requestConnectedPeopleFetch()
+                this.props.requestConnectedPeopleFetch(),
               )
             }
           >
@@ -508,7 +508,7 @@ export class Topbar extends React.Component<
                   whiteSpace: "nowrap",
                   overflow: "hidden",
                   textOverflow: "ellipsis",
-                  maxWidth: "15em"
+                  maxWidth: "15em",
                 }}
               >
                 {this.props.orgName}
@@ -516,7 +516,7 @@ export class Topbar extends React.Component<
             ) : (
               <div
                 style={{
-                  margin: "0 4px 0 4px"
+                  margin: "0 4px 0 4px",
                 }}
               />
             )}
@@ -531,7 +531,7 @@ export class Topbar extends React.Component<
             component={Outsider}
             onOutsideClick={() =>
               this.setState(({ userMenuVisible }) => ({
-                userMenuVisible: !userMenuVisible
+                userMenuVisible: !userMenuVisible,
               }))
             }
             cleanup={!this.state.userMenuVisible}
@@ -544,14 +544,14 @@ export class Topbar extends React.Component<
                 ? {
                     visibility: "visible",
                     opacity: 1,
-                    transition: "none"
+                    transition: "none",
                   }
                 : {
                     visibility: "hidden",
                     opacity: 0,
-                    transition: "all 120ms ease-in"
+                    transition: "all 120ms ease-in",
                   }),
-              cursor: "default"
+              cursor: "default",
             }}
           >
             <div>
@@ -562,14 +562,14 @@ export class Topbar extends React.Component<
                 style={{
                   display: "block",
                   padding: "16px",
-                  textDecoration: "none"
+                  textDecoration: "none",
                 }}
               >
                 <div
                   style={{
                     fontSize: "18px",
                     lineHeight: "24px",
-                    display: "flex"
+                    display: "flex",
                   }}
                 >
                   <div
@@ -577,7 +577,7 @@ export class Topbar extends React.Component<
                       ...IEFlex1,
                       ...fontFamily,
                       color: "#444",
-                      whiteSpace: "nowrap"
+                      whiteSpace: "nowrap",
                     }}
                   >
                     {this.props.userName}
@@ -589,7 +589,7 @@ export class Topbar extends React.Component<
                         marginLeft: "64px",
                         fontSize: "12px",
                         color: "#666",
-                        ...fontFamily
+                        ...fontFamily,
                       }}
                     >
                       profile
@@ -605,7 +605,7 @@ export class Topbar extends React.Component<
                     whiteSpace: "nowrap",
                     overflow: "hidden",
                     textOverflow: "ellipsis",
-                    ...fontFamily
+                    ...fontFamily,
                   }}
                 >
                   {this.props.orgName}
@@ -620,7 +620,7 @@ export class Topbar extends React.Component<
                     alignItems: "center",
                     borderTop: "1px solid #ddd",
                     lineHeight: "32px",
-                    padding: "0 16px"
+                    padding: "0 16px",
                   }}
                 >
                   <div
@@ -630,7 +630,7 @@ export class Topbar extends React.Component<
                       color: "#666",
                       fontSize: "12px",
                       whiteSpace: "nowrap",
-                      ...fontFamily
+                      ...fontFamily,
                     }}
                   >
                     Linked Accounts
@@ -641,7 +641,7 @@ export class Topbar extends React.Component<
                       ...IEFlex1,
                       textAlign: "right",
                       alignItems: "center",
-                      fontSize: "12px"
+                      fontSize: "12px",
                     }}
                   >
                     <a
@@ -656,7 +656,7 @@ export class Topbar extends React.Component<
                         color: "#666",
                         textDecoration: "none",
                         marginLeft: "64px",
-                        ...fontFamily
+                        ...fontFamily,
                       }}
                     >
                       unlink
@@ -676,12 +676,12 @@ export class Topbar extends React.Component<
               >
                 {connectedPeopleMenuFormatter(
                   this.props.connectedPeople,
-                  this.props.orgName
+                  this.props.orgName,
                 ).map(({ id, attributes: person }) => (
                   <HoverableListItem component="li" key={id}>
                     <a
                       href={`${pcoUrl(this.props.env)(
-                        "accounts"
+                        "accounts",
                       )}/link/new?to=${id}&return=${this.props.appName}%2f`}
                       data-turbolinks={false}
                       onClick={() => {
@@ -700,7 +700,7 @@ export class Topbar extends React.Component<
                         textDecoration: "none",
                         overflow: "hidden",
                         textOverflow: "ellipsis",
-                        ...fontFamily
+                        ...fontFamily,
                       }}
                     >
                       {person.organization_name}
@@ -726,7 +726,7 @@ export class Topbar extends React.Component<
                 display: "block",
                 color: "#444",
                 textDecoration: "none",
-                ...fontFamily
+                ...fontFamily,
               }}
             >
               <svg
@@ -783,7 +783,7 @@ export class Route extends React.Component<
     super(props);
     this.state = {
       entered: false,
-      down: false
+      down: false,
     };
   }
 
@@ -813,7 +813,7 @@ export class Route extends React.Component<
           backgroundColor: getBackgroundColor(),
           ...fontFamily,
           ...slightBackgroundTransition,
-          ...style
+          ...style,
         }}
         onMouseEnter={() => this.setState({ entered: true })}
         onMouseLeave={() => this.setState({ entered: false })}

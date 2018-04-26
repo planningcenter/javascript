@@ -13,7 +13,7 @@ export function StyledRoot({ children, style, ...nativeProps }): JSX.Element {
         fontFamily: "Lato",
         WebkitFontSmoothing: "antialiased",
         MozOsxFontSmoothing: "grayscale",
-        ...style
+        ...style,
       }}
       {...nativeProps}
     >

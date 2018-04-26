@@ -7,7 +7,7 @@ export class ConnectedPeopleProvider extends React.Component<
     env: string;
     render: (
       connectedPeople: object[],
-      callback: any
+      callback: any,
     ) => React.ReactElement<any>;
   },
   {
@@ -18,27 +18,27 @@ export class ConnectedPeopleProvider extends React.Component<
     super(props);
 
     this.state = {
-      connectedPeople: []
+      connectedPeople: [],
     };
   }
 
   fetchConnectedPeople() {
     getJSON(
       `${pcoUrl(this.props.env)("api")}/people/v2/me/connected_people`,
-      res => {
+      (res) => {
         const connectedPeople = res.data;
 
         return this.setState(
           {
-            connectedPeople
+            connectedPeople,
           },
           () =>
             window.localStorage.setItem(
               "Topbar:ConnectedPeople",
-              JSON.stringify(connectedPeople)
-            )
+              JSON.stringify(connectedPeople),
+            ),
         );
-      }
+      },
     );
   }
 
@@ -48,7 +48,7 @@ export class ConnectedPeopleProvider extends React.Component<
 
   componentDidMount() {
     const connectedPeople = JSON.parse(
-      window.localStorage.getItem("Topbar:ConnectedPeople")
+      window.localStorage.getItem("Topbar:ConnectedPeople"),
     );
 
     if (connectedPeople) return this.setState({ connectedPeople });
@@ -59,7 +59,7 @@ export class ConnectedPeopleProvider extends React.Component<
   render() {
     return this.props.render(this.state.connectedPeople || [], {
       fetchConnectedPeople: this.fetchConnectedPeople.bind(this),
-      clearConnectedPeopleCache: this.clearConnectedPeopleCache.bind(this)
+      clearConnectedPeopleCache: this.clearConnectedPeopleCache.bind(this),
     });
   }
 }

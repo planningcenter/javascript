@@ -14,9 +14,9 @@ const entries = function(obj) {
 };
 
 function formatter(announcements) {
-  return entries(announcements).map(entry => ({
+  return entries(announcements).map((entry) => ({
     id: entry[0],
-    data: entry[1]
+    data: entry[1],
   }));
 }
 
@@ -37,12 +37,12 @@ class Provider extends React.Component<
     super(props);
 
     this.state = {
-      announcements: props.initialAnnouncements
+      announcements: props.initialAnnouncements,
     };
   }
 
   public static defaultProps: Partial<ProviderProps> = {
-    formatter: formatter
+    formatter: formatter,
   };
 
   dismissAnnouncements(id) {
@@ -56,8 +56,8 @@ class Provider extends React.Component<
     return request
       .post(
         `${pcURL(this.props.env)(
-          "api"
-        )}/people/v2/me/platform_notifications/${id}/dismiss`
+          "api",
+        )}/people/v2/me/platform_notifications/${id}/dismiss`,
       )
       .withCredentials()
       .end(() => {
@@ -68,7 +68,7 @@ class Provider extends React.Component<
   render() {
     return this.props.children(
       { announcements: this.props.formatter(this.state.announcements) },
-      { dismissAnnouncements: this.dismissAnnouncements.bind(this) }
+      { dismissAnnouncements: this.dismissAnnouncements.bind(this) },
     );
   }
 }
@@ -82,7 +82,7 @@ export class StyledAnnouncement extends React.Component<
 
     return (
       <PointBreak
-        render={breakpoint => (
+        render={(breakpoint) => (
           <div
             style={{
               display: "flex",
@@ -93,7 +93,7 @@ export class StyledAnnouncement extends React.Component<
               paddingBottom: 16,
               paddingRight: 18,
               borderTop: "1px solid rgba(0,0,0,.35)",
-              ...style
+              ...style,
             }}
             {...platformProps}
           />
@@ -120,7 +120,7 @@ export class StyleProvider extends React.Component<
         style={{
           color: "white",
           backgroundColor: "#282828",
-          ...style
+          ...style,
         }}
         {...platformProps}
       >
@@ -156,7 +156,7 @@ export default class PlatformAnnouncements extends React.Component<
         html={announcement.data.html}
         onClick={() => actions.dismissAnnouncements(announcement.id)}
       />
-    )
+    ),
   };
 
   render() {
@@ -169,8 +169,8 @@ export default class PlatformAnnouncements extends React.Component<
           {(data, actions) =>
             Boolean(data.announcements.length > 0) ? (
               <div>
-                {data.announcements.map(announcement =>
-                  this.props.renderItem({ announcement, actions })
+                {data.announcements.map((announcement) =>
+                  this.props.renderItem({ announcement, actions }),
                 )}
               </div>
             ) : null
@@ -192,7 +192,7 @@ function StyledDismissButton({ ...props }: any): JSX.Element {
         WebkitAppearance: "none",
         // larger click target without increasing box
         padding: 8,
-        margin: -8
+        margin: -8,
       }}
       {...props}
     >
@@ -209,7 +209,7 @@ function DissmissibleAnnouncement(props: {
     <StyledAnnouncement>
       <span
         dangerouslySetInnerHTML={{
-          __html: props.html
+          __html: props.html,
         }}
       />
 

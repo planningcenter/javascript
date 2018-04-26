@@ -8,7 +8,7 @@ export interface Props {
 
 export class ClientStorage extends React.Component<Props, {}> {
   public static defaultProps: Partial<Props> = {
-    method: "localStorage"
+    method: "localStorage",
   };
 
   update(value) {
@@ -20,7 +20,7 @@ export class ClientStorage extends React.Component<Props, {}> {
     return this.props.render(
       JSON.parse(window[this.props.method].getItem(this.props.item)) ||
         undefined,
-      this.update.bind(this)
+      this.update.bind(this),
     );
   }
 }
