@@ -5,7 +5,7 @@
   "source": "index.js",
   "main": "dist/finder.js",
   "module": "dist/finder.m.js",
-  "browser": "dist/finder.umd.js",
+  "umd:main": "dist/finder.umd.js",
   "repository": "https://github.com/planningcenter/javascript",
   "author": "Michael Chan <mijoch@gmail.com>",
   "license": "MIT",
