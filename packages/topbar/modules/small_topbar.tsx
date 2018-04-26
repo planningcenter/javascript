@@ -4,14 +4,12 @@ import pcoUrl from "./pco_url";
 import { StyledRoot } from "./styled_root";
 import { Unbutton } from "./unbutton";
 import { Avatar } from "./avatar";
-import MONO_APP_NAME from "./mono_app_name";
-import { MonoAppText } from "./mono_app_text";
-import COLOR_APP_BADGES from "./color_app_badges";
-import { ColorAppIcon } from "./color_app_icon";
 import { ClientStorage as LocalStorageProvider } from "./client_storage";
 import { appsMenuFormatter, connectedPeopleMenuFormatter } from "./formatters";
 import { IEFlex1, fontFamily } from "./styles";
 import { MonoAppIcon } from "./mono_app_icon";
+import { MonoAppText } from "./mono_app_text";
+import { ColorAppIcon } from "./color_app_icon";
 
 const MENU_GUTTER = 57;
 
@@ -55,6 +53,18 @@ export interface Props {
   requestAppsFetch: any;
   requestConnectedPeopleFetch: any;
   notifications?: any;
+}
+
+function UserMenuAppLockup(props) {
+  let appName = props.appName.replace(/[\s-]/, "");
+
+  return (
+    <div>
+      <ColorAppIcon appName={appName} size={28} />
+      <span style={{ marginLeft: "12px" }} />
+      <MonoAppText appName={appName} color="#fff" size={28} />
+    </div>
+  );
 }
 
 export class Topbar extends React.Component<
@@ -213,16 +223,7 @@ export class Topbar extends React.Component<
                 >
                   <div style={{ ...IEFlex1 }}>
                     <div style={{ display: "flex", alignItems: "center" }}>
-                      <ColorAppIcon
-                        appName={this.props.appName.replace(/[\s-]/, "")}
-                        size={28}
-                      />
-                      <span style={{ marginLeft: "12px" }} />
-                      <MonoAppText
-                        appName={this.props.appName.replace(/[\s-]/, "")}
-                        color="#fff"
-                        size={28}
-                      />
+                      <UserMenuAppLockup appName={this.props.appName} />
                     </div>
                   </div>
 
@@ -290,16 +291,7 @@ export class Topbar extends React.Component<
                               "accounts"
                             )}/apps/${name.toLowerCase()}`}
                           >
-                            <ColorAppIcon
-                              appName={name.replace(/[\s-]/, "")}
-                              size={28}
-                            />
-                            <span style={{ marginLeft: "12px" }} />
-                            <MonoAppText
-                              appName={name.replace(/[\s-]/, "")}
-                              color="#fff"
-                              size={28}
-                            />
+                            <UserMenuAppLockup appName={name} />
                           </a>
                         </li>
                       )
