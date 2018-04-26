@@ -96,6 +96,7 @@ class HoverableListItem extends React.Component<
     component?: any;
     style?: object;
     href?: string;
+    onClick?: any;
   },
   {
     entered: boolean;
@@ -368,6 +369,8 @@ export interface Props {
   notifications?: any;
   requestAppsFetch: any;
   requestConnectedPeopleFetch: any;
+  requestClearAppsCache: any;
+  requestClearConnectedPeopleCache: any;
   linkToProfile?: boolean;
 }
 
@@ -648,6 +651,11 @@ export class Topbar extends React.Component<
                     <a
                       href={`${pcoUrl(this.props.env)("accounts")}/unlink`}
                       data-turbolinks={false}
+                      onClick={() => {
+                        this.props.requestClearAppsCache();
+                        this.props.requestClearConnectedPeopleCache();
+                        return;
+                      }}
                       style={{
                         color: "#666",
                         textDecoration: "none",
@@ -680,6 +688,11 @@ export class Topbar extends React.Component<
                         "accounts"
                       )}/link/new?to=${id}&return=${this.props.appName}%2f`}
                       data-turbolinks={false}
+                      onClick={() => {
+                        this.props.requestClearAppsCache();
+                        this.props.requestClearConnectedPeopleCache();
+                        return;
+                      }}
                       style={{
                         marginLeft: "16px",
                         paddingRight: "16px",
@@ -704,6 +717,11 @@ export class Topbar extends React.Component<
             <HoverableListItem
               component="a"
               href={`${pcoUrl(this.props.env)("accounts")}/logout`}
+              onClick={() => {
+                this.props.requestClearAppsCache();
+                this.props.requestClearConnectedPeopleCache();
+                return;
+              }}
               data-turbolinks={false}
               style={{
                 textAlign: "center",

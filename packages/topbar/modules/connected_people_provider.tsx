@@ -42,6 +42,10 @@ export class ConnectedPeopleProvider extends React.Component<
     );
   }
 
+  clearConnectedPeopleCache() {
+    window.localStorage.removeItem("Topbar:ConnectedPeople");
+  }
+
   componentDidMount() {
     const connectedPeople = JSON.parse(
       window.localStorage.getItem("Topbar:ConnectedPeople")
@@ -53,9 +57,9 @@ export class ConnectedPeopleProvider extends React.Component<
   }
 
   render() {
-    return this.props.render(
-      this.state.connectedPeople || [],
-      this.fetchConnectedPeople.bind(this)
-    );
+    return this.props.render(this.state.connectedPeople || [], {
+      fetchConnectedPeople: this.fetchConnectedPeople.bind(this),
+      clearConnectedPeopleCache: this.clearConnectedPeopleCache.bind(this)
+    });
   }
 }

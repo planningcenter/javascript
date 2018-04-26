@@ -233,6 +233,10 @@ class StaticConnectedPeopleProvider extends React.Component<
     }, 1000);
   }
 
+  clearConnectedPeopleCache() {
+    return window.localStorage.removeItem("Topbar:ConnectedPeople");
+  }
+
   componentDidMount() {
     if (!JSON.parse(window.localStorage.getItem("Topbar:ConnectedPeople"))) {
       this.mockConnectedPeopleFetch();
@@ -242,7 +246,10 @@ class StaticConnectedPeopleProvider extends React.Component<
   render() {
     return this.props.render(
       JSON.parse(window.localStorage.getItem("Topbar:ConnectedPeople")) || [],
-      this.mockConnectedPeopleFetch.bind(this)
+      {
+        fetchConnectedPeople: this.mockConnectedPeopleFetch.bind(this),
+        clearConnectedPeopleCache: this.clearConnectedPeopleCache.bind(this)
+      }
     );
   }
 }
@@ -260,6 +267,10 @@ class StaticAppsProvider extends React.Component<
     }, 1000);
   }
 
+  clearAppsCache() {
+    return window.localStorage.removeItem("Topbar:Apps");
+  }
+
   componentDidMount() {
     if (!JSON.parse(window.localStorage.getItem("Topbar:Apps"))) {
       this.mockAppsFetch();
@@ -269,7 +280,10 @@ class StaticAppsProvider extends React.Component<
   render() {
     return this.props.render(
       JSON.parse(window.localStorage.getItem("Topbar:Apps")) || [],
-      this.mockAppsFetch.bind(this)
+      {
+        fetchApps: this.mockAppsFetch.bind(this),
+        clearAppsCache: this.clearAppsCache.bind(this)
+      }
     );
   }
 }
@@ -287,9 +301,12 @@ class SampleTopbar extends React.Component<
   render() {
     return (
       <StaticConnectedPeopleProvider
-        render={(connectedPeople, fetchConnectedPeople) => (
+        render={(
+          connectedPeople,
+          { fetchConnectedPeople, clearConnectedPeopleCache }
+        ) => (
           <StaticAppsProvider
-            render={(apps, fetchApps) => (
+            render={(apps, { fetchApps, clearAppsCache }) => (
               <div style={{ backgroundColor: shared.colors.base0 }}>
                 {/*
                 <PlatformAnnouncementsStyleProvider colors={shared.colors}>
@@ -328,6 +345,10 @@ class SampleTopbar extends React.Component<
                           />
                         )}
                         requestAppsFetch={fetchApps}
+                        requestClearConnectedPeopleCache={
+                          clearConnectedPeopleCache
+                        }
+                        requestClearAppsCache={clearAppsCache}
                         requestConnectedPeopleFetch={fetchConnectedPeople}
                         routes={staticData.routes.map(([name, uri]) => (
                           <SmallRoute
@@ -356,6 +377,10 @@ class SampleTopbar extends React.Component<
                       orgName={this.props.orgName}
                       showOrgName={["xl"].indexOf(activeBreakpoint) !== -1}
                       requestAppsFetch={fetchApps}
+                      requestClearConnectedPeopleCache={
+                        clearConnectedPeopleCache
+                      }
+                      requestClearAppsCache={clearAppsCache}
                       linkToProfile={true}
                       requestConnectedPeopleFetch={fetchConnectedPeople}
                       routes={staticData.routes.map(([name, uri]) => (

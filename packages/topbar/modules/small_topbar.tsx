@@ -52,6 +52,8 @@ export interface Props {
   currentRouteComponent?: any;
   requestAppsFetch: any;
   requestConnectedPeopleFetch: any;
+  requestClearAppsCache: any;
+  requestClearConnectedPeopleCache: any;
   notifications?: any;
 }
 
@@ -367,6 +369,11 @@ export class Topbar extends React.Component<
                                   this.props.appName
                                 }%2f`}
                                 data-turbolinks={false}
+                                onClick={() => {
+                                  this.props.requestClearAppsCache();
+                                  this.props.requestClearConnectedPeopleCache();
+                                  return;
+                                }}
                                 style={{
                                   maxWidth: "100%",
                                   overflow: "hidden",
@@ -392,6 +399,11 @@ export class Topbar extends React.Component<
                             href={`${pcoUrl(this.props.env)(
                               "accounts"
                             )}/unlink`}
+                            onClick={() => {
+                              this.props.requestClearAppsCache();
+                              this.props.requestClearConnectedPeopleCache();
+                              return;
+                            }}
                             style={{
                               display: "block",
                               fontSize: "15px",
@@ -440,6 +452,11 @@ export class Topbar extends React.Component<
                   <div style={{ ...IEFlex1 }}>
                     <a
                       href={`${pcoUrl(this.props.env)("accounts")}/logout`}
+                      onClick={() => {
+                        this.props.requestClearAppsCache();
+                        this.props.requestClearConnectedPeopleCache();
+                        return;
+                      }}
                       data-turbolinks={false}
                       style={{
                         color: "white",

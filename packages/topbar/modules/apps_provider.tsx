@@ -29,6 +29,10 @@ export class AppsProvider extends React.Component<
     });
   }
 
+  clearAppsCache() {
+    window.localStorage.removeItem("Topbar:Apps");
+  }
+
   componentDidMount() {
     const apps = JSON.parse(window.localStorage.getItem("Topbar:Apps"));
 
@@ -38,6 +42,9 @@ export class AppsProvider extends React.Component<
   }
 
   render() {
-    return this.props.render(this.state.apps || [], this.fetchApps.bind(this));
+    return this.props.render(this.state.apps || [], {
+      fetchApps: this.fetchApps.bind(this),
+      clearAppsCache: this.clearAppsCache.bind(this)
+    });
   }
 }
