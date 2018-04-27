@@ -81,7 +81,7 @@ const apps = [
 ];
 
 const shared = {
-  appName: apps[7].attributes.name,
+  appName: apps[1].attributes.name,
   env: "development",
   style: {
     zIndex: 1,
@@ -92,20 +92,20 @@ const shared = {
   //   base2: "#C47F15",
   //   base3: "#8E5804"
   // }
-  // colors: {
-  //   // People
-  //   base0: "#5781CF",
-  //   base1: "#3F70CB",
-  //   base2: "#3063BF",
-  //   base3: "#184595"
-  // }
   colors: {
-    // Services
-    base0: "#6A9639",
-    base1: "#55861F",
-    base2: "#487813",
-    base3: "#376109",
+    // People
+    base0: "#5781CF",
+    base1: "#3F70CB",
+    base2: "#3063BF",
+    base3: "#184595",
   },
+  // colors: {
+  //   // Services
+  //   base0: "#6A9639",
+  //   base1: "#55861F",
+  //   base2: "#487813",
+  //   base3: "#376109",
+  // },
 };
 
 const staticPlatformAnnouncements = {
@@ -113,11 +113,11 @@ const staticPlatformAnnouncements = {
     html: "<strong>PCO Rocks!</strong>",
     enabled: "true",
   },
-  texas: {
-    html: "<strong>I won't be here long!</strong>",
-    enabled: "true",
-    expires_at: "2018-02-28T19:02:13Z",
-  },
+  // texas: {
+  //   html: "<strong>I won't be here long!</strong>",
+  //   enabled: "true",
+  //   expires_at: "2018-02-28T19:02:13Z",
+  // },
   // other: {
   //   html:
   //     "Just testing some things... <em>I won't be here long!</em>: <a href='#'>click this</a>",
@@ -399,9 +399,9 @@ class SampleTopbar extends React.Component<
                       notifications={() => (
                         <Notification notifications={true} />
                       )}
-                      search={({ hideRoutes, showRoutes }) => (
-                        <Search onOpen={hideRoutes} onClose={showRoutes} />
-                      )}
+                      // search={({ hideRoutes, showRoutes }) => (
+                      //   <Search onOpen={hideRoutes} onClose={showRoutes} />
+                      // )}
                     />
                   )}
                 />
