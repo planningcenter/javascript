@@ -1,6 +1,6 @@
 {
   "name": "@planningcenter/finder-layouts",
-  "version": "0.0.2-0",
+  "version": "0.0.2-1",
   "description": "Layout components for Planning Center Finder",
   "source": "index.js",
   "main": "dist/finder-layouts.js",
