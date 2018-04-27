@@ -22,7 +22,7 @@ export class ConnectedPeopleProvider extends React.Component<
     };
   }
 
-  fetchConnectedPeople() {
+  fetch() {
     getJSON(
       `${pcoUrl(this.props.env)("api")}/people/v2/me/connected_people`,
       (res) => {
@@ -42,7 +42,7 @@ export class ConnectedPeopleProvider extends React.Component<
     );
   }
 
-  clearConnectedPeopleCache() {
+  remove() {
     window.localStorage.removeItem("Topbar:ConnectedPeople");
   }
 
@@ -53,13 +53,13 @@ export class ConnectedPeopleProvider extends React.Component<
 
     if (connectedPeople) return this.setState({ connectedPeople });
 
-    return this.fetchConnectedPeople();
+    return this.fetch();
   }
 
   render() {
     return this.props.render(this.state.connectedPeople || [], {
-      fetchConnectedPeople: this.fetchConnectedPeople.bind(this),
-      clearConnectedPeopleCache: this.clearConnectedPeopleCache.bind(this),
+      fetch: this.fetch.bind(this),
+      remove: this.remove.bind(this),
     });
   }
 }

@@ -142,7 +142,7 @@ export default class PlatformAnnouncements extends React.Component<
   {
     colors: any;
     env: string;
-    announcements: object;
+    data: object;
     renderItem?: any;
   },
   {}
@@ -160,10 +160,7 @@ export default class PlatformAnnouncements extends React.Component<
   render() {
     return (
       <StyleProvider colors={this.props.colors}>
-        <Provider
-          env={this.props.env}
-          initialAnnouncements={this.props.announcements}
-        >
+        <Provider env={this.props.env} initialAnnouncements={this.props.data}>
           {(data, actions) =>
             Boolean(data.announcements.length > 0) ? (
               <div>

@@ -7,12 +7,12 @@ import {
   SmallTopbar,
   SmallRoute,
   DisplaySwitch,
-  BellSymbol,
-  XSymbol,
-  SpyglassSymbol,
-  PlatformNotifications,
-  PlatformAnnouncementsStyleProvider,
-  StyledPlatformAnnouncement,
+  BellIcon,
+  XIcon,
+  SpyglassIcon,
+  PlatformAnnouncements,
+  // PlatformAnnouncementsStyleProvider,
+  // StyledPlatformAnnouncement,
   // AppsProvider,
   // ConnectedPeopleProvider
 } from "../index";
@@ -223,7 +223,7 @@ class StaticConnectedPeopleProvider extends React.Component<
   },
   {}
 > {
-  mockConnectedPeopleFetch() {
+  fetch() {
     setTimeout(() => {
       window.localStorage.setItem(
         "Topbar:ConnectedPeople",
@@ -233,13 +233,13 @@ class StaticConnectedPeopleProvider extends React.Component<
     }, 1000);
   }
 
-  clearConnectedPeopleCache() {
+  remove() {
     return window.localStorage.removeItem("Topbar:ConnectedPeople");
   }
 
   componentDidMount() {
     if (!JSON.parse(window.localStorage.getItem("Topbar:ConnectedPeople"))) {
-      this.mockConnectedPeopleFetch();
+      this.fetch();
     }
   }
 
@@ -247,8 +247,8 @@ class StaticConnectedPeopleProvider extends React.Component<
     return this.props.render(
       JSON.parse(window.localStorage.getItem("Topbar:ConnectedPeople")) || [],
       {
-        fetchConnectedPeople: this.mockConnectedPeopleFetch.bind(this),
-        clearConnectedPeopleCache: this.clearConnectedPeopleCache.bind(this),
+        fetch: this.fetch.bind(this),
+        remove: this.remove.bind(this),
       },
     );
   }
@@ -260,20 +260,20 @@ class StaticAppsProvider extends React.Component<
   },
   {}
 > {
-  mockAppsFetch() {
+  fetch() {
     setTimeout(() => {
       window.localStorage.setItem("Topbar:Apps", JSON.stringify(apps));
       return this.forceUpdate();
     }, 1000);
   }
 
-  clearAppsCache() {
+  remove() {
     return window.localStorage.removeItem("Topbar:Apps");
   }
 
   componentDidMount() {
     if (!JSON.parse(window.localStorage.getItem("Topbar:Apps"))) {
-      this.mockAppsFetch();
+      this.fetch();
     }
   }
 
@@ -281,8 +281,8 @@ class StaticAppsProvider extends React.Component<
     return this.props.render(
       JSON.parse(window.localStorage.getItem("Topbar:Apps")) || [],
       {
-        fetchApps: this.mockAppsFetch.bind(this),
-        clearAppsCache: this.clearAppsCache.bind(this),
+        fetch: this.fetch.bind(this),
+        remove: this.remove.bind(this),
       },
     );
   }
@@ -301,12 +301,9 @@ class SampleTopbar extends React.Component<
   render() {
     return (
       <StaticConnectedPeopleProvider
-        render={(
-          connectedPeople,
-          { fetchConnectedPeople, clearConnectedPeopleCache },
-        ) => (
+        render={(connectedPeople, connectedPeopleActions) => (
           <StaticAppsProvider
-            render={(apps, { fetchApps, clearAppsCache }) => (
+            render={(apps, appsActions) => (
               <div style={{ backgroundColor: shared.colors.base0 }}>
                 {/*
                 <PlatformAnnouncementsStyleProvider colors={shared.colors}>
@@ -317,8 +314,8 @@ class SampleTopbar extends React.Component<
                 </PlatformAnnouncementsStyleProvider>
               */}
 
-                <PlatformNotifications
-                  announcements={staticPlatformAnnouncements}
+                <PlatformAnnouncements
+                  data={staticPlatformAnnouncements}
                   colors={shared.colors}
                   env={shared.env}
                 />
@@ -344,12 +341,14 @@ class SampleTopbar extends React.Component<
                             }}
                           />
                         )}
-                        requestAppsFetch={fetchApps}
+                        requestAppsFetch={appsActions.fetch}
                         requestClearConnectedPeopleCache={
-                          clearConnectedPeopleCache
+                          connectedPeopleActions.remove
                         }
-                        requestClearAppsCache={clearAppsCache}
-                        requestConnectedPeopleFetch={fetchConnectedPeople}
+                        requestClearAppsCache={appsActions.remove}
+                        requestConnectedPeopleFetch={
+                          connectedPeopleActions.fetch
+                        }
                         routes={staticData.routes.map(([name, uri]) => (
                           <SmallRoute
                             key={name}
@@ -376,13 +375,13 @@ class SampleTopbar extends React.Component<
                       userName={this.props.userName}
                       orgName={this.props.orgName}
                       showOrgName={["xl"].indexOf(activeBreakpoint) !== -1}
-                      requestAppsFetch={fetchApps}
+                      requestAppsFetch={appsActions.fetch}
                       requestClearConnectedPeopleCache={
-                        clearConnectedPeopleCache
+                        connectedPeopleActions.remove
                       }
-                      requestClearAppsCache={clearAppsCache}
+                      requestClearAppsCache={appsActions.remove}
                       linkToProfile={true}
-                      requestConnectedPeopleFetch={fetchConnectedPeople}
+                      requestConnectedPeopleFetch={connectedPeopleActions.fetch}
                       routes={staticData.routes.map(([name, uri]) => (
                         <NotSmallRoute
                           colors={shared.colors}
@@ -427,7 +426,7 @@ const Notification = ({ notifications = false, style = {}, ...props }) => (
       ...style,
     }}
   >
-    <BellSymbol
+    <BellIcon
       dot={notifications}
       fill={shared.colors.base3}
       stroke={shared.colors.base0}
@@ -457,11 +456,11 @@ class Search extends React.Component<
       <div>
         {this.state.open ? (
           <button type="button" onClick={() => this.setState({ open: false })}>
-            <XSymbol />
+            <XIcon />
           </button>
         ) : (
           <button type="button" onClick={() => this.setState({ open: true })}>
-            <SpyglassSymbol />
+            <SpyglassIcon />
           </button>
         )}
       </div>

@@ -19,7 +19,7 @@ export class AppsProvider extends React.Component<
     };
   }
 
-  fetchApps() {
+  fetch() {
     getJSON(`${pcoUrl(this.props.env)("api")}/people/v2/me/apps`, (res) => {
       const apps = res.data;
 
@@ -29,7 +29,7 @@ export class AppsProvider extends React.Component<
     });
   }
 
-  clearAppsCache() {
+  remove() {
     window.localStorage.removeItem("Topbar:Apps");
   }
 
@@ -38,13 +38,13 @@ export class AppsProvider extends React.Component<
 
     if (apps) return this.setState({ apps });
 
-    return this.fetchApps();
+    return this.fetch();
   }
 
   render() {
     return this.props.render(this.state.apps || [], {
-      fetchApps: this.fetchApps.bind(this),
-      clearAppsCache: this.clearAppsCache.bind(this),
+      fetch: this.fetch.bind(this),
+      remove: this.remove.bind(this),
     });
   }
 }
