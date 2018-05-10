@@ -52,3 +52,6 @@ All commands are prefixed with `yarn`.
 ## Improvements
 
 * New project generator with sensible defaults
+
+
+#### I did this for the lolcommit
