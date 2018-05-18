@@ -6,6 +6,7 @@ function Symbol({ symbol: _symbol, ...props }) {
   return (
     <svg
       role="img"
+      title={`${symbol} icon`}
       className={["symbol", props.className].join(" ").trim()}
       {...props}
     >
