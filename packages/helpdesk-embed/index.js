@@ -103,6 +103,8 @@
         (t += "&current_page=" + this.escape(window.location.href)),
         null != this.backgroundColor &&
           (t += "&background=" + this.escape(this.backgroundColor)),
+        null != this.mode &&
+          (t += "&mode=" + this.escape(this.mode)),
         null != this.zendeskDetails)
       )
         if (
