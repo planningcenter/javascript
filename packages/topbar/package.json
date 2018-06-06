@@ -1,6 +1,6 @@
 {
   "name": "@planningcenter/topbar",
-  "version": "3.0.0-8",
+  "version": "3.0.0-9",
   "description": "Planning Center application Topbar",
   "main": "dist/topbar.js",
   "umd:main": "dist/topbar.umd.js",
