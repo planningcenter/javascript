@@ -1,4 +1,4 @@
-import { createElement } from "react";
+import React from "react";
 
 function Symbol({ className, symbol: _symbol, ...platformProps }) {
   let [path, symbol] = _symbol.replace(".svg", "").split("#");
