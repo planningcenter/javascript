@@ -33,12 +33,11 @@
     "markdown-toc": "^1.2.0",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
-    "rollup": "^0.58.2",
-    "rollup-plugin-typescript2": "^0.13.0",
+    "rollup-plugin-typescript2": "^0.15.1",
     "ts-loader": "^4.0.1",
     "typescript": "^2.5.2",
     "webpack": "^4.1.1",
-    "webpack-cli": "^2.0.10",
+    "webpack-cli": "^3.0.8",
     "webpack-dev-server": "^3.1.0"
   }
 }

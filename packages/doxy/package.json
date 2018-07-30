@@ -1,0 +1,39 @@
+{
+    "name": "@planningcenter/doxy",
+    "version": "0.0.0",
+    "description": "Cross-platform Church Center UI components",
+    "main": "dist/doxy.js",
+    "umd:main": "dist/doxy.umd.js",
+    "module": "dist/doxy.m.js",
+    "source": "tmp/doxy.js",
+    "repository": "@planningcenter/javascript",
+    "author": "Michael Chan <mijoch@gmail.com>",
+    "license": "MIT",
+    "private": false,
+    "scripts": {
+      "babel": "./node_modules/.bin/babel src -d tmp",
+      "build": "npm run -s babel && microbundle"
+    },
+    "devDependencies": {
+      "@babel/cli": "^7.0.0-beta.46",
+      "@babel/core": "^7.0.0-beta.46",
+      "@babel/preset-env": "^7.0.0-beta.46",
+      "@babel/preset-react": "^7.0.0-beta.46"
+    },
+    "babel": {
+      "presets": [
+        "@babel/preset-react",
+        [
+          "@babel/preset-env",
+          {
+            "targets": {
+              "browsers": [
+                "defaults"
+              ]
+            }
+          }
+        ]
+      ]
+    }
+  }
+  
