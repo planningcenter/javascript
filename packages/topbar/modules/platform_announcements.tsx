@@ -51,12 +51,17 @@ class Provider extends React.Component<
       return { announcements: newAnnouncements };
     });
 
+    const csrfToken = document
+      .querySelector("meta[name=csrf-token]")
+      .getAttribute("content");
+
     return request
       .post(
         `${pcURL(this.props.env)(
           "api",
         )}/people/v2/me/platform_notifications/${id}/dismiss`,
       )
+      .set("X-CSRF-Token", csrfToken)
       .withCredentials()
       .end(() => {
         return;
