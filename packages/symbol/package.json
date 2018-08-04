@@ -12,8 +12,12 @@
   "private": false,
   "scripts": {
     "babel": "./node_modules/.bin/babel src -d tmp",
-    "build": "npm run -s babel && microbundle"
+    "build": "npm run -s babel && microbundle",
+    "prepublish": "npm run build"
   },
+  "files": [
+    "dist"
+  ],
   "devDependencies": {
     "@babel/cli": "^7.0.0-beta.46",
     "@babel/core": "^7.0.0-beta.46",
