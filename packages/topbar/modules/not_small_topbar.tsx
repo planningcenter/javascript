@@ -288,6 +288,10 @@ class Outsider extends React.Component<
     this.handleOutsideClick = this.handleOutsideClick.bind(this);
   }
 
+  componentWillUnmount() {
+    document.removeEventListener("click", this.handleOutsideClick, true);
+  }
+
   handleOutsideClick(e) {
     if (this.container.contains(e.target)) return;
 
