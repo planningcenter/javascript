@@ -59,9 +59,15 @@ export class Overflowing extends React.Component {
       style: { position: "relative" },
       children: [
         Boolean(this.state.right) && (
-          <EdgeGradient gap={this.state.right} direction="left" edge="right" />
+          <EdgeGradient
+            key="Overflowing-left-EdgeGradient"
+            gap={this.state.right}
+            direction="left"
+            edge="right"
+          />
         ),
         <div
+          key="Overflowing-main-content"
           ref={el => (this.containerEl = el)}
           {...nativeProps}
           style={{
@@ -73,7 +79,12 @@ export class Overflowing extends React.Component {
           <div ref={el => (this.innerEl = el)}>{children}</div>
         </div>,
         Boolean(this.state.left) && (
-          <EdgeGradient gap={this.state.left} direction="right" edge="left" />
+          <EdgeGradient
+            key="Overflowing-right-EdgeGradient"
+            gap={this.state.left}
+            direction="right"
+            edge="left"
+          />
         )
       ]
     });
