@@ -1,6 +1,7 @@
 {
   "name": "@planningcenter/topbar",
   "version": "3.0.1-0",
+  "license": "UNLICENSED",
   "description": "Planning Center application Topbar",
   "main": "dist/topbar.js",
   "umd:main": "dist/topbar.umd.js",
@@ -20,9 +21,7 @@
   "author": "Michael Chan <mijoch@gmail.com>",
   "private": false,
   "dependencies": {
-    "rollup-plugin-typescript2": "^0.17.0",
-    "superagent": "^3.8.0",
-    "typescript": "^3.0.1"
+    "superagent": "^3.8.0"
   },
   "peerDependencies": {
     "react": ">= 15.6.1 < 17"
@@ -34,9 +33,9 @@
     "markdown-toc": "^1.2.0",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
-    "rollup-plugin-typescript2": "^0.15.1",
+    "rollup-plugin-typescript2": "^0.17.0",
     "ts-loader": "^4.0.1",
-    "typescript": "^2.5.2",
+    "typescript": "^3.0.1",
     "webpack": "^4.1.1",
     "webpack-cli": "^3.0.8",
     "webpack-dev-server": "^3.1.0"
