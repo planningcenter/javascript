@@ -20,7 +20,9 @@
   "author": "Michael Chan <mijoch@gmail.com>",
   "private": false,
   "dependencies": {
-    "superagent": "^3.8.0"
+    "rollup-plugin-typescript2": "^0.17.0",
+    "superagent": "^3.8.0",
+    "typescript": "^3.0.1"
   },
   "peerDependencies": {
     "react": ">= 15.6.1 < 17"
