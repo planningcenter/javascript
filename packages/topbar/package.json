@@ -23,7 +23,6 @@
   "dependencies": {
     "superagent": "^3.8.0"
   },
-  "peerDependencies": {},
   "devDependencies": {
     "@types/react": "^16.0.5",
     "@types/react-dom": "^16.0.5",
