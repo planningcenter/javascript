@@ -14,8 +14,8 @@
       "index.js"
     ],
     "scripts": {
-      "build": "microbundle",
-      "dev": "microbundle watch"
+      "build": "microbundle --jsx",
+      "dev": "microbundle watch --jsx"
     },
     "bugs": {
       "url": "https://github.com/planningcenter/javascript/issues"

@@ -1,2 +1,2 @@
-!function(e,n){"object"==typeof exports&&"undefined"!=typeof module?n():"function"==typeof define&&define.amd?define(n):n()}(0,function(){console.log("hiya")});
+!function(e,o){"object"==typeof exports&&"undefined"!=typeof module?module.exports=o():"function"==typeof define&&define.amd?define(o):e.tabbedHeader=o()}(this,function(){return"production"===process.env.NODE_ENV?module.exports=require("./cjs/react.production.min.js"):module.exports=require("./cjs/react.development.js"),function(){return(!0)("div",null,"hi")}});
 //# sourceMappingURL=tabbed-header.umd.js.map
