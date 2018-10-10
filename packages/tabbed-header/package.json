@@ -1,6 +1,6 @@
 {
   "name": "@planningcenter/tabbed-header",
-  "version": "0.0.0-1",
+  "version": "1.0.0-alpha.0",
   "description": "Tabbed Header React components for Planning Center apps.",
   "main": "dist/tabbed-header.js",
   "umd:main": "dist/tabbed-header.umd.js",
