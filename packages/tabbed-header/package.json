@@ -1,0 +1,26 @@
+{
+    "name": "@planningcenter/tabbed-header",
+    "version": "0.0.0",
+    "description": "Tabbed Header React components for Planning Center apps.",
+    "main": "dist/tabbed-header.js",
+    "umd:main": "dist/tabbed-header.umd.js",
+    "module": "dist/tabbed-header.mjs",
+    "source": "index.js",
+    "repository": "https://github.com/planningcenter/javascript.git",
+    "author": "Michael Chan <mijoch@gmail.com>",
+    "license": "UNLICENSED",
+    "files": [
+      "dist",
+      "index.js"
+    ],
+    "scripts": {
+      "build": "microbundle",
+      "dev": "microbundle watch"
+    },
+    "bugs": {
+      "url": "https://github.com/planningcenter/javascript/issues"
+    },
+    "homepage": "https://github.com/planningcenter/javascript/tree/master/packages/tabbed-header",
+    "private": false
+  }
+  
