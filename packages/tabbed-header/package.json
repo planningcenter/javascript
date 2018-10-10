@@ -10,8 +10,7 @@
   "author": "Michael Chan <mijoch@gmail.com>",
   "license": "UNLICENSED",
   "files": [
-    "dist",
-    "index.js"
+    "dist"
   ],
   "scripts": {
     "babel": "./node_modules/.bin/babel src -d tmp",
